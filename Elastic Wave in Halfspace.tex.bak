@@ -524,11 +524,11 @@ Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi)$ where g(x,y,z) is a  qua
 \be
 \Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}\Big| \leq C(\frac{k_s^2 b}{\rho(k_s\rho)^{1/2}}+\frac{k_s^2a}{\rho(k_s\rho)^{3/2}})
 \ee
-where C only dependent on $\kappa$.
+where C is only dependent on $\kappa$.
 \end{lem}
 \debproof
 Let I(a,b) denote the integral in the left side of inequality (\ref{es_dgreen}). To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. The integral I(a,b) then becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$)
-\be 
+\be
  k_s^2 \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
 \ee
 Taking the shift transformation of t and using cauchy integral theorem, we can obtain the representation of I(a,b):
@@ -540,7 +540,7 @@ k_s^2\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos 
 \een
 The lemma will be proved if we can show $|I_1|\leq C/(k_s\rho)^{1/2}$ and $|I_2|\leq C/(k_S\rho)^{3/2}$.
 
-For $I_1$, we split the integral path L into $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$, then we have corresponding representation $I_1=I_{11}+I_{12}$. A simple calculation gives that $f$ and $\pa f/\pa t$ are both integrable on path $L1$. Further more, $\cos t>1/2$ as $t\in(-\pi/4,\pi/4)$  while $|\sin t|>1/2$ as $t\in (-\pi/2,-\pi/4)\cup(\pi/4,\pi/2)$. Then we have $|I_{11}|\leq C/(k_s\rho)^{1/2}$ following the lemma \ref{van}.
+For $I_1$, we split the integral path L into $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$, then we have corresponding representation: $I_1=I_{11}+I_{12}$. A simple calculation gives that $f$ and $\pa f/\pa t$ are both integrable on path $L1$. Further more, $\cos t>1/2$ if $t\in(-\pi/4,\pi/4)$  while $|\sin t|>1/2$ if $t\in (-\pi/2,-\pi/4)\cup(\pi/4,\pi/2)$. Then we have $|I_{11}|\leq C/(k_s\rho)^{1/2}$ following the lemma \ref{van}.
 
 Moreover, because $f$ and $\pa f/\pa t$ has on singularity on $L2$ and $\i\cos t \to -\infty$ as $t\to \pm\infty$ along $L_2$, it is easy to see that $|I_12|\leq C/k_s\rho$ via integration by parts.
 
@@ -554,10 +554,38 @@ I_2=\frac{k_s}{\i\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+
 Then $|I_{22}|\leq C/k_s\rho$ can be proved by the same method used above. Following a tedious computation, we obtain a simple form of $\pa f/\pa t$:
 \be
 \frac{\pa f}{\pa t}&=&\frac{(\gamma\pa_t g  -g \pa_t \gamma)(\kappa^2-\sin^2 t)^{1/2}}{(\sin^2 t +\cos t (\kappa^2-\sin^2 t)^{1/2})^2}\frac{1}{(\kappa^2-\sin^2 t)^{1/2}} \\
-&:=&\frac{h(t)}{(\kappa^2-\sin^2 t)^{1/2}}
+&:=&\frac{h(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{(\kappa^2-\sin^2 t)^{1/2}}
 \ee
-where $h$ and $\pa h/\pa t$ can be integrated on path $L_1$.
+where $h$ and $\pa h/\pa t$ are integrable on path $L_1$. By the assumption above, there exist $0<\delta<\pi/4$ only dependent on $\kappa$ such that $|\sin(t+\phi)|>(1+\kappa)/2, |\cos(t+\phi)|<\kappa/2$ for any $t\in(-\delta,\delta)$ while $|\cos(t+\phi)|>(1+\kappa)/2, |\sin(t+\phi)|<\kappa/2$ for any $t\in(-\pi/2,-\pi/2+\delta)\cup(\pi/2-\delta,\pi/2)$. Let define $t_1,t_2\in \chi_1=(-\pi/2+\delta,-\delta)\cup(\delta,\pi/2-\delta)$ which satisfy $\kappa^2 = \sin^2 (t_i+\phi)$, $i=1,2$. Moreover, for any $a>1$ and $0<b<1$, there exists $\sigma>0$, which satisfy that $\chi_2=(t_1-\sigma,t_1+\sigma)\cup(t_2-\sigma,t_2+\sigma)\subset\chi_1$ and is only dependent on a,b,$\kappa$, such that
+\be \label{assume1}
+a\kappa<|\sin (t+\phi)|<b\kappa.
+\ee
+We are now in a position to estimate $I_{21}$. Similarly, we split the path $L_1$ into $\chi_2$ and $L_1\bks \chi_2$, then we have the corresponding representation: $I_{21}=I_\chi+I_{L_1\bks\chi}$. 
 
+For $I_{\chi}$, we only analysis the integral on $\chi_{21}=(t_1-\sigma,t_1+\sigma)$ denoted by $I^1_{\chi}$, the process of another one is same. Without loss of generality, we assume that $\sin (t_1-\sigma+\phi)<\kappa<\sin (t_1+\sigma+\phi)$. It is easy to see that $\sin (t+\phi)$ is monotonic increasing in $\chi_{21}$. Let $\sin (t+\phi) = \kappa \sin \theta$ and the implicit mapping from $\theta$ to $t$ is denoted by $t(\theta)$ while the inverse mapping by $\theta(t)$, taking the interval $\chi$ onto $L_\theta : \theta_1\rightarrow\pi/2\rightarrow\pi/2-\i\theta_2$ where $\sin(t_1-\sigma+\phi)=\kappa\sin \theta_1,\sin(t_1+\sigma+\phi)=\kappa\sin(\pi/2-\i\theta_2)$. By substituting $t(\theta)$ into $I^1_{\chi}$, we have
+\be
+I^1_{\chi}=\int_{L_\theta}\frac{ h(\kappa\sin\theta,(1-\kappa^2\sin^2\theta,\kappa\cos\theta)}{(1-\kappa^2\sin^2\theta)} \ e^{\i
+k_s\rho(\cos(t(\theta)))} d\theta
+\ee
+Because of inequality \ref{assume1}, we assert that $h$ and $\pa h/\pa\theta$ are integrable on the path $L_\theta$. A simple computation show that
+\ben
+\frac{dt(\theta)}{d\theta}=\frac{\kappa\cos\theta}{\cos(t+\phi)} \ \ 
+\frac{d^2 t(\theta)}{dt^2}=\frac{\kappa^2\cos^2\theta\sin(t+\phi)-\kappa\sin\theta\cos^2(t+\phi)}{\cos^3(t+\phi)}
+\een
+Then we can obtain
+\ben
+\frac{d\cos t}{d\theta}&=&\frac{-\kappa\sin t\cos\theta}{\cos(t+\phi)} \\
+\frac{d^2\cos t}{d\theta^2}&=&\frac{d^2\cos t}{dt^2}(\frac{dt}{d\theta})^2+\frac{d\cos t}{dt}\frac{d^2t}{d\theta^2} \\
+&=&\frac{-\kappa^2\cos^2\theta\cos t}{\cos^2(t+\phi)}+\frac{\kappa\sin\theta\cos^2(t+\phi)\sin t -\kappa^2\cos^2\theta\sin(t+\phi)\sin t}{\cos^3(t+\phi)} \\
+&=&\frac{-\kappa^2\cos^2\theta\cos\phi+\kappa\sin\theta\cos^2(t+\phi)\sin t}{\cos^3(t+\phi)} \\
+&=&\frac{(\sin^2(t+\phi)-\kappa^2)\cos\phi+\cos^2(t+\phi)\sin(t+\phi)\sin t}{\cos^3(t+\phi)}
+\een
+It is simple to see that $\theta=\pi/2$ is the stationary point of $\cos(t(\theta))$ and we can obtain
+\be
+|\frac{d^2\cos t}{d\theta^2}(0)|=\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}|\sin t|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin (\pi/2-\delta)
+\ee
+Therefore, we can choose appropriate a,b, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin (\pi/2-\delta)$ for any $t\in \chi_2$.
+An argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks\chi}|\leq C/(k_s\rho)^{1/2}$. This completes the proof.
 
 \finproof
 
