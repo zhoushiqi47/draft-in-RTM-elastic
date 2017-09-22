@@ -524,7 +524,7 @@ Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi)$ where g(x,y,z) is a  qua
 \be
 \Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}\Big| \leq C(\frac{k_s^2 b}{\rho(k_s\rho)^{1/2}}+\frac{k_s^2a}{\rho(k_s\rho)^{3/2}})
 \ee
-where C is only dependent on $\kappa$.
+where C only dependent on $\kappa$.
 \end{lem}
 \debproof
 Let I(a,b) denote the integral in the left side of inequality (\ref{es_dgreen}). To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. The integral I(a,b) then becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$)
@@ -540,7 +540,7 @@ k_s^2\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos 
 \een
 The lemma will be proved if we can show $|I_1|\leq C/(k_s\rho)^{1/2}$ and $|I_2|\leq C/(k_S\rho)^{3/2}$.
 
-For $I_1$, we split the integral path L into $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$, then we have corresponding representation: $I_1=I_{11}+I_{12}$. A simple calculation gives that $f$ and $\pa f/\pa t$ are both integrable on path $L1$. Further more, $\cos t>1/2$ as $t\in(-\pi/4,\pi/4)$  while $|\sin t|>1/2$ as $t\in (-\pi/2,-\pi/4)\cup(\pi/4,\pi/2)$. Then we have $|I_{11}|\leq C/(k_s\rho)^{1/2}$ following the lemma \ref{van}.
+For $I_1$, we split the integral path L into $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$, then we have corresponding representation $I_1=I_{11}+I_{12}$. A simple calculation gives that $f$ and $\pa f/\pa t$ are both integrable on path $L1$. Further more, $\cos t>1/2$ as $t\in(-\pi/4,\pi/4)$  while $|\sin t|>1/2$ as $t\in (-\pi/2,-\pi/4)\cup(\pi/4,\pi/2)$. Then we have $|I_{11}|\leq C/(k_s\rho)^{1/2}$ following the lemma \ref{van}.
 
 Moreover, because $f$ and $\pa f/\pa t$ has on singularity on $L2$ and $\i\cos t \to -\infty$ as $t\to \pm\infty$ along $L_2$, it is easy to see that $|I_12|\leq C/k_s\rho$ via integration by parts.
 
@@ -556,9 +556,7 @@ Then $|I_{22}|\leq C/k_s\rho$ can be proved by the same method used above. Follo
 \frac{\pa f}{\pa t}&=&\frac{(\gamma\pa_t g  -g \pa_t \gamma)(\kappa^2-\sin^2 t)^{1/2}}{(\sin^2 t +\cos t (\kappa^2-\sin^2 t)^{1/2})^2}\frac{1}{(\kappa^2-\sin^2 t)^{1/2}} \\
 &:=&\frac{h(t)}{(\kappa^2-\sin^2 t)^{1/2}}
 \ee
-where $h$ and $\pa h/\pa t$ are integrable on path $L_1$. By the assumption above, there exist $0<\delta<\pi/4$ only dependent on $\kappa$ such that $|\sin(t+\phi)|>(1+\kappa)/2, |\cos(t+\phi)|<\kappa/2$ for any $t\in(-\delta,\delta)$ while $|\cos(t+\phi)|>(1+\kappa)/2, |\sin(t+\phi)|<\kappa/2$ for any $t\in(-\pi/2,-\pi/2+\delta)\cup(\pi/2-\delta,\pi/2)$. Let define $t_1,t_2\in \chi_1=(-\pi/2+\delta,-\delta)\cup(\delta,\pi/2-\delta)$ which satisfy $\kappa^2 = \sin^2 t_i$, $i=1,2$. Moreover, there exists $\sigma>0$, which satisfy that $\chi_2=(t_1-\sigma,t_1+\sigma)\cup(t_2-\sigma,t_2+\sigma)\subset\chi_1$, such that $\kappa/2<|\sin t|<(\kappa+1)/2$.
-
-We are now in a position to estimate $I_{21}$. Similarly, we split the path $L_1$ into $\chi_2$ and $L_1\bks \chi_2$, then we have the corresponding representation: $I_{21}=I_\chi+I_{L_1\bks\chi}$. An argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks\chi}|\leq C/(k_s\rho)^{1/2}$. For $I_{\chi}$, we only analysis the integral on $(t_1-\sigma,t_1+\sigma)$, the another is same.
+where $h$ and $\pa h/\pa t$ can be integrated on path $L_1$.
 
 
 \finproof
