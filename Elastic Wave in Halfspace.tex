@@ -522,21 +522,21 @@ We also have following more explicit estimation:
 \begin{lem}\label{es_dgreen}
 Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi)$ where g(x,y,z) is a  quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $a/\rho >(1+\kappa)/2$, $b/\rho < \kappa/2$ and $k_s\rho >1$, then we have
 \be
-\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}\Big| \leq C(\frac{k_s^2 b}{\rho(k_s\rho)^{1/2}}+\frac{k_s^2a}{\rho(k_s\rho)^{3/2}})
+\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}\Big| \leq C(\frac{k_s b}{\rho(k_s\rho)^{1/2}}+\frac{k_s a}{\rho(k_s\rho)^{3/2}})
 \ee
 where C is only dependent on $\kappa$.
 \end{lem}
 \debproof
 Let I(a,b) denote the integral in the left side of inequality (\ref{es_dgreen}). To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. The integral I(a,b) then becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$)
 \be
- k_s^2 \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
+ k_s \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
 \ee
 Taking the shift transformation of t and using cauchy integral theorem, we can obtain the representation of I(a,b):
 \ben \hspace{-1.5cm}
-k_s^2\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos (t+\phi) e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
-=k_s^2\cos \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
--k_s^2\sin \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\sin t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
-:=k_s^2(\cos\phi \ I_1+\sin\phi \ I_2)
+k_s\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos (t+\phi) e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+=k_s \cos \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+-k_s \sin \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\sin t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+:=k_s (\cos\phi \ I_1+\sin\phi \ I_2)
 \een
 The lemma will be proved if we can show $|I_1|\leq C/(k_s\rho)^{1/2}$ and $|I_2|\leq C/(k_s\rho)^{3/2}$.
 
@@ -546,10 +546,10 @@ Moreover, because $f$ and $\pa f/\pa t$ has on singularity on $L_2$ and $\i\cos 
 
 For $I_2$, using integration by parts on path $L$ first, we have
 \be \hspace{-2cm}
-I_2=\frac{k_s}{\i\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2}) d \ e^{\i(k_s\rho \cos t)} \\ \hspace{-1.5cm}
-=\frac{k_s}{\i\rho} \int_{L_1 \cup L_2} \frac{\pa f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{\pa t
+I_2=\frac{1}{\i k_s\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2}) d \ e^{\i(k_s\rho \cos t)} \\ \hspace{-1.5cm}
+=-\frac{1}{\i k_s\rho} \int_{L_1 \cup L_2} \frac{\pa f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{\pa t
 } \  e^{\i(k_s\rho \cos t)} dt \\ \hspace{-1.5cm}
-=\frac{k_s}{\i\rho}(I_{21}+I_{22})
+=-\frac{1}{\i k_s\rho}(I_{21}+I_{22})
 \ee
 Then $|I_{22}|\leq C/(k_s\rho)$ can be proved by the same method used above. Following a tedious computation, we obtain a simple form of $\pa f/\pa t$:
 \be
