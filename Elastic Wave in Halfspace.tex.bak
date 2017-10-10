@@ -216,7 +216,7 @@ By the standard arguement in ODEs, solutions of (\ref{pp7}) are linear combinati
 \be
 \r(x_2) = \v e^{\i\nu x_2}
 \ee
-where $\mathbf{v} = (v_1,v_2) \in \mathbb{C}^2$ and $\nu \in \mathbb{C}$. It is well kown that the admissible values of $\nu$ are in $\Lambda:= \{\pm\mu_p,\pm\mu_s\}$ and where
+where $\mathbf{v} = (v_1,v_2)^T \in \mathbb{C}^2$ and $\nu \in \mathbb{C}$. It is well kown that the admissible values of $\nu$ are in $\Lambda:= \{\pm\mu_p,\pm\mu_s\}$ and where
 \be
 \mu_\alpha=(k_\alpha^2-\xi^2)^{1/2} \ \ \ \ \ \ \ \ \ \mbox{for} \ \ \ \ \alpha= s,p
 \ee
@@ -452,7 +452,7 @@ Thus, we get the representation of Green Tensor by inverse Fourier transform
 \be
 D(x,y)&=&\Phi(x,y)-\Phi(x,y')+\frac{1}{2\pi}\int_{\R}\hat M(\xi,x_2;y_2) e^{\i(x_1-y_1)\xi}d\xi
 \ee
-Let $T_D(x,y)$ denote the traction of $D(x,y)$ in direction $e_2$ to variable $x$ that $T_D(x,y)e_i=T_x^{e_2}(D(x,y))e_i=T_x^{e_2}(D(x,y)e_i)$. Then we can get the representation of $T_D(x,y)$ by a trivial caculation.
+Let $T_D(x,y)$ denote the traction of $D(x,y)$ in direction $e_2$ to variable $x$ that $T_D(x,y)e_i=T_x^{e_2}(D(x,y))e_i=T_x^{e_2}(D(x,y)e_i)$. Then we can get the representation of $T_D(x,y)$ by a trivial calculation.
 \be
 T_D(x,y)&=&T(x,y)-T(x,y')+\frac{1}{2\pi}\int_{\R}\hat T_M(\xi,x_2;y_2) e^{\i(x_1-y_1)\xi}d\xi
 \ee
@@ -520,23 +520,27 @@ The assertion can be proved by extending the Van der Corptut lemma in \cite{graf
 \finproof
 We also have following more explicit estimation:
 \begin{lem}\label{es_dgreen}
-Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi)$ where g(x,y,z) is a  quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $a/\rho >(1+\kappa)/2$, $b/\rho < \kappa/2$ and $k_s\rho >1$, then we have
+Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $a/\rho >(1+\kappa)/2$, $b/\rho < \kappa/2$, $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
+\be \label{ap_estimation}
+\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi \Big| \leq C(\frac{k_s b}{\rho(k_s\rho)^{1/2}}+\frac{k_s a}{\rho(k_s\rho)^{3/2}})
+\ee
+and
 \be
-\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}\Big| \leq C(\frac{k_s^2 b}{\rho(k_s\rho)^{1/2}}+\frac{k_s^2a}{\rho(k_s\rho)^{3/2}})
+\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)} d\xi\Big| \leq C(\frac{k_s b}{\rho(k_s\rho)^{1/2}}+\frac{k_s a}{\rho(k_s\rho)^{3/2}})
 \ee
 where C is only dependent on $\kappa$.
 \end{lem}
 \debproof
-Let I(a,b) denote the integral in the left side of inequality (\ref{es_dgreen}). To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. The integral I(a,b) then becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$)
+Let I(a,b) denote the integral in the left side of inequality (\ref{ap_estimation}). To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. The integral I(a,b) then becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$, $0<\phi<\pi/4$)
 \be
- k_s^2 \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
+ k_s \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
 \ee
 Taking the shift transformation of t and using cauchy integral theorem, we can obtain the representation of I(a,b):
 \ben \hspace{-1.5cm}
-k_s^2\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos (t+\phi) e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
-=k_s^2\cos \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
--k_s^2\sin \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\sin t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
-:=k_s^2(\cos\phi \ I_1+\sin\phi \ I_2)
+k_s\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos (t+\phi) e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+=k_s \cos \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+-k_s \sin \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\sin t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+:=k_s (\cos\phi \ I_1+\sin\phi \ I_2)
 \een
 The lemma will be proved if we can show $|I_1|\leq C/(k_s\rho)^{1/2}$ and $|I_2|\leq C/(k_s\rho)^{3/2}$.
 
@@ -546,10 +550,10 @@ Moreover, because $f$ and $\pa f/\pa t$ has on singularity on $L_2$ and $\i\cos 
 
 For $I_2$, using integration by parts on path $L$ first, we have
 \be \hspace{-2cm}
-I_2=\frac{k_s}{\i\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2}) d \ e^{\i(k_s\rho \cos t)} \\ \hspace{-1.5cm}
-=\frac{k_s}{\i\rho} \int_{L_1 \cup L_2} \frac{\pa f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{\pa t
+I_2=\frac{1}{\i k_s\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2}) d \ e^{\i(k_s\rho \cos t)} \\ \hspace{-1.5cm}
+=-\frac{1}{\i k_s\rho} \int_{L_1 \cup L_2} \frac{\pa f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{\pa t
 } \  e^{\i(k_s\rho \cos t)} dt \\ \hspace{-1.5cm}
-=\frac{k_s}{\i\rho}(I_{21}+I_{22})
+=-\frac{1}{\i k_s\rho}(I_{21}+I_{22})
 \ee
 Then $|I_{22}|\leq C/(k_s\rho)$ can be proved by the same method used above. Following a tedious computation, we obtain a simple form of $\pa f/\pa t$:
 \be
@@ -569,7 +573,7 @@ k_s\rho(\cos(t(\theta)))} d\theta
 \ee
 Because of inequality \ref{assume1}, we assert that $h$ and $\pa h/\pa\theta$ are integrable on the path $L_\theta$. A simple computation show that
 \ben
-\frac{dt(\theta)}{d\theta}=\frac{\kappa\cos\theta}{\cos(t+\phi)} \ \ 
+\frac{dt(\theta)}{d\theta}=\frac{\kappa\cos\theta}{\cos(t+\phi)} \ \
 \frac{d^2 t(\theta)}{dt^2}=\frac{\kappa^2\cos^2\theta\sin(t+\phi)-\kappa\sin\theta\cos^2(t+\phi)}{\cos^3(t+\phi)}
 \een
 Then we can obtain
