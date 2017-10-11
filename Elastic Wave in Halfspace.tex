@@ -415,7 +415,7 @@ Since there are no stationary points in the phases of $e^{\i(x_1-y_1)\xi}$, the 
 	For $y\in \R_+^2$, $x\in\Gamma_0$, we have
 	\be
 	|G_r(x;y)| \leq \frac{C}{\mu{|x-y|^{1/2}}}\\
-	|G_s(x;y)| \leq \frac{C}{\mu}(e^{-\sqrt{k_r^2-k_s^2}y_2}+e^{-\sqrt{k_r^2-k_p^2}y_2})
+	|G_s(x;y)| \leq \frac{C}{\mu}(e^{-\sqrt{k_r^2-k_s^2}y_2}+ e^{-\sqrt{k_r^2-k_p^2}y_2})
 	\ee
 	where the constant C is only dependent on $\kappa$.
 \end{lem}
@@ -527,7 +527,7 @@ We need the following slight generalization of Van der Corput lemma for the osci
 The assertion can be proved by extending the Van der Corptut lemma in \cite{grafakos}. Here we omit the details.
 \finproof
 We also have following more explicit estimation:
-\begin{lem}\label{es_dgreen}
+\begin{lem}\label{es_dgreen1}
 Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $a/\rho >(1+\kappa)/2$, $b/\rho < \kappa/2$, $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
 \be \label{ap_estimation}
 \Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi \Big| \leq C(\frac{k_s b}{\rho(k_s\rho)^{1/2}}+\frac{k_s a}{\rho(k_s\rho)^{3/2}})
@@ -600,11 +600,18 @@ Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\
 Finally, an argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks{\chi_2}}|\leq C/(k_s\rho)^{1/2}$. This completes the proof.
 
 \finproof
-Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct consequence of lemma \ref{es_dgreen}.
+Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct consequence of lemma \ref{es_dgreen1}.
+\begin{lem}\label{es_dgreen2}
+	For every $x\in\Gamma_0$, $y\in\R_+^2$ that $|x_1-y_1|/|x-y|>(1+\kappa)/2$ and $y_2/|x-y|<\kappa/2$, we have
+	\be
+	|T_D(x,y)|\leq C(\frac{k_s y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{1/2}}+\frac{k_s |x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{3/2}})
+	\ee
+	where C is only dependent on $\kappa$.
+\end{lem}
 
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
-\be\label{o_bound}
+\be\label{om_bound}
 |x_1|\leq c_1 d , \ \ |x_1-y_1|\leq c_2 h , \ \
 |x_2|\leq c_3 h    \ \ \ \forall x,y \in \Omega
 \ee
@@ -949,18 +956,34 @@ Now we consider the finite aperture point spread function $J_d(z,y)$:
 \int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
 \ee
 Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that 
+
 \be
 \frac{(x_1-z_1)^2}{\rho^2}=\frac{1}{1+\frac{z_2^2}{(x_1-z_1)^2}}\geq \frac{1}{1+\frac{c_3^2 h^2}{(1-c_1)^2 d^2}}:=m(h/d)\\
 \frac{z_2^2}{\rho^2}=\frac{1}{1+\frac{(x_1-z_1)^2}{z_2^2}}\leq \frac{1}{1+\frac{(1-c_1)^2 d^2}{c_3^2 h^2}}:=M(h/d)
 \ee
 where $\rho=\sqrt{(x_1-z_1)^2+z_2^2}$ and $z\in\Omega,x\in \Gamma_0\bks(-d,d)$.
 \begin{thm} \label{ap_psf}
-	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $d\geq h$. Then for $z,y\in\Omega$, we have 
-	\be
-	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq C (\frac{h}{\mu d})
+	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $k_s h\geq 1$. Then for $z,y\in\Omega$, we have 
+	\be \hspace{-2cm}
+	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq C (\frac{h}{\mu d}+\frac{(k_s h)^{1/2}}{\mu e^{\sqrt{k_r^2-k_s^2}h}})(\frac{h}{d})^{1/2}
 	\ee
 	where the constant C is only dependent on $\kappa$.
 \end{thm}
+\debproof
+By lemma \ref{es_ngreen}, lemma \ref{es_dgreen2} and $k_s h\geq 1$, we have
+\ben
+\Bigg| \int_{d}^{\infty} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\Bigg| \\
+\leq
+\frac{C}{\mu}\int_{d}^{\infty}\frac{k_s z_2}{|x-z|}\frac{1}{|x-z|^{1/2}}\bigg(
+\frac{1}{|x-y|^{1/2}}+e^{-\sqrt{k_r^2-k_s^2}y_2}\bigg)\\
+\leq
+\frac{C}{\mu}\int_{(1-c_1)d/h}^{\infty}\frac{1}{1+t^2}+\frac{(k_s h)^{1/2}}{(1+t^2)^{3/4}} e^{-\sqrt{k_r^2-k_s^2}h} \\
+\leq C (\frac{h}{\mu d}+\frac{(k_s h)^{1/2}}{\mu e^{\sqrt{k_r^2-k_s^2}h}})(\frac{h}{d})^{1/2}
+\een
+Here we have used the first inequeality in (\ref{om_bound}). Similarly, we can prove that the estimate for te integral in $[-\infty,-d]$. This shows the estimate for $J(z,y)-J_d(z,y)$. The estimate for $\nabla_y(J(z,y)-J_d(z,y))$ can be proved similarly.
+\finproof
+
 \section{Analysis of the forward scattering problem}
 
 In this section we introduce the following stability estimate of the forward elastic scattering problem in the half space which can be proved by the limiting absorption principle by extending the classical argument in \cite{leis,wilcox1975,Yves1988}. Let the obstacle occupy a bounded Lipschitz domain $D\subset \R^2_+$.
@@ -970,7 +993,7 @@ In this section we introduce the following stability estimate of the forward ela
 	\Delta_e u + \omega^2 u =0 \qquad\mbox{\rm in } \R^2_+\bks \bar{D}, \label{es1}\ \ \
 	\\ u= g \ \ \ \ \mbox{\rm on } \Ga_D, \label{es2} \\
 	\sigma(u)e_2=0 \ \ \ \ \mbox{\rm on} \Ga_0, \label{es3} \\
-	 u \ \mbox{satisfies the generalized radiation codition such that} \nn \\\label{rc1}
+	 u \ \mbox{satisfies the generalized radiation codition\cite{Guzina2006} such that} \nn \\\label{rc1}
 	 \lim_{r\to\infty}  \int_{S_r^+} (\sigma(G(x,y)e_i)\hat{r})\cdot u(x) - (G(x,y)e_i)\cdot (\sigma(u)\hat{r})ds(x)=0
 	\ee
 	where $S_r^+:=\{x\in \R^2_+ \ | \ \|x\|=r^2\}$, $\hat{r}=x/r$ and $y\in \R_+^2$. Then the problem (\ref{es1})-(\ref{rc1})

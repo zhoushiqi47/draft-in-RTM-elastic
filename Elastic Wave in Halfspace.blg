@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Elastic Wave in Halfspace.aux
 The style file: plain.bst
 Database file #1: eee.bib
-You've used 15 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            601 strings with 6304 characters,
-and the built_in function-call counts, 4357 in all, are:
-= -- 409
-> -- 191
+            609 strings with 6443 characters,
+and the built_in function-call counts, 4664 in all, are:
+= -- 439
+> -- 204
 < -- 1
-+ -- 79
-- -- 62
-* -- 300
-:= -- 762
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 69
++ -- 85
+- -- 66
+* -- 323
+:= -- 814
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 74
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 169
-empty$ -- 363
-format.name$ -- 62
-if$ -- 891
+cite$ -- 16
+duplicate$ -- 180
+empty$ -- 388
+format.name$ -- 66
+if$ -- 955
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 20
-newline$ -- 78
-num.names$ -- 30
-pop$ -- 82
+int.to.str$ -- 16
+missing$ -- 21
+newline$ -- 83
+num.names$ -- 32
+pop$ -- 85
 preamble$ -- 1
-purify$ -- 61
+purify$ -- 65
 quote$ -- 0
-skip$ -- 100
+skip$ -- 108
 stack$ -- 0
-substring$ -- 253
-swap$ -- 16
+substring$ -- 274
+swap$ -- 17
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 52
 warning$ -- 0
-while$ -- 40
-width$ -- 17
-write$ -- 162
+while$ -- 43
+width$ -- 18
+write$ -- 173
