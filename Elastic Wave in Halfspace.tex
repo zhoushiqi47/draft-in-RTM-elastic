@@ -270,7 +270,7 @@ where
 \een
 and  $\beta(\xi)=k_s^2-2\xi^2$, $\delta(\xi)=\beta^2+4\xi^2\mu_s\mu_p $.
 
-The desired Green function should be obtained by taking the inverse Fourier transform of $\hat G(\xi,x_2;y_2)$. Unfortunately, one cannot simply take the inverse Fourier transform in the above formula because $\delta(\xi)$ have zero points in the real axis by lemma \ref{lem2.1} \cite{achenbach1980}.
+The desired Green function should be obtained by taking the inverse Fourier transform of $\hat G(\xi,x_2;y_2)$. Unfortunately, one cannot simply take the inverse Fourier transform in the above formula because $\delta(\xi)$ have zero points in the real axis by lemma \ref{lem2.1} \cite{achenbach1980}\cite{Harris2001Linear}.
 \begin{lem} \label{lem2.1}
 	Let \emph{Lam\'{e}} constant $\lambda, \mu \in \R^+$, then the Rayleigh equation $\delta(\xi) = 0$ has only two roots denoted by $\pm k_R$ in complex plane. Morever, $k_R > k_s > k_p, \ k_R\in\R$ and $k_R$ is called Rayleigh wave number.
 \end{lem}
@@ -411,6 +411,14 @@ holds, where $h \in C(\R_+)$
 \debproof
 Since there are no stationary points in the phases of $e^{\i(x_1-y_1)\xi}$, the estimate above can be easy obtained via integration by part. Here we omit the details.
 \finproof
+\begin{lem} \label{es_ngreen}
+	For $y\in \R_+^2$, $x\in\Gamma_0$, we have
+	\be
+	|G_r(x;y)| \leq \frac{C}{\mu{|x-y|^{1/2}}}\\
+	|G_s(x;y)| \leq \frac{C}{\mu}(e^{-\sqrt{k_r^2-k_s^2}y_2}+e^{-\sqrt{k_r^2-k_p^2}y_2})
+	\ee
+	where the constant C is only dependent on $\kappa$.
+\end{lem}
 
 \section{Green Tensor with Dirichlet boundary}
 In this section we study the elastic Green Tensor in the half-space with Dirichlet boundary \cite{arens1999}.
@@ -936,7 +944,23 @@ F^{pp}(z,y)=\frac{1}{\mu}\int_{0}^{\pi} A(\theta,\kappa) e^{\i k_s |z-y| \cos(\t
 The phase function $f(\theta)=\cos(\theta-\phi)$ satisfies $f'(\theta)=-\sin(\theta-\phi),f''(\theta)=-\cos(\theta-\phi)$. For any given $0\le\phi\le2\pi$, we can decompose $[0,\pi]$ into several intervals such that in each either $|f''(\theta)|\ge 1/2$ or $|f'(\theta)|\ge 1/2$ and $f'(\theta)$ is monotonous. The amplitude function $A(\theta,\kappa)$ and their derirates are integrable on $[0,\pi]$. Then the estimate for $F_{pp}(z,y)$ follows by using lemma \ref{van}. The estimation of $F^{ss}(z,y)$ can be proved similarly. This completes the proof.
 \finproof
 
-
+Now we consider the finite aperture point spread function $J_d(z,y)$:
+\be
+\int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\ee
+Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that 
+\be
+\frac{(x_1-z_1)^2}{\rho^2}=\frac{1}{1+\frac{z_2^2}{(x_1-z_1)^2}}\geq \frac{1}{1+\frac{c_3^2 h^2}{(1-c_1)^2 d^2}}:=m(h/d)\\
+\frac{z_2^2}{\rho^2}=\frac{1}{1+\frac{(x_1-z_1)^2}{z_2^2}}\leq \frac{1}{1+\frac{(1-c_1)^2 d^2}{c_3^2 h^2}}:=M(h/d)
+\ee
+where $\rho=\sqrt{(x_1-z_1)^2+z_2^2}$ and $z\in\Omega,x\in \Gamma_0\bks(-d,d)$.
+\begin{thm} \label{ap_psf}
+	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $d\geq h$. Then for $z,y\in\Omega$, we have 
+	\be
+	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq C (\frac{h}{\mu d})
+	\ee
+	where the constant C is only dependent on $\kappa$.
+\end{thm}
 \section{Analysis of the forward scattering problem}
 
 In this section we introduce the following stability estimate of the forward elastic scattering problem in the half space which can be proved by the limiting absorption principle by extending the classical argument in \cite{leis,wilcox1975,Yves1988}. Let the obstacle occupy a bounded Lipschitz domain $D\subset \R^2_+$.
