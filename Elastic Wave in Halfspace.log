@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  11 OCT 2017 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  12 OCT 2017 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,12 +262,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 888--891
 
  []
 
-[18] [19]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 950--953
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 983--986
 
  []
@@ -298,7 +298,7 @@ Here is how much of TeX's memory you used:
  5919 multiletter control sequences out of 15000+600000
  13839 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,26p,829b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,26p,830b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-dist
@@ -317,7 +317,7 @@ msfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
 fonts/latxfont/lasy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (25 pages, 320033 bytes).
+Output written on "Elastic Wave in Halfspace.pdf" (25 pages, 320289 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  108 compressed objects within 2 object streams

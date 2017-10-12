@@ -813,12 +813,12 @@ Eliminating $k_s$ in fraction, we can obtain estimation (\ref{re3}). The other t
 \finproof
 Now, it turn to estimate $F^{sp}(z,y)$ and $F^{ps}(z,y)$.
 \begin{lem}\label{f_estimate}
-	For any $z,y\in \Omega$,
+	For any $z,y\in \R_+^2$,
 	\be
-	|F^{sp}_{ij}|\leq C(1+d_\Omega)(\frac{1}{z_2}+\frac{1}{z_2^{1/4}}+\frac{1}{z_2^{1/(2k_{c_3}-1)}})  \\
-	|F^{ps}_{ij}|\leq C(1+d_\Omega)(\frac{1}{y_2}+\frac{1}{y_2^{1/4}}+\frac{1}{y_2^{1/(2k_{c_3}-1)}})
+	|F^{sp}_{ij}|\leq \frac{C}{\mu}(1+k_s |z_1-y_1|)(\frac{1}{k_s z_2}+\frac{1}{(k_s z_2)^{1/4}}+\frac{1}{(k_s z_2)^{1/(2k_{c_3}-1)}})  \\
+	|F^{ps}_{ij}|\leq \frac{C}{\mu}(1+k_s |z_1-y_1|)(\frac{1}{k_s y_2}+\frac{1}{(k_s y_2)^{1/4}}+\frac{1}{(k_s y_2)^{1/(2k_{c_3}-1)}})
 	\ee
-where C may be only dependent on $\kappa$, $c_3$ and $k_{c_3}$ is the minimum of k which satisfy $\kappa^{2k-1}<1/c_3$.
+where C is only dependent on $\kappa$, $c_3$ and $k_{c_3}$ is the minimum of k which satisfy $\kappa^{2k-1}<1/c_3$.
 \end{lem}
 \debproof
 Substituting (\ref{theta}) and (\ref{ngreen}) into $F^{ps}$ and $F^{sp}$, we have
@@ -878,7 +878,7 @@ We are now in the position to analysis the case of $\tau\geq\kappa$. Substitute 
 (\tau/\kappa^{n-1}-1)(1/2-n/2)_{n/2}(3/2-n/2)_{n/2}2^n \ \ \mbox{n is even}.
 \end{array} \right.
 \ee
-It is trivial to see that $\phi^{(2)}(0,\tau)=\tau/\kappa-1$, $\phi^{(3)}(0,\tau)=0$ and $\phi^{(4)}(0,\tau)=3(\tau/\kappa^3-1)$. Using the fact $\kappa<1$ we obtain $|\phi^{(4)}(0,\tau) |\geq 3(1/\kappa^2-1)$. Furthermore, there exists a $0<\delta_\kappa<\kappa$, which is independent of $\tau$, such that $|\phi^{(4)}(t,\tau) |\geq 2(1/\kappa^2-1)$ when $t\in[-\delta_\kappa,\delta_\kappa]$. Let $m_\kappa=\min_{([-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa))\times [0,c_3]}\phi^{(1)}(t,\tau)$. Since $\phi^{(2)}(t,\tau)$ has at most 4 zero points with respect to t, then the set $[-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa)$ is the union of at most 5 intervals on each of which $u'$ is monotone`. Thus he estimation of $F^{ps}(z,y)$ follows immediately from lemma \ref{van}.
+It is trivial to see that $\phi^{(2)}(0,\tau)=\tau/\kappa-1$, $\phi^{(3)}(0,\tau)=0$ and $\phi^{(4)}(0,\tau)=3(\tau/\kappa^3-1)$. Using the fact $\kappa<1$ we obtain $|\phi^{(4)}(0,\tau) |\geq 3(1/\kappa^2-1)$. Furthermore, there exists a $0<\delta_\kappa<\kappa$, which is independent of $\tau$, such that $|\phi^{(4)}(t,\tau) |\geq 2(1/\kappa^2-1)$ when $t\in[-\delta_\kappa,\delta_\kappa]$. Let $m_\kappa=\min_{([-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa))\times [0,c_3]}\phi^{(1)}(t,\tau)$. Since $\phi^{(2)}(t,\tau)$ has at most 4 zero points with respect to t, then the set $[-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa)$ is the union of at most 5 intervals on each of which $u'$ is monotone`. Thus the estimation of $F^{ps}(z,y)$ follows immediately from lemma \ref{van}.
 
 It remains to analysis the case of $1/c_3<\tau<\kappa$. Let $t_\tau =((\kappa^2-\tau^2)/(1-\tau^2))^{1/2}$. By substituting $\pm t_\tau$ into $\phi^{(4)}(t,\tau)$, we obtain
 \be
@@ -886,10 +886,10 @@ It remains to analysis the case of $1/c_3<\tau<\kappa$. Let $t_\tau =((\kappa^2-
 &=& \frac{(4\kappa^2-4\tau^4)(\kappa^2-\tau^2)+(\kappa^4-\tau^6)(1-\tau^2)}{\tau^6(1-\tau^2)}\\
 &\geq& \frac{\kappa^4(1-\tau^2)}{\tau^6(1-\tau^2)}\geq\frac{1}{\kappa^2}
 \ee
- It is easy to see that $\phi^{(2k_{c_3})}(0,tau)\geq C(\frac{1}{c_3\kappa^{2k_{c_3}}}-1)$ due to $1/c_3<\kappa^{2k_{c_3}-1}$. Consequently, the estimation here can be proved by the same method as employed in the last case. This completes the proof.
+ It is easy to see that $\phi^{(2k_{c_3})}(0, \tau)\geq C(\frac{1}{c_3\kappa^{2k_{c_3}-1}}-1)$ due to $\kappa^{2k_{c_3}-1}<1/c_3$. Consequently, the estimation here can be proved by the same method as employed in the last case. This completes the proof.
 \finproof
 
-To complete the analysis of the point spread function, we define $F(z,y)=F_{ss}(z,y)+F_{pp}(z,y)$, where
+To complete the analysis of the point spread function, Let $F(z,y)=F_{ss}(z,y)+F_{pp}(z,y)$, where
 \ben
 \hspace{-2cm}
 F^{pp}(z,y)=-\frac{1}{2\pi}\int_{(-k_p,-k_p)} \frac{\i k_s^2\mu_s}{\mu\gamma(\xi)\delta(\xi)}
@@ -917,7 +917,7 @@ and $R(z,y)=R^{ss}(z,y)+R^{pp}(z,y)+J^{sp}(z,y)+J^{ps}(z,y)$. Then we have $J(z,
 function is from $F(z,y)$ when $z,y$ far away from $\Gamma_0$. Based on the above argument, we know that $R(z,y)$ becomes small when z,y move away from $\Gamma_0$. Our goal is to show $F(z,y)$ has the similar decay to the elastic fundamental solution $\Im\Phi(z,y)$ as $|z-y|\to\infty$.
 
 \begin{lem} \label{festimate1}
-	For any $z,y\in \R_+^2$, for $z=y$
+	For any $z,y\in \R_+^2$, when $z=y$
 	\ben \label{fe1}
 |\Im F_{ii}(z,y)| \geq \frac{1}{4(\lambda+2\mu)} \ , \ i =1 ,2 \\
 \Im F_{12}(z,y) = \Im F_{21}(z,y) =0
@@ -934,14 +934,14 @@ First, we have $\gamma(\xi)\le k_s^2$, $\delta(\xi)\le k_s^4$ and $\mu_p\le\mu_s
 \be
 -\Im (F^{pp}_{11}+F^{ss1}_{11})\geq\frac{1}{2\pi\mu}\int_{(-k_p,k_p)} \frac{\mu_p}{k_s^2}d\xi \\ =\frac{k_p^2}{2\pi\mu k_s^2}\int_{0}^{\pi} \sin^2(t) dt= \frac{1}{4(\lambda+2\mu)}
 \ee
-We are then left to proof $-\Im F^{ss2}_{11}>0$. If $\xi\in(-k_s,k_s)\bks(-k_p,k_p)$, $\mu_p=\i\sqrt(\xi-k_p^2)$. Substituting it into $F^{ss2}$, we have
+It's left to proof $-\Im F^{ss2}_{11}>0$. If $\xi\in(-k_s,k_s)\bks(-k_p,k_p)$, $\mu_p=\i\sqrt{\xi^2-k_p^2}$. Substituting it into $F^{ss2}$, we have
 \be
 \hspace{-1.5cm}
 F^{ss2}_{11}=\frac{1}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^2\sqrt{\xi^2-k_p^2}(k_s^2-4\xi^2)}{(\xi^2+\i\mu_s\sqrt{\xi^2-k_p^2})(\beta^2-\i4\xi^2\mu_s\sqrt{\xi^2-k_p^2})} d\xi
 \ee
 let $\alpha=(\xi^2+\i\mu_s\sqrt{\xi^2-k_p^2})(\beta^2-\i4\xi^2\mu_s\sqrt{\xi^2-k_p^2})$. A simple computation show that $\Im \alpha=k_s^2\mu_s\sqrt{\xi^2-k_p^2}(k_s^2-4\xi^2)$. It is easy to see that
 \ben
--\Im F^{ss2}_{11}=\frac{1}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^3(\xi^2-k_p^2)(k_s^2-\xi^2)^2}{|\alpha|^2} d\xi >0
+-\Im F^{ss2}_{11}=\frac{k_s^2}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^3(\xi^2-k_p^2)(k_s^2-\xi^2)^2}{|\alpha|^2} d\xi >0
 \een
 
 For $z\neq y$, we denot $y-z=|y-z|(\cos\phi,\sin\phi)^T$ for some $0\le\phi\le2\pi$. Then it is easy to see that
