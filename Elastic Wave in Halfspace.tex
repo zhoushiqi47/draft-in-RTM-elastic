@@ -596,13 +596,13 @@ It is simple to see that $\theta=\pi/2$ is the only stationary point of $\cos(t(
 \be
 \Bigg|\frac{d^2\cos t}{d\theta^2}(\pi/2)\Bigg|=\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}|\sin t|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta
 \ee
-Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta$ for any $\theta\in \theta(\chi_2)$. Since the amplitude function of integrand in $I^1_{\chi_2}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_{\chi_2}|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}.
+Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta$ for any $\theta\in \theta(\chi_{21})$. Since the amplitude function of integrand in $I^1_{\chi_2}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_{\chi_2}|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}.
 Finally, an argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks{\chi_2}}|\leq C/(k_s\rho)^{1/2}$. This completes the proof.
 
 \finproof
 Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct consequence of lemma \ref{es_dgreen1}.
 \begin{lem}\label{es_dgreen2}
-	For every $x\in\Gamma_0$, $y\in\R_+^2$ that $|x_1-y_1|/|x-y|>(1+\kappa)/2$ and $y_2/|x-y|<\kappa/2$, we have
+	For every $x\in\Gamma_0$, $y\in\R_+^2$ that $|x_1-y_1|/|x-y|>(1+\kappa)/2$, $y_2/|x-y|<\kappa/2$ and $k_s |x-y|>1$, we have
 	\be
 	|T_D(x,y)|\leq C(\frac{k_s y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{1/2}}+\frac{k_s |x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{3/2}})
 	\ee
@@ -965,7 +965,7 @@ where $\rho=\sqrt{(x_1-z_1)^2+z_2^2}$ and $z\in\Omega,x\in \Gamma_0\bks(-d,d)$.
 \begin{thm} \label{ap_psf}
 	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $k_s h\geq 1$. Then for $z,y\in\Omega$, we have 
 	\be \hspace{-2cm}
-	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq C (\frac{h}{\mu d}+\frac{(k_s h)^{1/2}}{\mu e^{\sqrt{k_r^2-k_s^2}h}})(\frac{h}{d})^{1/2}
+	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq C (\frac{h}{\mu d}+\frac{(k_s h)^{1/2}}{\mu e^{\sqrt{k_r^2-k_s^2}h}}(\frac{h}{d})^{1/2})
 	\ee
 	where the constant C is only dependent on $\kappa$.
 \end{thm}
