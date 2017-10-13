@@ -18,9 +18,12 @@
 \bibliographystyle{plain}
 \def\debproof{\noindent {\bf Proof.} }
 \def\finproof{\hfill {\small $\Box$} \\}
-\renewcommand{\theequation}
-{\arabic{section}.\arabic{equation}}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 
+\makeatletter % `@' now normal "letter"
+\@addtoreset{equation}{section}
+\makeatother  % `@' is restored as "non-letter"
+\renewcommand\theequation{{\thesection}.{\arabic{equation}}}
 \title[]{Elastic Problem in Half-space}
 
 
@@ -993,8 +996,8 @@ In this section we introduce the following stability estimate of the forward ela
 	\Delta_e u + \omega^2 u =0 \qquad\mbox{\rm in } \R^2_+\bks \bar{D}, \label{es1}\ \ \
 	\\ u= g \ \ \ \ \mbox{\rm on } \Ga_D, \label{es2} \\
 	\sigma(u)e_2=0 \ \ \ \ \mbox{\rm on} \Ga_0, \label{es3} \\
-	 u \ \mbox{satisfies the generalized radiation codition\cite{Guzina2006} such that} \nn \\\label{rc1}
-	 \lim_{r\to\infty}  \int_{S_r^+} (\sigma(G(x,y)e_i)\hat{r})\cdot u(x) - (G(x,y)e_i)\cdot (\sigma(u)\hat{r})ds(x)=0
+	u \ \mbox{satisfies the generalized radiation codition\cite{Guzina2006} such that} \nn \\\label{rc1}
+	\lim_{r\to\infty}  \int_{S_r^+} (\sigma(G(x,y)e_i)\hat{r})\cdot u(x) - (G(x,y)e_i)\cdot (\sigma(u)\hat{r})ds(x)=0
 	\ee
 	where $S_r^+:=\{x\in \R^2_+ \ | \ \|x\|=r^2\}$, $\hat{r}=x/r$ and $y\in \R_+^2$. Then the problem (\ref{es1})-(\ref{rc1})
 	admits a unique solution $u \in H^{1}_{\rm loc}(\R^2_+ \backslash \bar D)$. Moreover, for any bounded open set $\mathcal O\subset \R^2_+\bks\bar D$ there exists a constant $C>0$ such that
@@ -1002,12 +1005,12 @@ In this section we introduce the following stability estimate of the forward ela
 	\|u\|_{H^{1}(\mathcal O)}\le C\|g\|_{H^{-1/2}(\Ga_D)}
 	\ee
 \end{thm}
-The existence of the solution can be proved by the method of limiting absorption principle. The argument is standard and we give several lemmas below, see e.g. \cite{leis} for the consideration for Helmholtz equation. For any $z=1+\i\varepsilon,\varepsilon>0$, $q\in H^{1}(\R^2_+)'$ with compact support, we consider the problem
+The existence of the solution can be proved by the method of limiting absorption principle. The argument is standard and we give several lemmas below, see e.g. \cite{leis} for the consideration for Helmholtz equation. For any $z=1+\i\varepsilon,\varepsilon>0$, $f\in H^{1}(\R^2_+)'$ with compact support in $B_R=\{x||x|^2<R^2,x\in\R^2_+\}\subsetneq\R_+^2$ where $B_R$ is a disk of radius R , we consider the problem
 \be \label{eqz}
 \Delta_e u_z +z\omega^2 u =-f \qquad\mbox{\rm in } \R^2_+ \\
-\sigma(u_z)e_2=0 \ \ \ \ \mbox{\rm on} \Ga_0 \label{bdv}
+\sigma(u_z)e_2=0 \ \ \ \ \mbox{\rm on} \ \ \ \  \Ga_0 \label{bdv}
 \ee
-It is easy to see by Lax-Milgrim lemma that (\ref{eqz}-\ref{bdv}) has a unique solution $u_z\in H^1(\R^2_+)$. For any domain $\mathcal D \subset \R^2_+$, we define the weighted space $L^{2,s}(\mathcal D),s \in \R$, by
+By Lax-Milgrim lemma we know that (\ref{eqz}-\ref{bdv}) has a unique solution $u_z\in H^1(\R^2_+)$. For any domain $\mathcal D \subset \R^2_+$, we define the weighted space $L^{2,s}(\mathcal D),s \in \R$, by
 \ben
 L^{2,s}(\mathcal D)=\{v \in L^2_{\rm loc}(\mathcal D): (1+|x|^2)^{s/2}v \in L^2(\mathcal D) \}
 \een
@@ -1016,14 +1019,14 @@ is defined as the set of functions in $L^{2,s}(\mathcal D)$ whose first derivati
 $\| v \|_{ H^{1,s}(\mathcal D)} = (\| v \|^2_{ L^{2,s} (\mathcal D)} + \| \nabla v \|^2_{ L^{2,s}(\mathcal D)})^{1/2}$.
 
 \begin{lem}{\label{newton}}
-	Let  $ f  \in L^2 (\R^2_+) $ with compact support in $B^2_+$. For any $z=1+\i\varepsilon$, $0<\varepsilon<1$, we have, for any $s>1/2$,
+	Let  $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$. For any $z=1+\i\varepsilon$, $0<\varepsilon<1$, we have, for any $s>1/2$,
 	$\|u_z\|_{H^{1,-s}(\R^2_+)}\le C\|f\|_{L^2(\R^2_+)}$ for some constant independent of $\varepsilon, u_z$, and $f$.
 \end{lem}
 \debproof
-We define $R_z(f)=u_z$, then it is easy to see that $R_z$ is a linear bounded operator from $L^2_c(\R^2_+)$ to $H^{1,-s}(\R^2_+)$, where $L^2_c(\R^2_+)$ is denoted by all $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$. It follows from theorem 3.7 in \cite{Yves1988} that $R_z$ is a uniformly continuous operator continues valued function on $z=1+\i\varepsilon$, $0<\varepsilon<1$ with value in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. Then, we can obtain that $R_z$ is uniformly bounded in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. This complete the proof by the defintion of the operator norm.
+Let $R_z$ denote the map from $L^2_c(\R^2_+)$ to $H^{1,-s}(\R^2_+)$ such that $R_z(f)=u_z$ where $L^2_c(\R^2_+)$ is denoted by all $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$, then it is easy to see that $R_z$ is a linear bounded operator. It follows from theorem 3.7 in \cite{Yves1988} that $R_z$ is a uniformly continuous operator continues valued function on $z=1+\i\varepsilon$, $0<\varepsilon<1$ with value in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. Then, we can obtain that $R_z$ is uniformly bounded in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. This complete the proof by the defintion of the operator norm.
 \finproof
 
-We next recall the following lemma that respecting the absence of positive eigenvalues for the linear elasticity system in half space \cite{sini2004}.
+We next recall the following lemma which states the absence of positive eigenvalues for the linear elasticity system in half space \cite{sini2004}.
 \begin{lem} \label{absen}
 	Let $u\in L^2(\R^2_+ \backslash \bar D)$ such that $u$ satisfies (\ref{es1}) and (\ref{es3}), than we assert that $u=0$ in $\R^2_+ \backslash \bar D$
 \end{lem}
@@ -1052,7 +1055,7 @@ $z=1+\i\eps$ and $q=\sigma(u_\eps)\na\chi+(\lambda+\mu)(\na^2 \chi u_\eps+ \na u
 \ee
 for some constant $C$ independent of $\eps>0$. Now let $\chi_1 \in C_{0}^{\infty}(\R^2_+)$
 be the cut-off function with that  $0 \leq \chi_1 \leq 1$, $\chi_1=1$ in $B_{R_2}$, and $\chi_1=0$
-outside of $B_{R_3}$. For $g\in H^{-1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$ hold. By testing \ref{wg2} with
+outside of $B_{R_3}$. For $g\in H^{1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$ hold. By testing \ref{wg2} with
 $\chi_1^2 ( \overline{u_{\eps}-u_{g}} )$, we have by the standard argument
 \be \label{u1}
 \|u_{\eps}\|_{H^{1}(B_{R_2} \backslash \bar{D})}\le C( \|u_{\eps}\|_{L^{2}(B_{R_3} \backslash \bar{D})} + \|g\|_{H^{1/2}(\Ga_D)} ).
@@ -1063,22 +1066,22 @@ A combination of (\ref{q10}) and the above estimate yields
 \ee
 Now we claim
 \be \label{u3}
-\|u_{\eps}\|_{H^{1,-s}(\R^2_+ \backslash \bar D)} \leq C \|g\|_{H^{1/2}(\Ga_D)} ,
+\|u_{\eps}\|_{L^2(B_{R_3} \backslash \bar D)} \leq C \|g\|_{H^{1/2}(\Ga_D)} ,
 \ee
 for any $g \in H^{1/2}(\Ga_D)$ and $\eps >0$. If it were false, there would exist sequences $\{g_m\} \subset H^{1/2}(\Ga_D)$ and $\{\eps_m\} \subset (0,1)$, and $\{u_{\eps_m}\}$ be the corresponding solution of (\ref{wg2})-(\ref{wg4}) such that
 \be {\label{contradict}}
 \|u_{\eps_m}\|_{H^{1,-s}(\R^2_+ \backslash \bar D)} = 1 \ {\rm{ and }} \ \|g_m\|_{H^{-1/2}(\Ga_D)} \leq \frac{1}{m}.
 \ee
-Then $\|u_{\eps_m}\|_{H^{1}(B_{R_3} \backslash \bar D)}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
+Then $\|u_{\eps_m}\|_{H^{1,-s} ( \R^2_+ \backslash \bar{D})}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
 still denoted by $\{\eps_m\}$, such that $\eps_m \to \eps' \in [0,1]$, and a subsequence of $\{u_{\eps_m}\}$,
-which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'} \in L^2(B_{R_3} \backslash \bar D)$ by Rellich imbedding theorem. Thus $u_{\eps_m}$ and $g_m$ are Cauchy sequeces respected in $L^2(B_{R_3} \backslash \bar D)$ and $H^{1/2}(\Ga_D)$. By extending inequality (\ref{u2}), we obtain that $u_{\eps_m}$ is also a Cauchy sequeces respected in $H^{1,-s}(\R^2_+ \backslash \bar D)$. So $u_{\eps'} \in H^{1,-s}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
+which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'} \in {H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by Rellich imbedding theorem where $s<s'$. Thus $u_{\eps_m}$ and $g_m$ are Cauchy sequeces respected in $L^2(B_{R_3} \backslash \bar D)$ and $H^{1/2}(\Ga_D)$. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
 
 By the integral representation satistied by $u_{\eps_m}$, we know that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \label{ge1} \hspace{-2cm}
 u_{\eps_m}(y)\cdot e^i=\int_{\Ga_D} (\sigma(G_{\eps_m}(x,y)e_i)\nu)\cdot u_{\eps_m}(x) - (G_{\eps_m}(x,y)e_i)\cdot (\sigma(u_{\eps_m})_{\eps_m}\nu)ds(x)
 \ee
 By the trace theorem, it is easy to see that $u_{\eps_m}\to u_{\eps'}$ in $H^{1/2}(\Ga_D)$ and $\sigma(u_{\eps_m})\to\sigma(u_{\eps'})$ in $H^{-1/2}(\Ga_D)$ when $\eps_m\to\eps'$. Then let $\eps_m\to\eps'$ in
-(\ref{ge1}), we obtain that or $y\in \R^2_+\backslash\bar D$ and $i=1,2$
+(\ref{ge1}), we obtain that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \ \hspace{-2cm} \label{ge2}
 u_{\eps'}(y)\cdot e^i=\int_{\Ga_D} (\sigma(G_{\eps'}(x,y)e_i)\nu)\cdot u_{\eps'}(x) - (G_{\eps'}(x,y)e_i)\cdot (\sigma(u_{\eps'})_{\eps'}\nu)ds(x)
 \ee
@@ -1095,10 +1098,10 @@ We also give a indirect prove here. Let $\delta_0>0$ and $\{\mu_n\}$ and $\{\nu_
 \be
 |\mu_n-\nu_n|\le 1/n \qquad \mbox{and} \qquad \|u_{\mu_n}-u_{\nu_n}\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \ge \delta_0
 \ee
-Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s} (\R^2_+ \bks \bar D)$ such that
+Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s} (\R^2_+ \bks \bar D)$, by choosing $s'>s$, such that
 \ben
-\|u_{\mu_n}-u_\epsilon\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \to 0 \\
-\|u_{\nu_n}-v_\epsilon\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \to 0
+\|u_{\mu_n}-u_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0 \\
+\|u_{\nu_n}-v_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0
 \een
 and $u_\epsilon=v_\epsilon$ by the same arguement in lemma \ref{newton2} which is contradict a contradiction. Thus we have proved $u_\eps$ is uniformly continuously for $\eps \in (0,1)$. Then it is easy to see $u_\eps$ has a limitation in ${H^{1,-s}(\R^2_+ \bks \bar D)} $ and the estimation of $u_0$ can be obtained by (\ref{u3}). This completes the proof.
 \finproof
@@ -1107,7 +1110,7 @@ It is remain to prove the uniqueness in theorem \ref{eu1}. Actually, it can be o
 {\it prove of Theorem \ref{eu1}}
 By the linearity of the problem, it is sufficient to prove that any $u_0$  satisfies the system (\ref{es1}-\ref{es3}) with the corresponding homogeneous boundary-value vanishes identically in $\R^2_+\bks \bar D$. For any $y\in \R^2_+\bks \bar D$, there exists $U^s(x,y)$ sataifies (\ref{es1}-\ref{es3}) with $g(x)=-G(x,y)$ on $\Ga_D$ following the lemma \ref{ext} and we define $U(x,y)=G(x,y)+U^s(x,y)$. It is easy to see that $U(x,y)$ satifies the generalized radiation condition (\ref{rc1}). Thus by the integral representaion of $u_0$, we have
 \ben
-	 \lim_{r\to\infty}  \int_{S_r^+} (\sigma(U(x,y)e_i)\nu)\cdot u_0(x) - (U(x,y)e_i)\cdot (\sigma(u_0)\nu)ds(x)=0
+\lim_{r\to\infty}  \int_{S_r^+} (\sigma(U(x,y)e_i)\nu)\cdot u_0(x) - (U(x,y)e_i)\cdot (\sigma(u_0)\nu)ds(x)=0
 \een
 Finally, combining $U(x,y)=0,u_0(x)=0$ on $\Ga_D$ and the Green integral theorem we find that
 \ben
@@ -1118,7 +1121,6 @@ u_0(y)e_i&=\int_{\R^2_+\bks\bar D} -(\Delta_e (G(x,y)e_i)+\omega^2 G(x,y)e_i)\cd
 \een
 Then the desired unique exsitence follows with lemma \ref{ext}. This comlpletes the proof of theorem \ref{eu1}.
 \finproof
-
 \section{The resolution analysis}
 In this section we study the imaging resolution of the RTM for the Direchlet boundary obstacle in the half space.
 
