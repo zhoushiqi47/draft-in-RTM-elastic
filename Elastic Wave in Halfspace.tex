@@ -958,7 +958,7 @@ Now we consider the finite aperture point spread function $J_d(z,y)$:
 \be
 \int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
 \ee
-Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that 
+Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that
 
 \be
 \frac{(x_1-z_1)^2}{\rho^2}=\frac{1}{1+\frac{z_2^2}{(x_1-z_1)^2}}\geq \frac{1}{1+\frac{c_3^2 h^2}{(1-c_1)^2 d^2}}:=m(h/d)\\
@@ -966,7 +966,7 @@ Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that
 \ee
 where $\rho=\sqrt{(x_1-z_1)^2+z_2^2}$ and $z\in\Omega,x\in \Gamma_0\bks(-d,d)$.
 \begin{thm} \label{ap_psf}
-	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $k_s h\geq 1$. Then for $z,y\in\Omega$, we have 
+	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $k_s h\geq 1$. Then for $z,y\in\Omega$, we have
 	\be \hspace{-2cm}
 	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq \frac{C}{\mu} (\frac{h}{ d}+\frac{(k_s h)^{1/2}}{ e^{\sqrt{k_r^2-k_s^2}h}}(\frac{h}{d})^{1/2})
 	\ee
@@ -1070,11 +1070,11 @@ Now we claim
 \ee
 for any $g \in H^{1/2}(\Ga_D)$ and $\eps >0$. If it were false, there would exist sequences $\{g_m\} \subset H^{1/2}(\Ga_D)$ and $\{\eps_m\} \subset (0,1)$, and $\{u_{\eps_m}\}$ be the corresponding solution of (\ref{wg2})-(\ref{wg4}) such that
 \be {\label{contradict}}
-\|u_{\eps_m}\|_{H^{1,-s}(\R^2_+ \backslash \bar D)} = 1 \ {\rm{ and }} \ \|g_m\|_{H^{-1/2}(\Ga_D)} \leq \frac{1}{m}.
+\|u_{\eps_m}\|_{L^2(B_{R_3} \backslash \bar D)} = 1 \ {\rm{ and }} \ \|g_m\|_{H^{-1/2}(\Ga_D)} \leq \frac{1}{m}.
 \ee
 Then $\|u_{\eps_m}\|_{H^{1,-s} ( \R^2_+ \backslash \bar{D})}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
 still denoted by $\{\eps_m\}$, such that $\eps_m \to \eps' \in [0,1]$, and a subsequence of $\{u_{\eps_m}\}$,
-which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'} \in {H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by Rellich imbedding theorem where $s<s'$. Thus $u_{\eps_m}$ and $g_m$ are Cauchy sequeces respected in $L^2(B_{R_3} \backslash \bar D)$ and $H^{1/2}(\Ga_D)$. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
+which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'}$ in ${H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by Rellich imbedding theorem where $s<s'$. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
 
 By the integral representation satistied by $u_{\eps_m}$, we know that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \label{ge1} \hspace{-2cm}
@@ -1098,7 +1098,7 @@ We also give a indirect prove here. Let $\delta_0>0$ and $\{\mu_n\}$ and $\{\nu_
 \be
 |\mu_n-\nu_n|\le 1/n \qquad \mbox{and} \qquad \|u_{\mu_n}-u_{\nu_n}\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \ge \delta_0
 \ee
-Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s} (\R^2_+ \bks \bar D)$, by choosing $s'>s$, such that
+Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s'} (\R^2_+ \bks \bar D)$, by choosing $s'>s$, such that
 \ben
 \|u_{\mu_n}-u_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0 \\
 \|u_{\nu_n}-v_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0

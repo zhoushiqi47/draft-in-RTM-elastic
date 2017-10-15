@@ -18,9 +18,12 @@
 \bibliographystyle{plain}
 \def\debproof{\noindent {\bf Proof.} }
 \def\finproof{\hfill {\small $\Box$} \\}
-\renewcommand{\theequation}
-{\arabic{section}.\arabic{equation}}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 
+\makeatletter % `@' now normal "letter"
+\@addtoreset{equation}{section}
+\makeatother  % `@' is restored as "non-letter"
+\renewcommand\theequation{{\thesection}.{\arabic{equation}}}
 \title[]{Elastic Problem in Half-space}
 
 
@@ -270,7 +273,7 @@ where
 \een
 and  $\beta(\xi)=k_s^2-2\xi^2$, $\delta(\xi)=\beta^2+4\xi^2\mu_s\mu_p $.
 
-The desired Green function should be obtained by taking the inverse Fourier transform of $\hat G(\xi,x_2;y_2)$. Unfortunately, one cannot simply take the inverse Fourier transform in the above formula because $\delta(\xi)$ have zero points in the real axis by lemma \ref{lem2.1} \cite{achenbach1980}.
+The desired Green function should be obtained by taking the inverse Fourier transform of $\hat G(\xi,x_2;y_2)$. Unfortunately, one cannot simply take the inverse Fourier transform in the above formula because $\delta(\xi)$ have zero points in the real axis by lemma \ref{lem2.1} \cite{achenbach1980}\cite{Harris2001Linear}.
 \begin{lem} \label{lem2.1}
 	Let \emph{Lam\'{e}} constant $\lambda, \mu \in \R^+$, then the Rayleigh equation $\delta(\xi) = 0$ has only two roots denoted by $\pm k_R$ in complex plane. Morever, $k_R > k_s > k_p, \ k_R\in\R$ and $k_R$ is called Rayleigh wave number.
 \end{lem}
@@ -411,6 +414,14 @@ holds, where $h \in C(\R_+)$
 \debproof
 Since there are no stationary points in the phases of $e^{\i(x_1-y_1)\xi}$, the estimate above can be easy obtained via integration by part. Here we omit the details.
 \finproof
+\begin{lem} \label{es_ngreen}
+	For $y\in \R_+^2$, $x\in\Gamma_0$, we have
+	\be
+	|G_r(x;y)| \leq \frac{C}{\mu{|x-y|^{1/2}}}\\
+	|G_s(x;y)| \leq \frac{C}{\mu}(e^{-\sqrt{k_r^2-k_s^2}y_2}+ e^{-\sqrt{k_r^2-k_p^2}y_2})
+	\ee
+	where the constant C is only dependent on $\kappa$.
+\end{lem}
 
 \section{Green Tensor with Dirichlet boundary}
 In this section we study the elastic Green Tensor in the half-space with Dirichlet boundary \cite{arens1999}.
@@ -519,7 +530,7 @@ We need the following slight generalization of Van der Corput lemma for the osci
 The assertion can be proved by extending the Van der Corptut lemma in \cite{grafakos}. Here we omit the details.
 \finproof
 We also have following more explicit estimation:
-\begin{lem}\label{es_dgreen}
+\begin{lem}\label{es_dgreen1}
 Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $a/\rho >(1+\kappa)/2$, $b/\rho < \kappa/2$, $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
 \be \label{ap_estimation}
 \Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi \Big| \leq C(\frac{k_s b}{\rho(k_s\rho)^{1/2}}+\frac{k_s a}{\rho(k_s\rho)^{3/2}})
@@ -546,7 +557,7 @@ The lemma will be proved if we can show $|I_1|\leq C/(k_s\rho)^{1/2}$ and $|I_2|
 
 For $I_1$, we split the integral path L into $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$, then we have corresponding representation: $I_1=I_{11}+I_{12}$. A simple calculation gives that $f$ and $\pa f/\pa t$ are both integrable on path $L_1$. Further more, $\cos t>1/2$ for any $t\in(-\pi/4,\pi/4)$  while $|\sin t|>1/2$ for any $t\in (-\pi/2,-\pi/4)\cup(\pi/4,\pi/2)$. Then we have $|I_{11}|\leq C/(k_s\rho)^{1/2}$ following the lemma \ref{van}.
 
-Moreover, because $f$ and $\pa f/\pa t$ has on singularity on $L_2$ and $\i\cos t \to -\infty$ as $t\to \pm\infty$ along $L_2$, it is easy to see that $|I_{12}|\leq C/(k_s\rho)$ via integration by parts.
+Moreover, because $f$ and $\pa f/\pa t$ has no singularity on $L_2$ and $\i\cos t \to -\infty$ as $t\to \infty$ along $L_2$, it is easy to see that $|I_{12}|\leq C/(k_s\rho)$ via integration by parts.
 
 For $I_2$, using integration by parts on path $L$ first, we have
 \be \hspace{-2cm}
@@ -560,15 +571,15 @@ Then $|I_{22}|\leq C/(k_s\rho)$ can be proved by the same method used above. Fol
 \frac{\pa f}{\pa t}&=&\frac{(\gamma\pa_t g  -g \pa_t \gamma)(\kappa^2-\sin^2 t)^{1/2}}{(\sin^2 t +\cos t (\kappa^2-\sin^2 t)^{1/2})^2}\frac{1}{(\kappa^2-\sin^2 t)^{1/2}} \\
 &:=&\frac{h(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{(\kappa^2-\sin^2 t)^{1/2}}
 \ee
-where $h$ and $\pa h/\pa t$ are integrable on path $L_1$. By the assumption above, there exist $0<\delta<\pi/4$ only dependent on $\kappa$ such that $|\sin(t+\phi)|>(1+\kappa)/2, |\cos(t+\phi)|<\kappa/2$ for any $t\in(-\delta,\delta)$ while $|\cos(t+\phi)|>(1+\kappa)/2, |\sin(t+\phi)|<\kappa/2$ for any $t\in(-\pi/2,-\pi/2+\delta)\cup(\pi/2-\delta,\pi/2)$. Let define $t_1,t_2\in \chi_1=(-\pi/2+\delta,-\delta)\cup(\delta,\pi/2-\delta)$ which satisfy $\kappa^2 = \sin^2 (t_i+\phi)$, $i=1,2$. Moreover, for any $0<a<1$ and $1<b<1/\kappa$, there exists $\sigma>0$, which satisfy that $\chi_2=(t_1-\sigma,t_1+\sigma)\cup(t_2-\sigma,t_2+\sigma)\subset\chi_1$ and is only dependent on a,b,$\kappa$, such that
+where $h$ and $\pa h/\pa t$ are integrable on path $L_1$. By the assumption above, there exist $0<\delta<\pi/4$ only dependent on $\kappa$ such that $|\sin(t+\phi)|>(1+\kappa)/2, |\cos(t+\phi)|<\kappa/2$ for any $t\in(-\delta,\delta)$ while $|\cos(t+\phi)|>(1+\kappa)/2, |\sin(t+\phi)|<\kappa/2$ for any $t\in(-\pi/2,-\pi/2+\delta)\cup(\pi/2-\delta,\pi/2)$. Let define $t_1,t_2\in \chi_1=(-\pi/2+\delta,-\delta)\cup(\delta,\pi/2-\delta)$ which satisfy $\kappa^2 = \sin^2 (t_i+\phi)$, $i=1,2$. Moreover, for any $0<\lambda_1<1$ and $1<\lambda_2<1/\kappa$, there exists $\sigma>0$, which satisfy that $\chi_2=(t_1-\sigma,t_1+\sigma)\cup(t_2-\sigma,t_2+\sigma)\subset\chi_1$ and is only dependent on $\lambda_1,\lambda_2,\kappa$, such that
 \be \label{assume1}
-a\kappa<|\sin (t+\phi)|<b\kappa.
+\lambda_1\kappa<|\sin (t+\phi)|<\lambda_2\kappa.
 \ee
-for any $t\in\chi_2$. We are now in a position to estimate $I_{21}$. Similarly, we split the path $L_1$ into $\chi_2$ and $L_1\bks \chi_2$, then we have the corresponding representation: $I_{21}=I_\chi+I_{L_1\bks\chi}$.
+for any $t\in\chi_2$. We are now in a position to estimate $I_{21}$. Similarly, we split the path $L_1$ into $\chi_2$ and $L_1\bks \chi_2$, then we have the corresponding representation: $I_{21}=I_{\chi_2}+I_{L_1\bks{\chi_2}}$.
 
-For $I_{\chi}$, we only analysis the integral on $\chi_{21}=(t_1-\sigma,t_1+\sigma)$ denoted by $I^1_{\chi}$, the procedure of the another is same. Without loss of generality, we assume that $\sin (t_1-\sigma+\phi)<\kappa<\sin (t_1+\sigma+\phi)$. It is easy to see that $\sin (t+\phi)$ is monotonic increasing in $\chi_{21}$. Let $\sin (t+\phi) = \kappa \sin \theta$ and the implicit mapping from $\theta$ to $t$ is denoted by $t(\theta)$ while the inverse mapping by $\theta(t)$, taking the interval $\chi$ onto $L_\theta : \theta_1\rightarrow\pi/2\rightarrow\pi/2-\i\theta_2$ where $\sin(t_1-\sigma+\phi)=\kappa\sin \theta_1,\sin(t_1+\sigma+\phi)=\kappa\sin(\pi/2-\i\theta_2)$. By substituting $t(\theta)$ into $I^1_{\chi}$, we have
+For $I_{\chi_2}$, we only analysis the integral on $\chi_{21}=(t_1-\sigma,t_1+\sigma)$ denoted by $I^1_{\chi_2}$, the procedure of the another is same. Without loss of generality, we assume that $\sin (t_1-\sigma+\phi)<\kappa<\sin (t_1+\sigma+\phi)$. It is easy to see that $\sin (t+\phi)$ is monotonic increasing in $\chi_{21}$. Let $\sin (t+\phi) = \kappa \sin \theta$ and the implicit mapping from $\theta$ to $t$ is denoted by $t(\theta)$ while the inverse mapping by $\theta(t)$, taking the interval $\chi_{21}$ onto $L_\theta : \theta_1\rightarrow\pi/2\rightarrow\pi/2-\i\theta_2$ where $\sin(t_1-\sigma+\phi)=\kappa\sin \theta_1,\sin(t_1+\sigma+\phi)=\kappa\sin(\pi/2-\i\theta_2)$. By substituting $t(\theta)$ into $I^1_{\chi_2}$, we have
 \be
-I^1_{\chi}=\int_{L_\theta}\frac{ h(\kappa\sin\theta,(1-\kappa^2\sin^2\theta,\kappa\cos\theta)}{(1-\kappa^2\sin^2\theta)} \ e^{\i
+I^1_{\chi_2}=\int_{L_\theta}\frac{ h(\kappa\sin\theta,(1-\kappa^2\sin^2\theta)^{1/2},\kappa\cos\theta)}{(1-\kappa^2\sin^2\theta)^{1/2}} \ e^{\i
 k_s\rho(\cos(t(\theta)))} d\theta
 \ee
 Because of inequality \ref{assume1}, we assert that $h$ and $\pa h/\pa\theta$ are integrable on the path $L_\theta$. A simple computation show that
@@ -586,16 +597,24 @@ Then we can obtain
 \een
 It is simple to see that $\theta=\pi/2$ is the only stationary point of $\cos(t(\theta))$ and we can obtain
 \be
-\Bigg|\frac{d^2\cos t}{d\theta^2}(0)\Bigg|=\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}|\sin t|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin (\pi/2-\delta)
+\Bigg|\frac{d^2\cos t}{d\theta^2}(\pi/2)\Bigg|=\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}|\sin t|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta
 \ee
-Therefore, we can choose appropriate a,b, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin (\pi/2-\delta)$ for any $\theta\in \theta(\chi_2)$. Since the amplitude function of integrand in $I^1_{\chi}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_\chi|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}.
-Finally, an argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks\chi}|\leq C/(k_s\rho)^{1/2}$. This completes the proof.
+Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta$ for any $\theta\in \theta(\chi_{21})$. Therefore, we can decompose $\theta(\chi_{21})$ into several intervals such that in each either $|\pa \cos(t(\theta))/\pa\theta|$ or $|\pa^2 \cos(t(\theta))/\pa\theta^2|$ has positive lower bound and $|\pa \cos(t(\theta))/\pa\theta|$ is monotonous. Since the amplitude function of integrand in $I^1_{\chi_2}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_{\chi_2}|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}.
+Finally, an argument similar to the estimation of $I_{11}$ used shoes that $|I_{L_1\bks{\chi_2}}|\leq C/(k_s\rho)^{1/2}$. This completes the proof.
 
 \finproof
+Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct consequence of lemma \ref{es_dgreen1}.
+\begin{lem}\label{es_dgreen2}
+	For every $x\in\Gamma_0$, $y\in\R_+^2$ that $|x_1-y_1|/|x-y|>(1+\kappa)/2$, $y_2/|x-y|<\kappa/2$ and $k_s |x-y|>1$, we have
+	\be
+	|T_D(x,y)|\leq C(\frac{k_s y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{1/2}}+\frac{k_s |x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{3/2}})
+	\ee
+	where C is only dependent on $\kappa$.
+\end{lem}
 
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
-\be\label{o_bound}
+\be\label{om_bound}
 |x_1|\leq c_1 d , \ \ |x_1-y_1|\leq c_2 h , \ \
 |x_2|\leq c_3 h    \ \ \ \forall x,y \in \Omega
 \ee
@@ -797,12 +816,12 @@ Eliminating $k_s$ in fraction, we can obtain estimation (\ref{re3}). The other t
 \finproof
 Now, it turn to estimate $F^{sp}(z,y)$ and $F^{ps}(z,y)$.
 \begin{lem}\label{f_estimate}
-	For any $z,y\in \Omega$,
+	For any $z,y\in \R_+^2$,
 	\be
-	|F^{sp}_{ij}|\leq C(1+d_\Omega)(\frac{1}{z_2}+\frac{1}{z_2^{1/4}}+\frac{1}{z_2^{1/(2k_{c_3}-1)}})  \\
-	|F^{ps}_{ij}|\leq C(1+d_\Omega)(\frac{1}{y_2}+\frac{1}{y_2^{1/4}}+\frac{1}{y_2^{1/(2k_{c_3}-1)}})
+	|F^{sp}_{ij}|\leq \frac{C}{\mu}(1+k_s |z_1-y_1|)(\frac{1}{k_s z_2}+\frac{1}{(k_s z_2)^{1/4}}+\frac{1}{(k_s z_2)^{1/(2k_{c_3}-1)}})  \\
+	|F^{ps}_{ij}|\leq \frac{C}{\mu}(1+k_s |z_1-y_1|)(\frac{1}{k_s y_2}+\frac{1}{(k_s y_2)^{1/4}}+\frac{1}{(k_s y_2)^{1/(2k_{c_3}-1)}})
 	\ee
-where C may be only dependent on $\kappa$, $c_3$ and $k_{c_3}$ is the minimum of k which satisfy $\kappa^{2k-1}<1/c_3$.
+where C is only dependent on $\kappa$, $c_3$ and $k_{c_3}$ is the minimum of k which satisfy $\kappa^{2k-1}<1/c_3$.
 \end{lem}
 \debproof
 Substituting (\ref{theta}) and (\ref{ngreen}) into $F^{ps}$ and $F^{sp}$, we have
@@ -822,11 +841,11 @@ F^{sp}(z,y)=\frac{1}{2\pi}\int_{(-k_p,k_p)} \frac{-\i (\beta-2\mu_s\mu_p)\xi}{\m
 	\xi^2& -\xi\mu_p
 \end{array}		\Bigg)e^{\mathrm{i}\mu_p z_2-\i\mu_s y_2 -\i\xi(z_1-y_1)}
 \een
-We only estimate $F^{ps}(z,y)$ here, the other terms can prove in the same way. let $\xi=k_s t$, we have
+We only estimate $F^{ps}(z,y)$ here, the other terms can be proved in the same way. let $\xi=k_s t$, we have
 \ben
 F^{ps}_{11}(z,y)=\frac{1}{\mu} \int^{\kappa}_{-\kappa} f(t,\kappa) e^{\i k_s t (y_1-z_1)} e^{\i k_s z_2\phi(t,\tau)} dt
 \een
-where $\phi(t,\tau)=(\sqrt{1-t^2}-\tau\sqrt{\kappa^2-t^2})$ and $\tau=y_2/z_2$. From the convention (\ref{o_bound}) we have $1/c_3<\tau<c_3$. A simple computation show that
+where $\phi(t,\tau)=(\sqrt{1-t^2}-\tau\sqrt{\kappa^2-t^2})$ and $\tau=y_2/z_2$. From the convention (\ref{om_bound}) we have $1/c_3<\tau<c_3$. A simple computation show that
 \ben
 \phi^{(1)}(t,\tau)=-\frac{t}{\sqrt{1-t^2}}+\frac{\tau t}{\sqrt{\kappa^2-t^2}}  \\
 \phi^{(2)}(t,\tau)=-\frac{1}{(1-t^2)^{3/2}}+\frac{\tau\kappa^2 }{(\kappa^2-t^2)^{3/2}} \\
@@ -862,7 +881,7 @@ We are now in the position to analysis the case of $\tau\geq\kappa$. Substitute 
 (\tau/\kappa^{n-1}-1)(1/2-n/2)_{n/2}(3/2-n/2)_{n/2}2^n \ \ \mbox{n is even}.
 \end{array} \right.
 \ee
-It is trivial to see that $\phi^{(2)}(0,\tau)=\tau/\kappa-1$, $\phi^{(3)}(0,\tau)=0$ and $\phi^{(4)}(0,\tau)=3(\tau/\kappa^3-1)$. Using the fact $\kappa<1$ we obtain $|\phi^{(4)}(0,\tau) |\geq 3(1/\kappa^2-1)$. Furthermore, there exists a $0<\delta_\kappa<\kappa$, which is independent of $\tau$, such that $|\phi^{(4)}(t,\tau) |\geq 2(1/\kappa^2-1)$ when $t\in[-\delta_\kappa,\delta_\kappa]$. Let $m_\kappa=\min_{([-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa))\times [0,c_3]}\phi^{(1)}(t,\tau)$. Since $\phi^{(2)}(t,\tau)$ has at most 4 zero points with respect to t, then the set $[-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa)$ is the union of at most 5 intervals on each of which $u'$ is monotone`. Thus he estimation of $F^{ps}(z,y)$ follows immediately from lemma \ref{van}.
+It is trivial to see that $\phi^{(2)}(0,\tau)=\tau/\kappa-1$, $\phi^{(3)}(0,\tau)=0$ and $\phi^{(4)}(0,\tau)=3(\tau/\kappa^3-1)$. Using the fact $\kappa<1$ we obtain $|\phi^{(4)}(0,\tau) |\geq 3(1/\kappa^2-1)$. Furthermore, there exists a $0<\delta_\kappa<\kappa$, which is independent of $\tau$, such that $|\phi^{(4)}(t,\tau) |\geq 2(1/\kappa^2-1)$ when $t\in[-\delta_\kappa,\delta_\kappa]$. Let $m_\kappa=\min_{([-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa))\times [0,c_3]}\phi^{(1)}(t,\tau)$. Since $\phi^{(2)}(t,\tau)$ has at most 4 zero points with respect to t, then the set $[-\kappa,\kappa]\bks(-\delta_\kappa,\delta_\kappa)$ is the union of at most 5 intervals on each of which $u'$ is monotone`. Thus the estimation of $F^{ps}(z,y)$ follows immediately from lemma \ref{van}.
 
 It remains to analysis the case of $1/c_3<\tau<\kappa$. Let $t_\tau =((\kappa^2-\tau^2)/(1-\tau^2))^{1/2}$. By substituting $\pm t_\tau$ into $\phi^{(4)}(t,\tau)$, we obtain
 \be
@@ -870,10 +889,10 @@ It remains to analysis the case of $1/c_3<\tau<\kappa$. Let $t_\tau =((\kappa^2-
 &=& \frac{(4\kappa^2-4\tau^4)(\kappa^2-\tau^2)+(\kappa^4-\tau^6)(1-\tau^2)}{\tau^6(1-\tau^2)}\\
 &\geq& \frac{\kappa^4(1-\tau^2)}{\tau^6(1-\tau^2)}\geq\frac{1}{\kappa^2}
 \ee
- It is easy to see that $\phi^{(2k_{c_3})}(0,tau)\geq C(\frac{1}{c_3\kappa^{2k_{c_3}}}-1)$ due to $1/c_3<\kappa^{2k_{c_3}-1}$. Consequently, the estimation here can be proved by the same method as employed in the last case. This completes the proof.
+ It is easy to see that $\phi^{(2k_{c_3})}(0, \tau)\geq C(\frac{1}{c_3\kappa^{2k_{c_3}-1}}-1)$ due to $\kappa^{2k_{c_3}-1}<1/c_3$. Consequently, the estimation here can be proved by the same method as employed in the last case. This completes the proof.
 \finproof
 
-To complete the analysis of the point spread function, we define $F(z,y)=F_{ss}(z,y)+F_{pp}(z,y)$, where
+To complete the analysis of the point spread function, Let $F(z,y)=F_{ss}(z,y)+F_{pp}(z,y)$, where
 \ben
 \hspace{-2cm}
 F^{pp}(z,y)=-\frac{1}{2\pi}\int_{(-k_p,-k_p)} \frac{\i k_s^2\mu_s}{\mu\gamma(\xi)\delta(\xi)}
@@ -901,7 +920,7 @@ and $R(z,y)=R^{ss}(z,y)+R^{pp}(z,y)+J^{sp}(z,y)+J^{ps}(z,y)$. Then we have $J(z,
 function is from $F(z,y)$ when $z,y$ far away from $\Gamma_0$. Based on the above argument, we know that $R(z,y)$ becomes small when z,y move away from $\Gamma_0$. Our goal is to show $F(z,y)$ has the similar decay to the elastic fundamental solution $\Im\Phi(z,y)$ as $|z-y|\to\infty$.
 
 \begin{lem} \label{festimate1}
-	For any $z,y\in \R_+^2$, for $z=y$
+	For any $z,y\in \R_+^2$, when $z=y$
 	\ben \label{fe1}
 |\Im F_{ii}(z,y)| \geq \frac{1}{4(\lambda+2\mu)} \ , \ i =1 ,2 \\
 \Im F_{12}(z,y) = \Im F_{21}(z,y) =0
@@ -918,14 +937,14 @@ First, we have $\gamma(\xi)\le k_s^2$, $\delta(\xi)\le k_s^4$ and $\mu_p\le\mu_s
 \be
 -\Im (F^{pp}_{11}+F^{ss1}_{11})\geq\frac{1}{2\pi\mu}\int_{(-k_p,k_p)} \frac{\mu_p}{k_s^2}d\xi \\ =\frac{k_p^2}{2\pi\mu k_s^2}\int_{0}^{\pi} \sin^2(t) dt= \frac{1}{4(\lambda+2\mu)}
 \ee
-We are then left to proof $-\Im F^{ss2}_{11}>0$. If $\xi\in(-k_s,k_s)\bks(-k_p,k_p)$, $\mu_p=\i\sqrt(\xi-k_p^2)$. Substituting it into $F^{ss2}$, we have
+It's left to proof $-\Im F^{ss2}_{11}>0$. If $\xi\in(-k_s,k_s)\bks(-k_p,k_p)$, $\mu_p=\i\sqrt{\xi^2-k_p^2}$. Substituting it into $F^{ss2}$, we have
 \be
 \hspace{-1.5cm}
 F^{ss2}_{11}=\frac{1}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^2\sqrt{\xi^2-k_p^2}(k_s^2-4\xi^2)}{(\xi^2+\i\mu_s\sqrt{\xi^2-k_p^2})(\beta^2-\i4\xi^2\mu_s\sqrt{\xi^2-k_p^2})} d\xi
 \ee
 let $\alpha=(\xi^2+\i\mu_s\sqrt{\xi^2-k_p^2})(\beta^2-\i4\xi^2\mu_s\sqrt{\xi^2-k_p^2})$. A simple computation show that $\Im \alpha=k_s^2\mu_s\sqrt{\xi^2-k_p^2}(k_s^2-4\xi^2)$. It is easy to see that
 \ben
--\Im F^{ss2}_{11}=\frac{1}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^3(\xi^2-k_p^2)(k_s^2-\xi^2)^2}{|\alpha|^2} d\xi >0
+-\Im F^{ss2}_{11}=\frac{k_s^2}{2\pi\mu}\int_{(-k_s,k_s)\bks(-k_p,k_p)} \frac{\mu_s^3(\xi^2-k_p^2)(k_s^2-\xi^2)^2}{|\alpha|^2} d\xi >0
 \een
 
 For $z\neq y$, we denot $y-z=|y-z|(\cos\phi,\sin\phi)^T$ for some $0\le\phi\le2\pi$. Then it is easy to see that
@@ -935,6 +954,38 @@ F^{pp}(z,y)=\frac{1}{\mu}\int_{0}^{\pi} A(\theta,\kappa) e^{\i k_s |z-y| \cos(\t
 The phase function $f(\theta)=\cos(\theta-\phi)$ satisfies $f'(\theta)=-\sin(\theta-\phi),f''(\theta)=-\cos(\theta-\phi)$. For any given $0\le\phi\le2\pi$, we can decompose $[0,\pi]$ into several intervals such that in each either $|f''(\theta)|\ge 1/2$ or $|f'(\theta)|\ge 1/2$ and $f'(\theta)$ is monotonous. The amplitude function $A(\theta,\kappa)$ and their derirates are integrable on $[0,\pi]$. Then the estimate for $F_{pp}(z,y)$ follows by using lemma \ref{van}. The estimation of $F^{ss}(z,y)$ can be proved similarly. This completes the proof.
 \finproof
 
+Now we consider the finite aperture point spread function $J_d(z,y)$:
+\be
+\int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\ee
+Our aim is to estimate the difference $J(z,y)-J_d(z,y)$. It is easy to see that
+
+\be
+\frac{(x_1-z_1)^2}{\rho^2}=\frac{1}{1+\frac{z_2^2}{(x_1-z_1)^2}}\geq \frac{1}{1+\frac{c_3^2 h^2}{(1-c_1)^2 d^2}}:=m(h/d)\\
+\frac{z_2^2}{\rho^2}=\frac{1}{1+\frac{(x_1-z_1)^2}{z_2^2}}\leq \frac{1}{1+\frac{(1-c_1)^2 d^2}{c_3^2 h^2}}:=M(h/d)
+\ee
+where $\rho=\sqrt{(x_1-z_1)^2+z_2^2}$ and $z\in\Omega,x\in \Gamma_0\bks(-d,d)$.
+\begin{thm} \label{ap_psf}
+	Assume $m(h/d)>(1+\kappa)^2/4$, $M(h/d)<\kappa^2/4$ and $k_s h\geq 1$. Then for $z,y\in\Omega$, we have
+	\be \hspace{-2cm}
+	|J(z,y)-J_d(z,y)|+k_s^{-1}|\nabla_y(J(z,y)-J_d(z,y))|\leq \frac{C}{\mu} (\frac{h}{ d}+\frac{(k_s h)^{1/2}}{ e^{\sqrt{k_r^2-k_s^2}h}}(\frac{h}{d})^{1/2})
+	\ee
+	where the constant C is only dependent on $\kappa$.
+\end{thm}
+\debproof
+By lemma \ref{es_ngreen}, lemma \ref{es_dgreen2} and $k_s h\geq 1$, we have
+\ben
+\Bigg| \int_{d}^{\infty} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\Bigg| \\
+\leq
+\frac{C}{\mu}\int_{d}^{\infty}\frac{k_s z_2}{|x-z|}\frac{1}{|x-z|^{1/2}}\bigg(
+\frac{1}{|x-y|^{1/2}}+e^{-\sqrt{k_r^2-k_s^2}y_2}\bigg) dx_1\\
+\leq
+\frac{C}{\mu}\int_{(1-c_1)d/h}^{\infty}\frac{1}{1+t^2}+\frac{(k_s h)^{1/2}}{(1+t^2)^{3/4}} e^{-\sqrt{k_r^2-k_s^2}h}  dt\\
+\leq \frac{C}{\mu} (\frac{h}{ d}+\frac{(k_s h)^{1/2}}{ e^{\sqrt{k_r^2-k_s^2}h}}(\frac{h}{d})^{1/2})
+\een
+Here we have used the first inequeality in (\ref{om_bound}). Similarly, we can prove that the estimate for te integral in $[-\infty,-d]$. This shows the estimate for $J(z,y)-J_d(z,y)$. The estimate for $\nabla_y(J(z,y)-J_d(z,y))$ can be proved similarly.
+\finproof
 
 \section{Analysis of the forward scattering problem}
 
@@ -945,8 +996,8 @@ In this section we introduce the following stability estimate of the forward ela
 	\Delta_e u + \omega^2 u =0 \qquad\mbox{\rm in } \R^2_+\bks \bar{D}, \label{es1}\ \ \
 	\\ u= g \ \ \ \ \mbox{\rm on } \Ga_D, \label{es2} \\
 	\sigma(u)e_2=0 \ \ \ \ \mbox{\rm on} \Ga_0, \label{es3} \\
-	 u \ \mbox{satisfies the generalized radiation codition such that} \nn \\\label{rc1}
-	 \lim_{r\to\infty}  \int_{S_r^+} (\sigma(G(x,y)e_i)\hat{r})\cdot u(x) - (G(x,y)e_i)\cdot (\sigma(u)\hat{r})ds(x)=0
+	u \ \mbox{satisfies the generalized radiation codition\cite{Guzina2006} such that} \nn \\\label{rc1}
+	\lim_{r\to\infty}  \int_{S_r^+} (\sigma(G(x,y)e_i)\hat{r})\cdot u(x) - (G(x,y)e_i)\cdot (\sigma(u)\hat{r})ds(x)=0
 	\ee
 	where $S_r^+:=\{x\in \R^2_+ \ | \ \|x\|=r^2\}$, $\hat{r}=x/r$ and $y\in \R_+^2$. Then the problem (\ref{es1})-(\ref{rc1})
 	admits a unique solution $u \in H^{1}_{\rm loc}(\R^2_+ \backslash \bar D)$. Moreover, for any bounded open set $\mathcal O\subset \R^2_+\bks\bar D$ there exists a constant $C>0$ such that
@@ -954,12 +1005,12 @@ In this section we introduce the following stability estimate of the forward ela
 	\|u\|_{H^{1}(\mathcal O)}\le C\|g\|_{H^{-1/2}(\Ga_D)}
 	\ee
 \end{thm}
-The existence of the solution can be proved by the method of limiting absorption principle. The argument is standard and we give several lemmas below, see e.g. \cite{leis} for the consideration for Helmholtz equation. For any $z=1+\i\varepsilon,\varepsilon>0$, $q\in H^{1}(\R^2_+)'$ with compact support, we consider the problem
+The existence of the solution can be proved by the method of limiting absorption principle. The argument is standard and we give several lemmas below, see e.g. \cite{leis} for the consideration for Helmholtz equation. For any $z=1+\i\varepsilon,\varepsilon>0$, $f\in H^{1}(\R^2_+)'$ with compact support in $B_R=\{x||x|^2<R^2,x\in\R^2_+\}\subsetneq\R_+^2$ where $B_R$ is a disk of radius R , we consider the problem
 \be \label{eqz}
 \Delta_e u_z +z\omega^2 u =-f \qquad\mbox{\rm in } \R^2_+ \\
-\sigma(u_z)e_2=0 \ \ \ \ \mbox{\rm on} \Ga_0 \label{bdv}
+\sigma(u_z)e_2=0 \ \ \ \ \mbox{\rm on} \ \ \ \  \Ga_0 \label{bdv}
 \ee
-It is easy to see by Lax-Milgrim lemma that (\ref{eqz}-\ref{bdv}) has a unique solution $u_z\in H^1(\R^2_+)$. For any domain $\mathcal D \subset \R^2_+$, we define the weighted space $L^{2,s}(\mathcal D),s \in \R$, by
+By Lax-Milgrim lemma we know that (\ref{eqz}-\ref{bdv}) has a unique solution $u_z\in H^1(\R^2_+)$. For any domain $\mathcal D \subset \R^2_+$, we define the weighted space $L^{2,s}(\mathcal D),s \in \R$, by
 \ben
 L^{2,s}(\mathcal D)=\{v \in L^2_{\rm loc}(\mathcal D): (1+|x|^2)^{s/2}v \in L^2(\mathcal D) \}
 \een
@@ -968,14 +1019,14 @@ is defined as the set of functions in $L^{2,s}(\mathcal D)$ whose first derivati
 $\| v \|_{ H^{1,s}(\mathcal D)} = (\| v \|^2_{ L^{2,s} (\mathcal D)} + \| \nabla v \|^2_{ L^{2,s}(\mathcal D)})^{1/2}$.
 
 \begin{lem}{\label{newton}}
-	Let  $ f  \in L^2 (\R^2_+) $ with compact support in $B^2_+$. For any $z=1+\i\varepsilon$, $0<\varepsilon<1$, we have, for any $s>1/2$,
+	Let  $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$. For any $z=1+\i\varepsilon$, $0<\varepsilon<1$, we have, for any $s>1/2$,
 	$\|u_z\|_{H^{1,-s}(\R^2_+)}\le C\|f\|_{L^2(\R^2_+)}$ for some constant independent of $\varepsilon, u_z$, and $f$.
 \end{lem}
 \debproof
-We define $R_z(f)=u_z$, then it is easy to see that $R_z$ is a linear bounded operator from $L^2_c(\R^2_+)$ to $H^{1,-s}(\R^2_+)$, where $L^2_c(\R^2_+)$ is denoted by all $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$. It follows from theorem 3.7 in \cite{Yves1988} that $R_z$ is a uniformly continuous operator continues valued function on $z=1+\i\varepsilon$, $0<\varepsilon<1$ with value in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. Then, we can obtain that $R_z$ is uniformly bounded in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. This complete the proof by the defintion of the operator norm.
+Let $R_z$ denote the map from $L^2_c(\R^2_+)$ to $H^{1,-s}(\R^2_+)$ such that $R_z(f)=u_z$ where $L^2_c(\R^2_+)$ is denoted by all $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$, then it is easy to see that $R_z$ is a linear bounded operator. It follows from theorem 3.7 in \cite{Yves1988} that $R_z$ is a uniformly continuous operator continues valued function on $z=1+\i\varepsilon$, $0<\varepsilon<1$ with value in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. Then, we can obtain that $R_z$ is uniformly bounded in $B(L^2_c(\R^2_+),H^{1,-s}(\R^2_+))$. This complete the proof by the defintion of the operator norm.
 \finproof
 
-We next recall the following lemma that respecting the absence of positive eigenvalues for the linear elasticity system in half space \cite{sini2004}.
+We next recall the following lemma which states the absence of positive eigenvalues for the linear elasticity system in half space \cite{sini2004}.
 \begin{lem} \label{absen}
 	Let $u\in L^2(\R^2_+ \backslash \bar D)$ such that $u$ satisfies (\ref{es1}) and (\ref{es3}), than we assert that $u=0$ in $\R^2_+ \backslash \bar D$
 \end{lem}
@@ -1004,7 +1055,7 @@ $z=1+\i\eps$ and $q=\sigma(u_\eps)\na\chi+(\lambda+\mu)(\na^2 \chi u_\eps+ \na u
 \ee
 for some constant $C$ independent of $\eps>0$. Now let $\chi_1 \in C_{0}^{\infty}(\R^2_+)$
 be the cut-off function with that  $0 \leq \chi_1 \leq 1$, $\chi_1=1$ in $B_{R_2}$, and $\chi_1=0$
-outside of $B_{R_3}$. For $g\in H^{-1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$ hold. By testing \ref{wg2} with
+outside of $B_{R_3}$. For $g\in H^{1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$ hold. By testing \ref{wg2} with
 $\chi_1^2 ( \overline{u_{\eps}-u_{g}} )$, we have by the standard argument
 \be \label{u1}
 \|u_{\eps}\|_{H^{1}(B_{R_2} \backslash \bar{D})}\le C( \|u_{\eps}\|_{L^{2}(B_{R_3} \backslash \bar{D})} + \|g\|_{H^{1/2}(\Ga_D)} ).
@@ -1015,22 +1066,22 @@ A combination of (\ref{q10}) and the above estimate yields
 \ee
 Now we claim
 \be \label{u3}
-\|u_{\eps}\|_{H^{1,-s}(\R^2_+ \backslash \bar D)} \leq C \|g\|_{H^{1/2}(\Ga_D)} ,
+\|u_{\eps}\|_{L^2(B_{R_3} \backslash \bar D)} \leq C \|g\|_{H^{1/2}(\Ga_D)} ,
 \ee
 for any $g \in H^{1/2}(\Ga_D)$ and $\eps >0$. If it were false, there would exist sequences $\{g_m\} \subset H^{1/2}(\Ga_D)$ and $\{\eps_m\} \subset (0,1)$, and $\{u_{\eps_m}\}$ be the corresponding solution of (\ref{wg2})-(\ref{wg4}) such that
 \be {\label{contradict}}
-\|u_{\eps_m}\|_{H^{1,-s}(\R^2_+ \backslash \bar D)} = 1 \ {\rm{ and }} \ \|g_m\|_{H^{-1/2}(\Ga_D)} \leq \frac{1}{m}.
+\|u_{\eps_m}\|_{L^2(B_{R_3} \backslash \bar D)} = 1 \ {\rm{ and }} \ \|g_m\|_{H^{-1/2}(\Ga_D)} \leq \frac{1}{m}.
 \ee
-Then $\|u_{\eps_m}\|_{H^{1}(B_{R_3} \backslash \bar D)}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
+Then $\|u_{\eps_m}\|_{H^{1,-s} ( \R^2_+ \backslash \bar{D})}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
 still denoted by $\{\eps_m\}$, such that $\eps_m \to \eps' \in [0,1]$, and a subsequence of $\{u_{\eps_m}\}$,
-which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'} \in L^2(B_{R_3} \backslash \bar D)$ by Rellich imbedding theorem. Thus $u_{\eps_m}$ and $g_m$ are Cauchy sequeces respected in $L^2(B_{R_3} \backslash \bar D)$ and $H^{1/2}(\Ga_D)$. By extending inequality (\ref{u2}), we obtain that $u_{\eps_m}$ is also a Cauchy sequeces respected in $H^{1,-s}(\R^2_+ \backslash \bar D)$. So $u_{\eps'} \in H^{1,-s}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
+which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'} \in {H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by Rellich imbedding theorem where $s<s'$. Thus $u_{\eps_m}$ and $g_m$ are Cauchy sequeces respected in $L^2(B_{R_3} \backslash \bar D)$ and $H^{1/2}(\Ga_D)$. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
 
 By the integral representation satistied by $u_{\eps_m}$, we know that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \label{ge1} \hspace{-2cm}
 u_{\eps_m}(y)\cdot e^i=\int_{\Ga_D} (\sigma(G_{\eps_m}(x,y)e_i)\nu)\cdot u_{\eps_m}(x) - (G_{\eps_m}(x,y)e_i)\cdot (\sigma(u_{\eps_m})_{\eps_m}\nu)ds(x)
 \ee
 By the trace theorem, it is easy to see that $u_{\eps_m}\to u_{\eps'}$ in $H^{1/2}(\Ga_D)$ and $\sigma(u_{\eps_m})\to\sigma(u_{\eps'})$ in $H^{-1/2}(\Ga_D)$ when $\eps_m\to\eps'$. Then let $\eps_m\to\eps'$ in
-(\ref{ge1}), we obtain that or $y\in \R^2_+\backslash\bar D$ and $i=1,2$
+(\ref{ge1}), we obtain that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \ \hspace{-2cm} \label{ge2}
 u_{\eps'}(y)\cdot e^i=\int_{\Ga_D} (\sigma(G_{\eps'}(x,y)e_i)\nu)\cdot u_{\eps'}(x) - (G_{\eps'}(x,y)e_i)\cdot (\sigma(u_{\eps'})_{\eps'}\nu)ds(x)
 \ee
@@ -1040,17 +1091,17 @@ Therefore, in any case $u_{\epsilon'}=0$, which , however contradicts to \ref{co
 \finproof
 Now we are in the position to prove the exsitence of Theorem \ref{eu1}.
 \begin{lem} \label{ext}
-	For any $s>1/2$, $u_\eps:(0,1)\to H^{1,-s}(\R^2_+ \bks \bar D)$ is a uniformly continuous operator valued function. Immediately, $u_{\eps}$ converges to some $u$ in $H^{1,-s}(\R^2_+ \bks \bar D)$ and $u_0$ is a solution of (\ref{es1}-\ref{es4}).
+	For any $s>1/2$, $u_\eps:(0,1)\to H^{1,-s}(\R^2_+ \bks \bar D)$ is a uniformly continuous operator valued function. Immediately, $u_{\eps}$ converges to some $u_0$ in $H^{1,-s}(\R^2_+ \bks \bar D)$ and $u_0$ is a solution of (\ref{es1}-\ref{es4}).
 \end{lem}
 \debproof
 We also give a indirect prove here. Let $\delta_0>0$ and $\{\mu_n\}$ and $\{\nu_n\}$ be sequences in $ (0,1) $ such that
 \be
 |\mu_n-\nu_n|\le 1/n \qquad \mbox{and} \qquad \|u_{\mu_n}-u_{\nu_n}\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \ge \delta_0
 \ee
-Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s} (\R^2_+ \bks \bar D)$ such that
+Thus there is a subsequence of $\{\mu_n\}$, which is still denoted by $\{\mu_n\}$, such that $\{\mu_n\}\to \epsilon\in[0,1]$ and also $\{\nu_n\}\to \epsilon$. Then using lemma \ref{newton2} and the procedure proving it, we get the $u_\epsilon,v_\epsilon \in H^{1,-s} (\R^2_+ \bks \bar D)$, by choosing $s'>s$, such that
 \ben
-\|u_{\mu_n}-u_\epsilon\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \to 0 \\
-\|u_{\nu_n}-v_\epsilon\|_{H^{1,-s}(\R^2_+ \bks \bar D)} \to 0
+\|u_{\mu_n}-u_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0 \\
+\|u_{\nu_n}-v_\epsilon\|_{H^{1,-s'}(\R^2_+ \bks \bar D)} \to 0
 \een
 and $u_\epsilon=v_\epsilon$ by the same arguement in lemma \ref{newton2} which is contradict a contradiction. Thus we have proved $u_\eps$ is uniformly continuously for $\eps \in (0,1)$. Then it is easy to see $u_\eps$ has a limitation in ${H^{1,-s}(\R^2_+ \bks \bar D)} $ and the estimation of $u_0$ can be obtained by (\ref{u3}). This completes the proof.
 \finproof
@@ -1059,7 +1110,7 @@ It is remain to prove the uniqueness in theorem \ref{eu1}. Actually, it can be o
 {\it prove of Theorem \ref{eu1}}
 By the linearity of the problem, it is sufficient to prove that any $u_0$  satisfies the system (\ref{es1}-\ref{es3}) with the corresponding homogeneous boundary-value vanishes identically in $\R^2_+\bks \bar D$. For any $y\in \R^2_+\bks \bar D$, there exists $U^s(x,y)$ sataifies (\ref{es1}-\ref{es3}) with $g(x)=-G(x,y)$ on $\Ga_D$ following the lemma \ref{ext} and we define $U(x,y)=G(x,y)+U^s(x,y)$. It is easy to see that $U(x,y)$ satifies the generalized radiation condition (\ref{rc1}). Thus by the integral representaion of $u_0$, we have
 \ben
-	 \lim_{r\to\infty}  \int_{S_r^+} (\sigma(U(x,y)e_i)\nu)\cdot u_0(x) - (U(x,y)e_i)\cdot (\sigma(u_0)\nu)ds(x)=0
+\lim_{r\to\infty}  \int_{S_r^+} (\sigma(U(x,y)e_i)\nu)\cdot u_0(x) - (U(x,y)e_i)\cdot (\sigma(u_0)\nu)ds(x)=0
 \een
 Finally, combining $U(x,y)=0,u_0(x)=0$ on $\Ga_D$ and the Green integral theorem we find that
 \ben
@@ -1070,7 +1121,6 @@ u_0(y)e_i&=\int_{\R^2_+\bks\bar D} -(\Delta_e (G(x,y)e_i)+\omega^2 G(x,y)e_i)\cd
 \een
 Then the desired unique exsitence follows with lemma \ref{ext}. This comlpletes the proof of theorem \ref{eu1}.
 \finproof
-
 \section{The resolution analysis}
 In this section we study the imaging resolution of the RTM for the Direchlet boundary obstacle in the half space.
 
