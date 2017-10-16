@@ -1018,6 +1018,11 @@ with the norm $\| v \|_{ L^{2,s}(\mathcal D)} = (\int_{\mathcal D}(1+|x|^2)^{s}|
 is defined as the set of functions in $L^{2,s}(\mathcal D)$ whose first derivative is also in $L^{2,s}(\mathcal D)$. The norm
 $\| v \|_{ H^{1,s}(\mathcal D)} = (\| v \|^2_{ L^{2,s} (\mathcal D)} + \| \nabla v \|^2_{ L^{2,s}(\mathcal D)})^{1/2}$.
 
+We need the following sligt generalization of Rellich Theorem:
+\begin{lem}\label{rellich}
+	Let $\Omega$ be an open Lipschitz domain, then the sobolev space $H^{1,-s}(\Omega)$ is compactly embeded in $L^{2,-s'}(\Omega)$ for every $s'>s>0$.
+\end{lem}
+
 \begin{lem}{\label{newton}}
 	Let  $ f  \in L^2 (\R^2_+) $ with compact support in $B_R$. For any $z=1+\i\varepsilon$, $0<\varepsilon<1$, we have, for any $s>1/2$,
 	$\|u_z\|_{H^{1,-s}(\R^2_+)}\le C\|f\|_{L^2(\R^2_+)}$ for some constant independent of $\varepsilon, u_z$, and $f$.
@@ -1055,8 +1060,8 @@ $z=1+\i\eps$ and $q=\sigma(u_\eps)\na\chi+(\lambda+\mu)(\na^2 \chi u_\eps+ \na u
 \ee
 for some constant $C$ independent of $\eps>0$. Now let $\chi_1 \in C_{0}^{\infty}(\R^2_+)$
 be the cut-off function with that  $0 \leq \chi_1 \leq 1$, $\chi_1=1$ in $B_{R_2}$, and $\chi_1=0$
-outside of $B_{R_3}$. For $g\in H^{1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$ hold. By testing \ref{wg2} with
-$\chi_1^2 ( \overline{u_{\eps}-u_{g}} )$, we have by the standard argument
+outside of $B_{R_3}$. For $g\in H^{1/2}(\Ga_D)$, let $u_g \in H^{1}(\R^2_+ \backslash \bar{D})$ be the lifting function such that $  u_{g}=g \mbox{ on } \Ga_D$ and $\|u_{g}\|_{H^{1}(\R^2_+ \backslash \bar{D})}\le C\|g\|_{H^{1/2}(\Ga_D)}$. By testing \ref{wg2} with
+$\chi_1^2 ( \overline{u_{\eps}-u_{g}} )$ and using the standard argument we have
 \be \label{u1}
 \|u_{\eps}\|_{H^{1}(B_{R_2} \backslash \bar{D})}\le C( \|u_{\eps}\|_{L^{2}(B_{R_3} \backslash \bar{D})} + \|g\|_{H^{1/2}(\Ga_D)} ).
 \ee
@@ -1074,7 +1079,7 @@ for any $g \in H^{1/2}(\Ga_D)$ and $\eps >0$. If it were false, there would exis
 \ee
 Then $\|u_{\eps_m}\|_{H^{1,-s} ( \R^2_+ \backslash \bar{D})}\le C $, and thus there is a subsequence of $\{\eps_m\}$, which is
 still denoted by $\{\eps_m\}$, such that $\eps_m \to \eps' \in [0,1]$, and a subsequence of $\{u_{\eps_m}\}$,
-which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'}$ in ${H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by Rellich imbedding theorem where $s<s'$. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
+which is still denoted by $\{u_{\eps_m}\}$, such that it converges to some $u_{\eps'}$ in ${H^{1,-s'} ( \R^2_+ \backslash \bar{D})}$ by choosing $s'>s$. This is a consequence of Korn's inequality and Rellich theorem. So $u_{\eps'} \in H^{1,-s'}(\R^2_+ \backslash \bar D)$ satisfies (\ref{wg2}-\ref{wg4}) with $g=0$ and $\eps=\eps'$.
 
 By the integral representation satistied by $u_{\eps_m}$, we know that for $y\in \R^2_+\backslash\bar D$ and $i=1,2$
 \be \label{ge1} \hspace{-2cm}
