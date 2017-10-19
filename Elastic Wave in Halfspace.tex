@@ -436,7 +436,7 @@ where $\de_y(x)$ is the Dirac source at $y \in R^2_+$ and $G$ is a $\mathbb{C}^{
 \be
 \hat
 {M}(\xi,x_2;y_2)&=& \frac{\mathrm{i}}{\omega^2 \gamma(\xi)} \Bigg\{ A(\xi)e^{\mathrm{i}\mu_s(x_2+y_2)}+B(\xi)e^{\mathrm{i}\mu_p(x_2+y_2)}\\ \nn
-&&-A(\xi)e^{\mathrm{i}\mu_s x_2+\mu_p y_2}-B(\xi)e^{\mathrm{i}\mu_p x_2+\mu_s y_2}\Bigg\}e^{\mathrm{i}\xi(x_1-y_1)}
+&&-A(\xi)e^{\mathrm{i}\mu_s x_2+\mu_p y_2}-B(\xi)e^{\mathrm{i}\mu_p x_2+\mu_s y_2}\Bigg\}
 \ee
 where
 \ben
@@ -471,7 +471,7 @@ and
 \be
 \hat
 T_M(\xi,x_2;y_2)&=& \frac{\mathrm{\mu}}{\omega^2 \gamma(\xi)} \Bigg\{ E(\xi)e^{\mathrm{i}\mu_s(x_2+y_2)}+F(\xi)e^{\mathrm{i}\mu_p(x_2+y_2)}\\ \nn
-&&-E(\xi)e^{\mathrm{i}\mu_s x_2+\mu_p y_2}-F(\xi)e^{\mathrm{i}\mu_p x_2+\mu_s y_2}\Bigg\}e^{\mathrm{i}\xi(x_1-y_1)}
+&&-E(\xi)e^{\mathrm{i}\mu_s x_2+\mu_p y_2}-F(\xi)e^{\mathrm{i}\mu_p x_2+\mu_s y_2}\Bigg\}
 \ee
 where
 \ben
@@ -488,16 +488,15 @@ where
 \een
 Specially, $T_D(x,y)$ has a simple form when $x_2=0$ that
 \be
-\hspace{-2cm}
 \hat
-    T_D(\xi,0;y_1,y_2)=\frac{1}{\gamma(\xi)}\Bigg[\Bigg(   \begin{array}{cc}
+    T_D(\xi,0;y_2)=\frac{1}{\gamma(\xi)}\Bigg[\Bigg(   \begin{array}{cc}
 	\mu_s\mu_p & \xi\mu_p \\
 	\xi\mu_s & \xi^2
-	\end{array}		\Bigg)e^{\mathrm{i}\mu_s z_2}+\Bigg(   \begin{array}{cc}
+	\end{array}		\Bigg)e^{\mathrm{i}\mu_s y_2}+\Bigg(   \begin{array}{cc}
 	\xi^2 & -\xi\mu_p \\
 	-\xi\mu_s & \mu_p\mu_s
-	\end{array} \Bigg)e^{\mathrm{i}\mu_p z_2}
-	\Bigg]	e^{-\i\xi y_1}
+	\end{array} \Bigg)e^{\mathrm{i}\mu_p y_2}
+	\Bigg]	
 \ee
 and
 \be
