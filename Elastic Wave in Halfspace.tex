@@ -611,6 +611,24 @@ Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct c
 	where C is only dependent on $\kappa$.
 \end{lem}
 
+\begin{lem}\label{pr_dgreen1}
+	Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
+	\be \label{pr_dgreen} 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi 
+	-f_{\xi=\frac{k_s a}{\rho}}\frac{k_s b}{\rho}(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
+	\\ \hspace{-0.5cm}
+	 \leq C(\frac{k_s b}{\rho(k_s\rho)^{3/4}}+\frac{k_s a}{\rho(k_s\rho)^{5/4}})
+	\ee
+	and
+		\be \label{pr_dgreen2} 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi 
+	-f_{\xi=\frac{k_p a}{\rho}}\frac{k_p b}{\rho}(\frac{2\pi}{k_p \rho})^{1/2}e^{\i(k_p\rho-\frac{\pi}{4})}\Big|
+	\\ \hspace{-0.5cm}
+	\leq C(\frac{k_p b}{\rho(k_p\rho)^{3/4}}+\frac{k_p a}{\rho(k_p\rho)^{5/4}})
+	\ee
+	where C is only dependent on $\kappa$.
+\end{lem}
+
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
 \be\label{om_bound}

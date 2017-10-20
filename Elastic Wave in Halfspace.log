@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  18 OCT 2017 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  20 OCT 2017 09:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,88 +236,88 @@ Missing character: There is no Ú in font cmti12!
 Missing character: There is no È in font cmti12!
 Missing character: There is no Ý in font cmti12!
  [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 765--769
+Underfull \hbox (badness 10000) in paragraph at lines 783--787
 
  []
 
 Missing character: There is no £ in font cmr12!
 Missing character: There is no ­ in font cmr12!
 
-Overfull \hbox (40.89989pt too wide) in alignment at lines 790--795
+Overfull \hbox (40.89989pt too wide) in alignment at lines 808--813
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 795--798
+Underfull \hbox (badness 10000) in paragraph at lines 813--816
 
  []
 
-[16]
-Overfull \hbox (32.7782pt too wide) in alignment at lines 859--862
+[16] [17]
+Overfull \hbox (32.7782pt too wide) in alignment at lines 877--880
  [] [] [] [] 
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 890--893
-
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 952--955
+Underfull \hbox (badness 10000) in paragraph at lines 908--911
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 985--988
+Underfull \hbox (badness 10000) in paragraph at lines 970--973
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1032
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1006
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1040
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1050
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1058
 
  []
 
 [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1123
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1141
 
  []
 
-(./Elastic Wave in Halfspace.bbl
+(./Elastic Wave in Halfspace.bbl [24]
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [24]) [25] (./Elastic Wave in Halfspace.aux) ) 
+) [25] (./Elastic Wave in Halfspace.aux) ) 
 Here is how much of TeX's memory you used:
- 2421 strings out of 493014
- 30052 string characters out of 6133350
- 100380 words of memory out of 5000000
- 5919 multiletter control sequences out of 15000+600000
+ 2424 strings out of 493014
+ 30087 string characters out of 6133350
+ 102423 words of memory out of 5000000
+ 5922 multiletter control sequences out of 15000+600000
  13839 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,26p,830b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/latxfont/lasy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (25 pages, 320546 bytes).
+</usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/latxfont/lasy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on "Elastic Wave in Halfspace.pdf" (25 pages, 322912 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  108 compressed objects within 2 object streams
