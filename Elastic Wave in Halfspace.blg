@@ -1,3 +1,48 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: Elastic Wave in Halfspace.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Elastic Wave in Halfspace.aux
 The style file: plain.bst
 Database file #1: eee.bib
+Warning--empty publisher in Wong_Asymptotic
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            621 strings with 6667 characters,
+and the built_in function-call counts, 5162 in all, are:
+= -- 481
+> -- 229
+< -- 1
++ -- 95
+- -- 74
+* -- 350
+:= -- 901
+add.period$ -- 54
+call.type$ -- 18
+change.case$ -- 82
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 204
+empty$ -- 432
+format.name$ -- 74
+if$ -- 1058
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 25
+newline$ -- 93
+num.names$ -- 36
+pop$ -- 104
+preamble$ -- 1
+purify$ -- 73
+quote$ -- 0
+skip$ -- 120
+stack$ -- 0
+substring$ -- 284
+swap$ -- 19
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 1
+while$ -- 47
+width$ -- 20
+write$ -- 192
+(There was 1 warning)

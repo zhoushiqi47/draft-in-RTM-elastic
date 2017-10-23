@@ -49,6 +49,11 @@ Mario Dur{\'a}n, Ignacio Muga, and Jean-Claude N{\'e}d{\'e}lec.
   boundary.
 \newblock {\em SIAM Journal on Applied Mathematics}, 71(2):443--464, 2011.
 
+\bibitem{Evans2010}
+Lawrence~C Evans.
+\newblock {\em Partial differential equations. 2nd ed}.
+\newblock Marcel Dekker,, 2010.
+
 \bibitem{grafakos}
 Loukas Grafakos.
 \newblock {\em Classical and modern Fourier analysis}.
@@ -85,6 +90,11 @@ Calvin~H. Wilcox.
 \newblock {\em Scattering Theory for the d'Alembert Equation in Exterior
   Domains}.
 \newblock PhD thesis, Springer Berlin Heidelberg, 1975.
+
+\bibitem{Wong_Asymptotic}
+R.~Wong, Werner Rheinboldt, and Daniel Siewiorek.
+\newblock {\em Asymptotic Approximations of Integrals}.
+\newblock 1989.
 
 \bibitem{Zhang2007}
 Yu~Zhang, Sheng Xu, Norman Bleistein, and Guanquan Zhang.
