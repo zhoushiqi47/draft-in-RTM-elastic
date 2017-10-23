@@ -611,16 +611,16 @@ Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct c
 	where C is only dependent on $\kappa$.
 \end{lem}
 
-\begin{lem}\label{pr_dgreen1}
+\begin{lem}\label{pr_dgreen}
 	Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
-	\be \label{pr_dgreen} 
+	\be \label{pr_dgreen1} \nn
 	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi 
 	-f_{\xi=\frac{k_s a}{\rho}}\frac{k_s b}{\rho}(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
 	 \leq C(\frac{k_s b}{\rho(k_s\rho)^{3/4}}+\frac{k_s a}{\rho(k_s\rho)^{5/4}})
 	\ee
 	and
-		\be \label{pr_dgreen2} 
+		\be \label{pr_dgreen2} \nn
 	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi 
 	-f_{\xi=\frac{k_p a}{\rho}}\frac{k_p b}{\rho}(\frac{2\pi}{k_p \rho})^{1/2}e^{\i(k_p\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
@@ -628,6 +628,63 @@ Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct c
 	\ee
 	where C is only dependent on $\kappa$.
 \end{lem}
+\debproof
+Let $I(a,b)=\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi$ . To simplify the integral, the standard substitution $\xi=k_s\sin t$ is made, taking the $\xi$-plane to a strip $-\pi/2<\Re t <\pi/2$ in the t-plane, and the real axis in the $\xi$-plane onto the path L from $-\pi/2+\i\infty\rightarrow-\pi/2\rightarrow\pi/2\rightarrow\pi/2-\i\infty$ in the t-plane. Then $I(a,b):=I(\rho,\phi)$ becomes(Let a=$\rho \sin\phi$  and b=$\rho\cos\phi$, $0<\phi<\pi/2$)
+\be
+k_s \int_L f(\sin t,\cos t,(\kappa^2-\sin^2 t)^{1/2})\cos t \ e^{\i k_s\rho(\cos (t-\phi))} dt
+\ee
+Taking the shift transformation of t and using cauchy integral theorem, we can obtain the representation of I(a,b):
+\ben \hspace{-1.5cm}
+k_s\int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos (t+\phi) e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+=k_s \cos \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\cos t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+-k_s \sin \phi \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})\sin t \ e^{\i k_s\rho(\cos t)} dt \\\hspace{-2cm}
+:=k_s (\cos\phi \ I_1+\sin\phi \ I_2)
+\een
+For $I_2$, using integration by parts on path $L$ first, we have
+\be \hspace{-2cm}
+I_2=\frac{1}{\i k_s\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2}) d \ e^{\i(k_s\rho \cos t)} \\ \hspace{-1.5cm}
+=-\frac{1}{\i k_s\rho} \int_{L} \frac{\pa f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (t+\phi))^{1/2})}{\pa t
+} \  e^{\i(k_s\rho \cos t)} dt \\ \hspace{-1.5cm}
+:=\frac{1}{ k_s\rho}I_3
+\ee
+Therefore, 
+\be \label{d_expan}
+I(\rho,\phi)=k_s(\cos\phi I_1 +\frac{\sin\phi}{k_s\rho}I_3)
+\ee
+First, we define $0<\phi_1<\phi_\kappa<\phi_2<\pi/2$ such that $\sin(\phi_\kappa)=\kappa,\sin(\phi_1)<\kappa/2,\sin(\phi_2)>(1+\kappa)/2$ and $\cos(\phi_1)>(1+\kappa)/2,\cos(\phi_2)<\kappa/2$. Now, we claim that \\
+1. If $\phi\in(0,\phi_1)\cup(\phi_2,\pi/2)$, we have
+\be 
+\Big|I_1-f(\sin\phi,\cos\phi,(\kappa^2-\sin^2\phi)^{1/2})(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
+\leq C\frac{1}{k_s\rho} \\
+|I_3|\leq C\frac{1}{(k_s\rho)^{1/2}}
+\ee
+where $C$ is independant of $\phi$.\\
+2. If $\phi\in[\phi_1,\phi_2]$ and $\phi\neq\phi_\kappa$, we have
+\be 
+\Big|I_1-f(\sin\phi,\cos\phi,(\kappa^2-\sin^2\phi)^{1/2})(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
+\leq C(\phi)\frac{1}{k_s\rho} \\
+|I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/2}}
+\ee
+3. If $\phi=\phi_\kappa$, we have
+\be 
+\Big|I_1-f(\sin\phi,\cos\phi,0)(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
+\leq C\frac{1}{(k_s\rho)^{3/4}} \\
+|I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/4}}
+\ee
+Since $I(\rho,\phi)$ is a continuous function, we can obtain estimate (\ref{pr_dgreen1}) soon by the claim and equality (\ref{d_expan}). We now proceed with the proof of the claim above. 
+
+For the claim 1, wo only give the proof when $\phi\in(\phi_2,\pi/2)$ since the similar proof can be adjusted to the other case. By the convention of $\phi_2$, for any $\phi\in(\phi_2,\pi/2)$, there exists $0<\delta<\pi/4$ only dependent on $\kappa$ such that $|\sin(t+\phi)|>(1+2\kappa)/3, |\cos(t+\phi)|<2\kappa/3$ for any $t\in(-\delta,\delta)$ while $|\cos(t+\phi)|>(1+2\kappa)/3, |\sin(t+\phi)|<2\kappa/3$ for any $t\in(-\pi/2,-\pi/2+\delta)\cup(\pi/2-\delta,\pi/2)$. Let $\chi_\delta\in C^\infty_0(-\pi/2,\pi/2)$ be the cut-off function with that $0\leq\chi_\delta\leq1$, $\chi_\delta=1$ in $(-\delta/2,\delta/2)$ and $\chi_\delta=0$ outside of $(-\delta,\delta)$. Then we can divide $I_1$ into three parts such that
+\be
+I_1=\int_L f(t)\cos t e^{\i k_s\rho\cos t}dt\\
+=\int_\R f(t)\cos t \chi_\delta(t)e^{\i k_s\rho\cos t} dt +
+\int_{L_1} f(t)\cos t (1-\chi_\delta(t))e^{\i k_s\rho\cos t} dt \\
++\int_{L_2} f(t)\cos t e^{\i k_s\rho\cos t}dt \\
+=: I_{11} + I_{12} +I_{13}
+\ee
+where $L_1=(-\pi/2,\pi/2)$ and $L_2=(-\pi/2+\i\infty,-\pi/2)\cup(\pi/2,\pi/2-\i\infty)$.
+
+The proof of the claim 2 is same to the claim1, here we omit the details.
+\finproof
 
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
