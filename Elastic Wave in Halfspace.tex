@@ -603,13 +603,6 @@ Finally, an argument similar to the estimation of $I_{11}$ used shoes that $|I_{
 
 \finproof
 Now, another more sophisticated estimation of $T_D(x_1,0;y_1,y_2)$ is a direct consequence of lemma \ref{es_dgreen1}.
-We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
-\begin{lem} \label{asym_frac}
-	Let $F(\lambda,a)=\int_{0}^{a} t^{\alpha-1}f(t)e^{\i\lambda t}dt$ where $0<a\leq+\infty$, $0<\alpha<1$ and $t^{\alpha-1}f\in L^1(0,a)$, then we have
-	\be
-	|F(\lambda,a)|\leq C(\frac{1}{\lambda^\alpha}+\frac{1}{\lambda}(a^{\alpha-1}+|t^{\alpha-1}f|_{L^1(0,a)})
-	\ee
-\end{lem}
 \begin{lem}\label{es_dgreen2}
 	For every $x\in\Gamma_0$, $y\in\R_+^2$ that $|x_1-y_1|/|x-y|>(1+\kappa)/2$, $y_2/|x-y|<\kappa/2$ and $k_s |x-y|>1$, we have
 	\be
@@ -617,7 +610,13 @@ We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
 	\ee
 	where C is only dependent on $\kappa$.
 \end{lem}
-
+We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
+\begin{lem} \label{asym_frac}
+	Let $F(\lambda,a)=\int_{0}^{a} t^{\alpha-1}f(t)e^{\i\lambda t}dt$ where $0<a\leq+\infty$, $0<\alpha<1$ and $t^{\alpha-1}f'\in L^1(0,a)$, then we have
+	\be
+	|F(\lambda,a)|\leq C(\frac{1}{\lambda^\alpha}+\frac{1}{\lambda}(a^{\alpha-1}f(a)+|t^{\alpha-1}f'(t)|_{L^1(0,a)})
+	\ee
+\end{lem}
 \begin{lem}\label{pr_dgreen}
 	Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
 	\be \label{pr_dgreen1} \nn
