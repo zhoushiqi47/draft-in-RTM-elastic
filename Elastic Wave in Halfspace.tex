@@ -630,7 +630,7 @@ We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
 	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi 
 	-f_{\xi=\frac{k_p a}{\rho}}\frac{k_p b}{\rho}(\frac{2\pi}{k_p \rho})^{1/2}e^{\i(k_p\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
-	\leq C(\frac{k_p b}{\rho(k_p\rho)^{3/4}}+\frac{k_p a}{\rho(k_p\rho)^{5/4}})
+	\leq C(\frac{k_p b}{\rho(k_p\rho)}+\frac{k_p a}{\rho(k_p\rho)^{3/2}})
 	\ee
 	where C is only dependent on $\kappa$.
 \end{lem}
@@ -758,17 +758,17 @@ It is simple to see that $\theta=\pi/2$ is the only stationary point of $\cos(t(
 \be
 \Bigg|\frac{d^2\cos t}{d\theta^2}(\pi/2)\Bigg|=\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}|\sin t|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta
 \ee
-Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta$ for any $\theta\in \theta(\chi_{21})$. Therefore, we can decompose $\theta(\chi_{21})$ into several intervals such that in each either $|\pa \cos(t(\theta))/\pa\theta|$ or $|\pa^2 \cos(t(\theta))/\pa\theta^2|$ has positive lower bound and $|\pa \cos(t(\theta))/\pa\theta|$ is monotonous. Since the amplitude function of integrand in $I^1_{\chi_2}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_{\chi_2}|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}. Then the estimate $|I_{L_1\bks{\chi_2}}|\leq C/(k_s\rho)^{1/2}$ also follows lemma \ref{van}. This completes the proof of the claim 1.
+Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\kappa$, such that $|\frac{d^2\cos t}{d\theta^2}|>\frac{(1-\kappa^2)\kappa}{(1-\kappa^2)^{3/2}}\sin \delta$ for any $\theta\in \theta(\chi_{21})$. Therefore, we can decompose $\theta(\chi_{21})$ into several intervals such that in each either $|\pa \cos(t(\theta))/\pa\theta|$ or $|\pa^2 \cos(t(\theta))/\pa\theta^2|$ has positive lower bound and $\pa \cos(t(\theta))/\pa\theta$ is monotonous. Since the amplitude function of integrand in $I^1_{\chi_2}$ and its derivative with respect to $\theta$ are both integrable on $L_\theta$, the estimation $|I^1_{\chi_2}|\leq C/(k_s\rho)^{1/2}$ can be obtained immediately by lemma \ref{van}. Then the estimate $|I_{L_1\bks{\chi_2}}|\leq C/(k_s\rho)^{1/2}$ also follows lemma \ref{van}. This completes the proof of the claim 1.
 
-2. For the claim 2, since $\phi\neq\phi_1\kappa$ we always can find some $\delta$ enough small such that $\sin^(t+\phi)\neq \kappa^2$ for any $t\in(-\delta,\delta)$ .Thus, the proof is similar to the claim1, here we omit the details.
+2. For the claim 2, since $\phi\neq\phi_\kappa$ we always can find some $\delta$ small enough such that $\sin^2(t+\phi)\neq \kappa^2$ for any $t\in(-\delta,\delta)$ .Thus, the proof is similar to the claim 1, here we omit the details.
 
-3. To prove the claim 3, observe that 0 and $\phi'$ are the only two movable singular points of $f'(t)$ for $t\in L$ where $\sin^2{(\phi'+\phi_\kappa)}=\kappa^2$ and $\phi'\neq 0$.
-However, we can not use stationary phase lemma directly because the fourth derivatives of amplitude function has singularity when $t=0$. Let $0<\delta<\pi/4$ such that $\sin (t+\phi_{\kappa})$ is monotonic as $t\in(-\delta,\delta)$, then we have $I_1=I_{11}+I_{12}$,
-$I_3=I_{31}+I_{32}$ like (\ref{I_split}). Using the same argument as in the proof of the claim 1, we easily obtain 
+3. To prove the claim 3, observe that 0 and $\phi'$ are the only two movable singular points of $f'(t)$ on $L$ where $\sin^2{(\phi'+\phi_\kappa)}=\kappa^2$ and $\phi'\neq 0$.
+However, we can not use stationary phase lemma directly because the fourth derivatives of amplitude function has singularity when $t=0$. Let $0<\delta<\pi/4$ such that $\sin (t+\phi_{\kappa})$ is monotonic as $t\in(-\delta,\delta)$ and $2\kappa/3\leq|\sin(\pm\delta+\phi_{\kappa})|\leq(1+2\kappa)/3$, then we have $I_1=I_{11}+I_{12}$,
+$I_3=I_{31}+I_{32}$ similar to (\ref{I_split}). Using the same argument as in the proof of the claim 1, we can easily obtain 
 \be
 |I_{12}|\leq C\frac{1}{k_s \rho} \ \ \ \  |I_{32}|\leq C\frac{1}{(k_s \rho)^{1/2}}
 \ee
-Obseve that we can always obtain following representation of $f(t)$
+Obseve that $f(t)$ can be always represented as 
 \be
 f(t)=\frac{g(t)}{\sin^2 (t+\phi_{\kappa})+\cos (t+\phi_{\kappa}) (\kappa^2-\sin^2 (t+\phi_{\kappa}))^{1/2}} \\
 =\frac{g(t)(\sin^2(t+\phi_{\kappa})-\cos (t+\phi_{\kappa}) (\kappa^2-\sin^2(t+\phi_{\kappa}))^{1/2})}{(1+\kappa^2)\sin^2(t+\phi_{\kappa})-\kappa^2}  \\
