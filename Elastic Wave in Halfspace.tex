@@ -935,8 +935,8 @@ T_D(x,z)=\frac{k_s}{\sqrt{2\pi}}\frac{1}{\gamma(\xi)}\Bigg(
 \begin{array}{cc}
 	\mu_s\mu_p & \xi\mu_p \\
 	\xi\mu_s & \xi^2
-\end{array}\Bigg)_{\xi=k_s\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-y|}\frac{1}{(k_s|x-z|)^{1/2}}
-e^{\i k_s|x-y|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
+\end{array}\Bigg)_{\xi=k_s\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{1/2}}
+e^{\i k_s|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
 +\frac{ k_p}{\sqrt{2\pi}}\frac{1}{\gamma(\xi)}	
 \Bigg(\begin{array}{cc}
 	\xi^2 & -\xi\mu_p \\
@@ -948,8 +948,22 @@ e^{\i k_p|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm} \nn
 Now we consider the finite aperture point spread function $J_d(z,y)$:
 \be
 \int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\ee 
+Recall following standard asymptotic expansion:
+\be
+|x-y|=|x-z|+\widehat{x-z}\cdot (z-y)+O(\frac{|y-z|^2}{|x-z|}) \\
+|y|^{-\alpha}=|z|^{-\alpha}(1+\frac{|y|-|z|}{|z|})^{-\alpha}=|z|^{-\alpha}(1+O(\frac{|y-z|}{|z|})) \\
+e^{\i t}=1+O(t)
 \ee
-Our a
+where $\alpha>0$. 
+\begin{lem}
+For any $z,y\in \R^2_+$, $J_d(z,y)=F_d(z,y)+O(\frac{1}{(k_s h)^{1/4}})$, where
+\be
+F_d(z,y)= =\frac{\i}{2\pi}\int_{\theta^1_d}^{\theta^2_d}e^{\i k_s(z_1-y_1)\cos\theta+\i k_s(z_2-y_2\sin\theta)}
+\ee
+where $0<\theta^1_d<\pi/2<\theta^2_d<\pi$ and $z_2=(d+y_1)\tan \theta^1_d=(y_1-d)\tan \theta^2_d$.
+\end{lem}
+
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
 \be\label{om_bound}
