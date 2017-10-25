@@ -912,7 +912,44 @@ Then inequality (\ref{pr_dgreen3}) follows.
 
 The proof of the claim 2 is similar to the claim1, here we omit the details. 
 \finproof
-
+\section{Finite Aperture Point Spread Function}
+If $x\in \Gamma_0$ and $z,y\in \R^2_+$, by lemma (\ref{pr_dgreen}) we have
+\be \hspace{-2.5cm} \nn
+G(x,y)=\frac{\i k_s}{\mu\sqrt{2\pi}}\frac{1}{\delta(\xi)}\Bigg(
+\begin{array}{cc}
+	\mu_s\beta & \xi\beta \\
+	2\xi\mu_s\mu_p & 2\xi^2\mu_p
+\end{array}\Bigg)_{\xi=k_s\frac{x_1-y_1}{|x-y|}} \frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{1/2}}
+e^{\i k_s|x-y|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
++\frac{\i k_p}{\mu\sqrt{2\pi}}\frac{1}{\delta(\xi)}	
+\Bigg(\begin{array}{cc}
+	2\xi^2\mu_s & -2\xi\mu_s\mu_p\\
+	-\xi\beta & \mu_p\beta
+\end{array} \Bigg)_{\xi=k_p\frac{x_1-y_1}{|x-y|}} \frac{y_2}{|x-y|}\frac{1}{(k_p|x-y|)^{1/2}}
+e^{\i k_p|x-y|-\i\frac{\pi}{4}} \\ \hspace{-1cm}\nn
++O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
+\ee
+\be
+\hspace{-2.5cm} \nn
+T_D(x,z)=\frac{k_s}{\sqrt{2\pi}}\frac{1}{\gamma(\xi)}\Bigg(
+\begin{array}{cc}
+	\mu_s\mu_p & \xi\mu_p \\
+	\xi\mu_s & \xi^2
+\end{array}\Bigg)_{\xi=k_s\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-y|}\frac{1}{(k_s|x-z|)^{1/2}}
+e^{\i k_s|x-y|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
++\frac{ k_p}{\sqrt{2\pi}}\frac{1}{\gamma(\xi)}	
+\Bigg(\begin{array}{cc}
+	\xi^2 & -\xi\mu_p \\
+	-\xi\mu_s & \mu_p\mu_s
+\end{array} \Bigg)_{\xi=k_p\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-z|}\frac{1}{(k_p|x-z|)^{1/2}}
+e^{\i k_p|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm} \nn
++O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})
+\ee
+Now we consider the finite aperture point spread function $J_d(z,y)$:
+\be
+\int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\ee
+Our a
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
 \be\label{om_bound}
