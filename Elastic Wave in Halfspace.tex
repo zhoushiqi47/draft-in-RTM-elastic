@@ -620,14 +620,14 @@ We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
 \begin{lem}\label{pr_dgreen}
 	Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
 	\be \label{pr_dgreen1} \nn
-	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi
 	-f_{\xi=\frac{k_s a}{\rho}}\frac{k_s b}{\rho}(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
 	 \leq C(\frac{k_s b}{\rho(k_s\rho)^{3/4}}+\frac{k_s a}{\rho(k_s\rho)^{5/4}})
 	\ee
 	and
 		\be \label{pr_dgreen2} \nn
-	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi
 	-f_{\xi=\frac{k_p a}{\rho}}\frac{k_p b}{\rho}(\frac{2\pi}{k_p \rho})^{1/2}e^{\i(k_p\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
 	\leq C(\frac{k_p b}{\rho(k_p\rho)}+\frac{k_p a}{\rho(k_p\rho)^{3/2}})
@@ -654,7 +654,7 @@ I_2=\frac{1}{\i k_s\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (
 } \  e^{\i(k_s\rho \cos t)} dt \\ \hspace{-1.5cm}
 :=\frac{1}{ k_s\rho}I_3
 \ee
-Therefore, 
+Therefore,
 \be \label{d_expan}
 I(\rho,\phi)=k_s(\cos\phi I_1 +\frac{\sin\phi}{k_s\rho}I_3)
 \ee
@@ -667,22 +667,22 @@ First, we define $0<\phi_1<\phi_\kappa<\phi_2<\pi/2$ such that $\sin(\phi_\kappa
 \ee
 where $C$ is independant of $\phi$.\\
 2. If $\phi\in[\phi_1,\phi_2]$ and $\phi\neq\phi_\kappa$, we have
-\be 
+\be
 \Big|I_1-f(\sin\phi,\cos\phi,(\kappa^2-\sin^2\phi)^{1/2})(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 \leq C(\phi)\frac{1}{k_s\rho} \\
 |I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/2}}
 \ee
 3. If $\phi=\phi_\kappa$, we have
-\be 
+\be
 \Big|I_1-f(\sin\phi,\cos\phi,0)(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 \leq C\frac{1}{(k_s\rho)^{3/4}} \\
 |I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/4}}
 \ee
-Since $I(\rho,\phi)$ is a continuous function, we can obtain estimate (\ref{pr_dgreen1}) soon by the claim and equality (\ref{d_expan}). We now proceed with the proof of the claim above. 
+Since $I(\rho,\phi)$ is a continuous function, we can obtain estimate (\ref{pr_dgreen1}) soon by the claim and equality (\ref{d_expan}). We now proceed with the proof of the claim above.
 
-1. For the claim 1, wo only give the proof when $\phi\in(\phi_2,\pi/2)$ since the similar proof can be adjusted to the other case. By the convention of $\phi_2$, for any $\phi\in(\phi_2,\pi/2)$, there exists $0<\delta<\pi/4$ only dependent on $\kappa$ such that 
+1. For the claim 1, wo only give the proof when $\phi\in(\phi_2,\pi/2)$ since the similar proof can be adjusted to the other case. By the convention of $\phi_2$, for any $\phi\in(\phi_2,\pi/2)$, there exists $0<\delta<\pi/4$ only dependent on $\kappa$ such that
 \be \label{d_convention1}
-|\sin(t+\phi)|>(1+2\kappa)/3,|\cos(t+\phi)|<2\kappa/3 
+|\sin(t+\phi)|>(1+2\kappa)/3,|\cos(t+\phi)|<2\kappa/3
 \ee
 for any $t\in(-\delta,\delta)$ while \be
 |\cos(t+\phi)|>(1+2\kappa)/3, |\sin(t+\phi)|<2\kappa/3
@@ -703,11 +703,11 @@ Let $h_\delta(s)=g_\delta(t(s))\frac{1}{\sqrt{1-s^2/4}}$. It is easy to see that
 I_{11}=e^{\i k_s \rho}\int_\R h_\delta(s)e^{-\i\frac{k_s\rho}{2}s^2}ds=
 e^{\i k_s \rho}\int_\R \widehat{h_\delta}(y)\alpha(-y)dy
 \ee
-where 
+where
 \be
 \alpha(y)=(\frac{1}{2\pi k_s \rho})^{1/2}e^{-\i\pi/4}e^{\frac{\i}{2 k_s \rho}y^2} \\
 =(\frac{1}{2\pi k_s \rho})^{1/2}e^{-\i\pi/4}(1+O(\frac{y^2}{k_s\rho}))
-\ee 
+\ee
 Consequently
 \be
 I_{11}=(\frac{1}{2\pi k_s \rho})^{1/2}e^{\i k_s \rho-\i\pi/4}
@@ -764,11 +764,11 @@ Therefore, we can choose appropriate $\lambda_1,\lambda_2$, only dependent on $\
 
 3. To prove the claim 3, observe that 0 and $\phi'$ are the only two movable singular points of $f'(t)$ on $L$ where $\sin^2{(\phi'+\phi_\kappa)}=\kappa^2$ and $\phi'\neq 0$.
 However, we can not use stationary phase lemma directly because the fourth derivatives of amplitude function has singularity when $t=0$. Let $0<\delta<\pi/4$ such that $\sin (t+\phi_{\kappa})$ is monotonic as $t\in(-\delta,\delta)$ and $2\kappa/3\leq|\sin(\pm\delta+\phi_{\kappa})|\leq(1+2\kappa)/3$, then we have $I_1=I_{11}+I_{12}$,
-$I_3=I_{31}+I_{32}$ similar to (\ref{I_split}). Using the same argument as in the proof of the claim 1, we can easily obtain 
+$I_3=I_{31}+I_{32}$ similar to (\ref{I_split}). Using the same argument as in the proof of the claim 1, we can easily obtain
 \be
 |I_{12}|\leq C\frac{1}{k_s \rho} \ \ \ \  |I_{32}|\leq C\frac{1}{(k_s \rho)^{1/2}}
 \ee
-Obseve that $f(t)$ can be always represented as 
+Obseve that $f(t)$ can be always represented as
 \be
 f(t)=\frac{g(t)}{\sin^2 (t+\phi_{\kappa})+\cos (t+\phi_{\kappa}) (\kappa^2-\sin^2 (t+\phi_{\kappa}))^{1/2}} \\
 =\frac{g(t)(\sin^2(t+\phi_{\kappa})-\cos (t+\phi_{\kappa}) (\kappa^2-\sin^2(t+\phi_{\kappa}))^{1/2})}{(1+\kappa^2)\sin^2(t+\phi_{\kappa})-\kappa^2}  \\
@@ -804,14 +804,14 @@ Finally, the claim 3 is a direct cosequence of using stationary phase theorem fo
 \begin{lem}\label{pr_dgreen}
 	Let $f(\xi,\mu_s,\mu_p)=g(\xi,\mu_s,\mu_p)/\gamma(\xi,\mu_s,\mu_p)$ where g(x,y,z) is a homogeneous quadratic polynomial with respect to x,y,z. Let $a,b>0$ and $\rho=\sqrt{a^2+b^2}$. Assume $\kappa=k_p/k_s$ and $k_s\rho >1$, then we have
 	\be \label{pr_dgreen1} \nn
-	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_s b +\xi a)}d\xi
 	-f_{\xi=\frac{k_s a}{\rho}}\frac{k_s b}{\rho}(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
 	\leq C\frac{k_s }{(k_s\rho)^{3/4}}
 	\ee
 	and
 	\be \label{pr_dgreen2} \nn
-	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi 
+	\Big|\int_\R f(\xi,\mu_s,\mu_p) e^{\i(\mu_p b +\xi a)}d\xi
 	-f_{\xi=\frac{k_p a}{\rho}}\frac{k_p b}{\rho}(\frac{2\pi}{k_p \rho})^{1/2}e^{\i(k_p\rho-\frac{\pi}{4})}\Big|
 	\\ \hspace{-0.5cm}
 	\leq C\frac{k_p }{(k_p\rho)^{3/4}}
@@ -838,7 +838,7 @@ I_2=\frac{1}{\i k_s\rho} \int_L f(\sin (t+\phi),\cos (t+\phi),(\kappa^2-\sin^2 (
 } \  e^{\i(k_s\rho \cos t)} dt \\ \hspace{-1.5cm}
 :=\frac{1}{ k_s\rho}I_3
 \ee
-Therefore, 
+Therefore,
 \be \label{d_expan}
 I(\rho,\phi)=k_s(\cos\phi I_1 +\frac{\sin\phi}{k_s\rho}I_3)
 \ee
@@ -851,22 +851,22 @@ First, we define $0<\phi_1<\phi_\kappa<\phi_2<\pi/2$ such that $\sin(\phi_\kappa
 \ee
 where $C$ is independant of $\phi$.\\
 2. If $\phi\in[\phi_1,\phi_2]$ and $\phi\neq\phi_\kappa$, we have
-\be 
+\be
 \Big|I_1-f(\sin\phi,\cos\phi,(\kappa^2-\sin^2\phi)^{1/2})(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 \leq C(\phi)\frac{1}{k_s\rho} \\
 |I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/2}}
 \ee
 3. If $\phi=\phi_\kappa$, we have
-\be 
+\be
 \Big|I_1-f(\sin\phi,\cos\phi,0)(\frac{2\pi}{k_s \rho})^{1/2}e^{\i(k_s\rho-\frac{\pi}{4})}\Big|
 \leq C\frac{1}{(k_s\rho)^{3/4}} \\
 |I_3|\leq C(\phi)\frac{1}{(k_s\rho)^{1/4}}
 \ee
-Since $I(\rho,\phi)$ is a continuous function, we can obtain estimate (\ref{pr_dgreen1}) soon by the claim and equality (\ref{d_expan}). We now proceed with the proof of the claim above. 
+Since $I(\rho,\phi)$ is a continuous function, we can obtain estimate (\ref{pr_dgreen1}) soon by the claim and equality (\ref{d_expan}). We now proceed with the proof of the claim above.
 
-For the claim 1, wo only give the proof when $\phi\in(\phi_2,\pi/2)$ since the similar proof can be adjusted to the other case. By the convention of $\phi_2$, for any $\phi\in(\phi_2,\pi/2)$, there exists $0<\delta<\pi/4$ only dependent on $\kappa$ such that 
+For the claim 1, wo only give the proof when $\phi\in(\phi_2,\pi/2)$ since the similar proof can be adjusted to the other case. By the convention of $\phi_2$, for any $\phi\in(\phi_2,\pi/2)$, there exists $0<\delta<\pi/4$ only dependent on $\kappa$ such that
 \be \label{d_convention1}
-|\sin(t+\phi)|>(1+2\kappa)/3,|\cos(t+\phi)|<2\kappa/3 
+|\sin(t+\phi)|>(1+2\kappa)/3,|\cos(t+\phi)|<2\kappa/3
 \ee
 for any $t\in(-\delta,\delta)$ while \be
 |\cos(t+\phi)|>(1+2\kappa)/3, |\sin(t+\phi)|<2\kappa/3
@@ -887,11 +887,11 @@ Let $h_\delta(s)=g_\delta(t(s))\frac{1}{\sqrt{1-s^2/4}}$. It is easy to see that
 I_{11}=e^{\i k_s \rho}\int_\R h_\delta(s)e^{-\i\frac{k_s\rho}{2}s^2}ds=
 e^{\i k_s \rho}\int_\R \widehat{h_\delta}(y)\alpha(-y)dy
 \ee
-where 
+where
 \be
 \alpha(y)=(\frac{1}{2\pi k_s \rho})^{1/2}e^{-\i\pi/4}e^{\frac{\i}{2 k_s \rho}y^2} \\
 =(\frac{1}{2\pi k_s \rho})^{1/2}e^{-\i\pi/4}(1+O(\frac{y^2}{k_s\rho}))
-\ee 
+\ee
 Consequently
 \be
 I_{11}=(\frac{1}{2\pi k_s \rho})^{1/2}e^{\i k_s \rho-\i\pi/4}
@@ -910,7 +910,7 @@ Then inequality (\ref{pr_dgreen3}) follows.
 
 
 
-The proof of the claim 2 is similar to the claim1, here we omit the details. 
+The proof of the claim 2 is similar to the claim1, here we omit the details.
 \finproof
 \section{Finite Aperture Point Spread Function}
 If $x\in \Gamma_0$ and $z,y\in \R^2_+$, by lemma (\ref{pr_dgreen}) we have
@@ -927,7 +927,8 @@ e^{\i k_s|x-y|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
 	-\xi\beta & \mu_p\beta
 \end{array} \Bigg)_{\xi=k_p\frac{x_1-y_1}{|x-y|}} \frac{y_2}{|x-y|}\frac{1}{(k_p|x-y|)^{1/2}}
 e^{\i k_p|x-y|-\i\frac{\pi}{4}} \\ \hspace{-1cm}\nn
-+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
++O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}}) \\ \hspace{-1cm}\nn
+:=\mathcal{G}(x,y)+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
 \ee
 \be
 \hspace{-2.5cm} \nn
@@ -943,25 +944,26 @@ e^{\i k_s|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
 	-\xi\mu_s & \mu_p\mu_s
 \end{array} \Bigg)_{\xi=k_p\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-z|}\frac{1}{(k_p|x-z|)^{1/2}}
 e^{\i k_p|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm} \nn
-+O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})
++O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}}) \\ \hspace{-1cm}\nn
+:=\mathcal{T}(x,z)+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
 \ee
 Now we consider the finite aperture point spread function $J_d(z,y)$:
 \be
 \int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
-\ee 
+\ee
 Recall following standard asymptotic expansion:
 \be
 |x-y|=|x-z|+\widehat{x-z}\cdot (z-y)+O(\frac{|y-z|^2}{|x-z|}) \\
 |y|^{-\alpha}=|z|^{-\alpha}(1+\frac{|y|-|z|}{|z|})^{-\alpha}=|z|^{-\alpha}(1+O(\frac{|y-z|}{|z|})) \\
 e^{\i t}=1+O(t)
 \ee
-where $\alpha>0$. 
+where $\alpha>0$.
 \begin{lem}
 For any $z,y\in \R^2_+$, $J_d(z,y)=F_d(z,y)+O(\frac{1}{(k_s h)^{1/4}})$, where
 \be
-F_d(z,y)= =\frac{\i}{2\pi}\int_{\theta^1_d}^{\theta^2_d}e^{\i k_s(z_1-y_1)\cos\theta+\i k_s(z_2-y_2\sin\theta)}
+F_d(z,y)= =\frac{\i}{2\pi}\int_{\theta^d_1}^{\theta^d_1}e^{\i k_s(z_1-y_1)\cos\theta+\i k_s(z_2-y_2\sin\theta)}
 \ee
-where $0<\theta^1_d<\pi/2<\theta^2_d<\pi$ and $z_2=(d+y_1)\tan \theta^1_d=(y_1-d)\tan \theta^2_d$.
+where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+y_1)\tan \theta^d_1=(y_1-d)\tan \theta^d_2$.
 \end{lem}
 
 \section{Reverse time migration method}
