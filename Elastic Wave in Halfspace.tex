@@ -960,11 +960,31 @@ e^{\i t}=1+O(t) \\
 \ee
 where $x,y,z\in \R^2$, $t,a,b\in\R $ and $\alpha>0$.
 \begin{lem}
-For any $z,y\in \R^2_+$, $J_d(z,y)=F_d(z,y)+O(\frac{1}{(k_s h)^{1/4}})$, where
-\be
-F_d(z,y)= =\frac{\i}{2\pi}\int_{\theta^d_1}^{\theta^d_1}e^{\i k_s(z_1-y_1)\cos\theta+\i k_s(z_2-y_2\sin\theta)}
+For any $z,y\in \R^2_+$, $J_d(z,y)=F(z,y)+O((1+\frac{|y-z|}{z_2})(\frac{1}{k_s z_2})^{1/4}+\frac{(k_s|y-z|)^2}{k_s z_2}+(\frac{|y-z|}{z_2})^{1/2})$, where
+\be \hspace{-2.2cm} 
+F(z,y) =-\frac{\i}{2\pi\mu}\int_{\theta^d_1}^{\theta^d_2}f_s(\theta)
+\Bigg(
+\begin{array}{cc}
+  \sin^2\theta & \sin\theta\cos\theta  \\
+  \sin\theta\cos\theta & \cos^2\theta
+\end{array}\Bigg)
+e^{\i k_s(z_1-y_1)\cos\theta+\i k_s(z_2-y_2)\sin\theta} d\theta \\ \hspace{-1.2cm}
+-\frac{\i}{2\pi\mu} \int_{\theta^d_1}^{\theta^d_2}f_p(\theta)
+\Bigg(
+\begin{array}{cc}
+  \cos^2\theta & -\sin\theta\cos\theta  \\
+  -\sin\theta\cos\theta & \sin^2\theta
+\end{array}\Bigg)
+e^{\i k_p(z_1-y_1)\cos\theta+\i k_p(z_2-y_2)\sin\theta}d\theta
 \ee
-where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+y_1)\tan \theta^d_1=(y_1-d)\tan \theta^d_2$.
+and
+\ben\hspace{-3cm}
+f_s(\theta)=\frac{\sin\theta((\kappa^2-\cos^2\theta)^{1/2}(1-2\cos^2\theta)+2\overline{(\kappa^2-\cos^2\theta)^{1/2}}\cos^2\theta)}
+{(\cos^2\theta+\sin\theta(\kappa^2-\cos^2\theta)^{1/2})\overline{((1-2\cos^2\theta)^2+4\cos^2\theta\sin\theta(\kappa^2-\cos\theta)^{1/2}})} \\\hspace{-3cm}
+f_p(\theta)=\frac{\sin\theta(1/\kappa^2-\cos^2\theta)^{1/2}}
+{(\cos^2\theta+\sin\theta(1/\kappa^2-\cos^2\theta)^{1/2})((1/\kappa^2-2\cos^2\theta)^2+4\cos^2\theta\sin\theta(1/\kappa^2-\cos\theta)^{1/2})}
+\een
+where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+z_1)\tan \theta^d_1=(z_1-d)\tan \theta^d_2$.
 \end{lem}
 \debproof
 \ben
@@ -972,13 +992,13 @@ where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+y_1)\tan \theta^d_1=(y_1-d
 =(\frac{ z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})(1+O(\frac{|y-z|}{|x-z|}))
 \een
 \ben
-|\mu_\i(k_j\frac{x_1-y_1}{|x-y|})-\mu_\i(k_j\frac{x_1-z_1}{|x-z|})| \\  \leq 
-Ck_j \sqrt{\Big|\frac{x_1-y_1}{|x-y|}-\frac{x_1-z_1}{|x-z|}\Big|} \leq C k_j \Big(\frac{|y-z|}{|x-z|}\Big)^{1/2}
+|\mu_\i(k_j\frac{x_1-y_1}{|x-y|})-\mu_\i(k_j\frac{x_1-z_1}{|x-z|})| \\  \leq
+C k_j \sqrt{\Big|\frac{x_1-y_1}{|x-y|}-\frac{x_1-z_1}{|x-z|}\Big|} \leq C k_j \Big(\frac{|y-z|}{|x-z|}\Big)^{1/2}
 \een
 where $i,j=s,p$.
 \be \label{G_sprin}\hspace{-2cm}
 \mathcal{G}_s(x,y)=\mathcal{G}_s(x,z)e^{\i k_s\widehat{x-z}\cdot (z-y)}+O(\frac{(k_s|y-z|)^2}{(k_s|x-z|)^{3/2}})+O(\frac{(k_s|y-z|)^{1/2}}{k_s|x-z|}) \\ \hspace{-2cm}\label{G_pprin}
-\mathcal{G}_p(x,y)=\mathcal{G}_p(x,z)e^{\i k_p\widehat{x-z}\cdot (z-y)}+O(\frac{(k_p|y-z|)^2}{(k_p|x-z|)^{3/2}})+O(\frac{(k_p|y-z|)^{1/2}}{k_p|x-z|}) 
+\mathcal{G}_p(x,y)=\mathcal{G}_p(x,z)e^{\i k_p\widehat{x-z}\cdot (z-y)}+O(\frac{(k_p|y-z|)^2}{(k_p|x-z|)^{3/2}})+O(\frac{(k_p|y-z|)^{1/2}}{k_p|x-z|})
 \ee
 For $l>1$, a simple computation show that
 \be\label{int_d} \hspace{-1cm}
