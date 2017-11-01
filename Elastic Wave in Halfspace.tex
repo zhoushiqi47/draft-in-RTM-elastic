@@ -928,7 +928,7 @@ e^{\i k_s|x-y|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
 \end{array} \Bigg)_{\xi=k_p\frac{x_1-y_1}{|x-y|}} \frac{y_2}{|x-y|}\frac{1}{(k_p|x-y|)^{1/2}}
 e^{\i k_p|x-y|-\i\frac{\pi}{4}} \\ \hspace{-1cm}\nn
 +O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}}) \\ \hspace{-1cm}\nn
-:=\mathcal{G}(x,y)+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
+:=\mathcal{G}_s(x,y)+\mathcal{G}_p(x,y)+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
 \ee
 \be
 \hspace{-2.5cm} \nn
@@ -945,7 +945,7 @@ e^{\i k_s|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm}
 \end{array} \Bigg)_{\xi=k_p\frac{x_1-z_1}{|x-z|}} \frac{z_2}{|x-z|}\frac{1}{(k_p|x-z|)^{1/2}}
 e^{\i k_p|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm} \nn
 +O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}}) \\ \hspace{-1cm}\nn
-:=\mathcal{T}(x,z)+O(\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}})
+:=\mathcal{T}_s(x,z)+\mathcal{T}_p(x,z)+O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})
 \ee
 Now we consider the finite aperture point spread function $J_d(z,y)$:
 \be
@@ -955,9 +955,10 @@ Recall following standard asymptotic expansion:
 \be
 |x-y|=|x-z|+\widehat{x-z}\cdot (z-y)+O(\frac{|y-z|^2}{|x-z|}) \\
 |y|^{-\alpha}=|z|^{-\alpha}(1+\frac{|y|-|z|}{|z|})^{-\alpha}=|z|^{-\alpha}(1+O(\frac{|y-z|}{|z|})) \\
-e^{\i t}=1+O(t)
+e^{\i t}=1+O(t) \\
+|a^{1/2}-b^{1/2}|\leq C \sqrt{|a-b|}
 \ee
-where $\alpha>0$.
+where $x,y,z\in \R^2$, $t,a,b\in\R $ and $\alpha>0$.
 \begin{lem}
 For any $z,y\in \R^2_+$, $J_d(z,y)=F_d(z,y)+O(\frac{1}{(k_s h)^{1/4}})$, where
 \be
@@ -965,6 +966,22 @@ F_d(z,y)= =\frac{\i}{2\pi}\int_{\theta^d_1}^{\theta^d_1}e^{\i k_s(z_1-y_1)\cos\t
 \ee
 where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+y_1)\tan \theta^d_1=(y_1-d)\tan \theta^d_2$.
 \end{lem}
+\debproof
+\ben
+\frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}} \\ \hspace{-0.5cm}
+=(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})(1+O(\frac{|y-z|}{|x-z|}))
+\een
+\ben
+|\mu_\i(k_j\frac{x_1-y_1}{|x-y|})-\mu_\i(k_j\frac{x_1-z_1}{|x-z|})| \\  \leq 
+Ck_j \sqrt{\Big|\frac{x_1-y_1}{|x-y|}-\frac{x_1-z_1}{|x-z|}\Big|} \leq C k_j \Big(\frac{|y-z|}{|x-z|}\Big)^{1/2}
+\een
+where $i,j=s,p$.
+\be \label{G_prin}\hspace{-2cm}
+\mathcal{G}_s(x,y)=\mathcal{G}_s(x,z)e^{\i k_s\widehat{x-z}\cdot (z-y)}(1+O(\frac{k_s|y-z|^2}{|x-z|}))+O(\Big(\frac{|y-z|}{k_s|x-z|^2}\Big)^{1/2}) \\ \hspace{-2cm}
+\mathcal{G}_p(x,y)=\mathcal{G}_p(x,z)e^{\i k_p\widehat{x-z}\cdot (z-y)}(1+O(\frac{k_p|y-z|^2}{|x-z|}))+O(\Big(\frac{|y-z|}{k_p|x-z|^2}\Big)^{1/2}) 
+\ee
+By substituting (\ref{G_prin}) into $J_d(z,y)$, we have
+\finproof
 
 \section{Reverse time migration method}
 In this section we introduce RTM method for inverse elastic scattering problems in the half space. Assume that there $N_s$ sources and $N_r$ receivers uniformly distributed on $\Gamma^d_0$, where $\Gamma^d_0=\{(x_1,x_2)^T\in\Gamma_0:x_1\in[-d,d]\},d>0$ is aperture. We denote by $\Omega$ the sampling domain in which the obstacle is sought. Let $h=dist(\Omega,\Gamma_0)$ be the distance of $\Omega$ to $\Gamma_0$. We assume the obstacle $D\subset\Omega$ and there exist constants $0<c_1<1,c_2>0,c_3>0$ such that
@@ -1091,7 +1108,7 @@ Substituting (\ref{theta}) and (\ref{ngreen}) into ${\MyRoman{1}}^{ss}$, we have
 \een
 where $A_r, A_l$ are respected the integrantion on the $\Gamma^+_r,\Gamma^+_l$.
 Now, we turn to estimation of $\MyRoman{1}^{ss}$.
- The integration path $\Gamma_r^+$ can be parameterized by $\xi:=k_s q(t)=k_s \sqrt{t^2+1} + \mathrm{i} k_s t$, with $0<t<+\infty$. We define $\gamma_p(t):=(\kappa^2-q(t)^2)^{1/2}$, $\gamma_s(t)=(1-q(t)^2)^{1/2}$, and $\tau(t):=1-2t^2$. It is well know that $\mu_\alpha=k_s\gamma_\alpha(t)$, $ \beta(\xi)=k_s^2\tau(t)$, $\gamma(\xi)=k_s^2(q(t)^2+\gamma_p(t)\gamma_s(t))$ and $\delta(\xi)=k_s^4(\tau(t)^2+4q(t)^2\gamma_p(t)\gamma_s(t))$ when $\xi$ on $\Gamma_r^+$. Now, substiting the parameterized representation of $\xi$ on $\Gamma^+_r$, we obtain
+ The integration path $\Gamma_r^+$ can be parameterized by $\xi:=k_s q(t)=k_s \sqrt{t^2+1} + \mathrm{i} k_s t$, with $0<t<+\infty$. We define $\gamma_p(t):=(\kappa^2-q(t)^2)^{1/2}$, $\gamma_s(t)=(1-q(t)^2)^{1/2}$, and $\tau(t):=1-2t^2$. It is well know that $\mu_\alpha=k_s\gamma_\alpha(t)$, $ \beta(\xi)=k_s^2\tau(t)$, $\gamma(\xi)=k_s^2(q(t)^2+\gamma_p(t)\gamma_s(t))$ and $\delta(\xi)=k_s^4(\tau(t)^2+4q(t)^2\gamma_p(t)\gamma_s(t))$ when $\xi$ on $\Gamma_r^+$. Now, substituting the parameterized representation of $\xi$ on $\Gamma^+_r$, we obtain
  \be
  A_r^{11}=\int_{0}^{+\infty} \frac{A(t)}{\mu}e^{\i k_s[\gamma_s(t)(z_2+y_2)+q(t)(z_1-y_1)]} dt
  \ee
