@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  26 OCT 2017 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.30)  1 NOV 2017 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,8 +266,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 913--915
 
  []
 
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 982--985
+[19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1016
 
  []
 
@@ -275,71 +275,72 @@ Missing character: There is no Ä in font cmti12!
 Missing character: There is no Ú in font cmti12!
 Missing character: There is no È in font cmti12!
 Missing character: There is no Ý in font cmti12!
-[21] [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1141
-
- []
-
-Missing character: There is no £ in font cmr12!
-Missing character: There is no ­ in font cmr12!
-
-Overfull \hbox (40.89989pt too wide) in alignment at lines 1162--1167
- [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1167--1170
+[22] [23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 1168--1172
 
  []
 
 [25]
-Overfull \hbox (32.7782pt too wide) in alignment at lines 1231--1234
+Missing character: There is no £ in font cmr12!
+Missing character: There is no ­ in font cmr12!
+
+Overfull \hbox (40.89989pt too wide) in alignment at lines 1193--1198
  [] [] [] [] 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1262--1265
+
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1201
 
  []
 
+[26]
+Overfull \hbox (32.7782pt too wide) in alignment at lines 1262--1265
+ [] [] [] [] 
+ []
+
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1324--1327
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1296
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1357--1360
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1358
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1388--1391
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1409--1412
+Underfull \hbox (badness 10000) in paragraph at lines 1432--1435
 
  []
 
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1495
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1440--1443
+
+ []
+
+[32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 1523--1526
 
  []
 
 (./Elastic Wave in Halfspace.bbl
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [33]) [34] (./Elastic Wave in Halfspace.aux)
+ [34]) [35] (./Elastic Wave in Halfspace.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2432 strings out of 493014
- 30179 string characters out of 6133350
- 104560 words of memory out of 5000000
- 5930 multiletter control sequences out of 15000+600000
+ 2434 strings out of 493014
+ 30196 string characters out of 6133350
+ 103592 words of memory out of 5000000
+ 5932 multiletter control sequences out of 15000+600000
  13839 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,26p,888b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -361,10 +362,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/t
 exmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (34 pages, 369283 bytes).
+Output written on "Elastic Wave in Halfspace.pdf" (35 pages, 372700 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 189 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

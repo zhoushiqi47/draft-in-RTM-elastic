@@ -969,18 +969,49 @@ where $0<\theta^d_1<\pi/2<\theta^d_2<\pi$ and $z_2=(d+y_1)\tan \theta^d_1=(y_1-d
 \debproof
 \ben
 \frac{y_2}{|x-y|}\frac{1}{(k_s|x-y|)^{3/4}}+\frac{|x_1-y_1|}{|x-y|}\frac{1}{(k_s|x-y|)^{5/4}} \\ \hspace{-0.5cm}
-=(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})(1+O(\frac{|y-z|}{|x-z|}))
+=(\frac{ z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})(1+O(\frac{|y-z|}{|x-z|}))
 \een
 \ben
 |\mu_\i(k_j\frac{x_1-y_1}{|x-y|})-\mu_\i(k_j\frac{x_1-z_1}{|x-z|})| \\  \leq 
 Ck_j \sqrt{\Big|\frac{x_1-y_1}{|x-y|}-\frac{x_1-z_1}{|x-z|}\Big|} \leq C k_j \Big(\frac{|y-z|}{|x-z|}\Big)^{1/2}
 \een
 where $i,j=s,p$.
-\be \label{G_prin}\hspace{-2cm}
-\mathcal{G}_s(x,y)=\mathcal{G}_s(x,z)e^{\i k_s\widehat{x-z}\cdot (z-y)}(1+O(\frac{k_s|y-z|^2}{|x-z|}))+O(\Big(\frac{|y-z|}{k_s|x-z|^2}\Big)^{1/2}) \\ \hspace{-2cm}
-\mathcal{G}_p(x,y)=\mathcal{G}_p(x,z)e^{\i k_p\widehat{x-z}\cdot (z-y)}(1+O(\frac{k_p|y-z|^2}{|x-z|}))+O(\Big(\frac{|y-z|}{k_p|x-z|^2}\Big)^{1/2}) 
+\be \label{G_sprin}\hspace{-2cm}
+\mathcal{G}_s(x,y)=\mathcal{G}_s(x,z)e^{\i k_s\widehat{x-z}\cdot (z-y)}+O(\frac{(k_s|y-z|)^2}{(k_s|x-z|)^{3/2}})+O(\frac{(k_s|y-z|)^{1/2}}{k_s|x-z|}) \\ \hspace{-2cm}\label{G_pprin}
+\mathcal{G}_p(x,y)=\mathcal{G}_p(x,z)e^{\i k_p\widehat{x-z}\cdot (z-y)}+O(\frac{(k_p|y-z|)^2}{(k_p|x-z|)^{3/2}})+O(\frac{(k_p|y-z|)^{1/2}}{k_p|x-z|}) 
 \ee
-By substituting (\ref{G_prin}) into $J_d(z,y)$, we have
+For $l>1$, a simple computation show that
+\be\label{int_d} \hspace{-1cm}
+\int_{-d}^{d}\frac{k_s }{(k_s|x-z|)^l}dx_1=\frac{1}{(k_s z_2)^{l-1}}\int_{\frac{-d-z_1}{z_2}}^{\frac{d-z_1}{z_2}}\frac{1}{(1+t^2)^{l/2}} dt\leq C\frac{1}{(k_s z_2)^{l-1}}
+\ee
+Let
+\be
+\mathcal{G}_\alpha(x,y)=\frac{\i}{\sqrt{2\pi}\mu}g_\alpha(\frac{x_1-y_1}{|x-y|},\kappa)\frac{1}{(k_\alpha|x-y|)^{1/2}}e^{\i k_\alpha|x-y|-\i\frac{\pi}{4}} \\
+\mathcal{T}_\alpha(x,y)=\frac{k_\alpha}{\sqrt{2\pi}}
+ t_\alpha(\frac{x_1-z_1}{|x-z|},\kappa)\frac{1}{(k_s|x-z|)^{1/2}}
+e^{\i k_\alpha|x-z|-\i\frac{\pi}{4}}
+\ee
+where $\alpha=s,p$.
+Now, by substituting (\ref{G_sprin}-\ref{G_pprin}) into $J_d(z,y)$ and using inequality (\ref{int_d}), we have
+\be\nn\hspace{-1.5cm}\nn
+J_d(z,y)=\frac{-\i}{2\pi\mu}\int_{-d}^{d}t_s(\frac{x_1-z_1}{|x-z|},\kappa)^T\overline{g_s(\frac{x_1-z_1}{|x-z|},\kappa)}\frac{e^{\i k_s\widehat{x-z}\cdot (y-z)}}{|x-z|}\\
++t_p(\frac{x_1-z_1}{|x-z|},\kappa)^T\overline{g_p(\frac{x_1-z_1}{|x-z|},\kappa)}\frac{e^{\i k_p\widehat{x-z}\cdot (y-z)}}{|x-z|}dx_1\\
+\frac{-\i}{2\pi\mu}\int_{-d}^{d}t_p(\frac{x_1-z_1}{|x-z|},\kappa)^T\overline{g_s(\frac{x_1-z_1}{|x-z|},\kappa)}\frac{e^{\i k_s\widehat{x-z}\cdot (y-z)}}{|x-z|}\\
++t_s(\frac{x_1-z_1}{|x-z|},\kappa)^T\overline{g_p(\frac{x_1-z_1}{|x-z|},\kappa)}\frac{e^{\i k_p\widehat{x-z}\cdot (y-z)}}{|x-z|}dx_1\\
++O((1+\frac{|y-z|}{z_2})(\frac{1}{k_s z_2})^{1/4}+\frac{(k_s|y-z|)^2}{k_s z_2}+(\frac{|y-z|}{z_2})^{1/2})\\
+:=F(z,y)+R(z,y)\\
++O((1+\frac{|y-z|}{z_2})(\frac{1}{k_s z_2})^{1/4}+\frac{(k_s|y-z|)^2}{k_s z_2}+(\frac{|y-z|}{z_2})^{1/2})
+\ee
+We denote $\widehat{x-z}=x-z/|x-z|=(cos(\phi+\pi),\sin(\phi+\pi))$, then taking the substitution $x_1=z_1-z_2\cot\phi$, we obtain
+\be
+F(z,y)&=&\frac{-\i}{2\pi\mu} \int_{\theta^d_1}^{\theta^d_2}A_s(\phi,\kappa)e^{\i k_s(z_1-y_1)\cos\phi+\i k_s(z_2-y_2)\sin\phi} \\
+&+&\frac{-\i}{2\pi\mu} \int_{\theta^d_1}^{\theta^d_2}A_p(\phi,\kappa)e^{\i k_p(z_1-y_1)\cos\phi+\i k_p(z_2-y_2)\sin\phi}
+\ee
+\be
+R(z,y)&=&\frac{-\i}{2\pi\mu} \int_{\theta^d_1}^{\theta^d_2}B_s(\phi,\kappa)e^{\i k_s(z_1-y_1)\cos\phi+\i k_s(z_2-y_2)\sin\phi+(k_p-k_s)|x-z|} \\
+&+&\frac{-\i}{2\pi\mu} \int_{\theta^d_1}^{\theta^d_2}B_p(\phi,\kappa)e^{\i k_p(z_1-y_1)\cos\phi+\i k_p(z_2-y_2)\sin\phi+(k_s-k_p)|x-z|}
+\ee
+It is easy to see that $|R(z,y)|\leq C\frac{|z-y|}{z_2}$.
 \finproof
 
 \section{Reverse time migration method}
