@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  1 NOV 2017 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  2 NOV 2017 12:31
 entering extended mode
 **"C:/Users/zhoushiqi/Desktop/github/draft-in-RTM-elastic/Elastic Wave in Halfs
 pace.tex"
@@ -327,22 +327,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1543--1546
 
  []
 
-("Elastic Wave in Halfspace.bbl"
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1594--1597
+
+ []
+
+("Elastic Wave in Halfspace.bbl" [35]
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [34]) [35] ("Elastic Wave in Halfspace.aux")
+) [36] ("Elastic Wave in Halfspace.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2435 strings out of 495237
- 28815 string characters out of 3182726
- 99691 words of memory out of 3000000
- 5671 multiletter control sequences out of 15000+200000
+ 2436 strings out of 495237
+ 28822 string characters out of 3182726
+ 99706 words of memory out of 3000000
+ 5672 multiletter control sequences out of 15000+200000
  13839 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,12n,26p,943b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,26p,943b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmbx6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/C
@@ -357,9 +362,9 @@ m/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/CTEX/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/CTEX/MiKTeX/fonts/type1/pu
 blic/amsfonts/latxfont/lasy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (35 pages, 400753 bytes).
+Output written on "Elastic Wave in Halfspace.pdf" (36 pages, 405428 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
+ 189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

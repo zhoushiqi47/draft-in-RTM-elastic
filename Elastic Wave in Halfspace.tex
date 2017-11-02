@@ -948,8 +948,8 @@ e^{\i k_p|x-z|-\i\frac{\pi}{4}}\\ \hspace{-1cm} \nn
 :=\mathcal{T}_s(x,z)+\mathcal{T}_p(x,z)+O(\frac{k_s z_2}{|x-z|}\frac{1}{(k_s|x-z|)^{3/4}}+\frac{k_s|x_1-z_1|}{|x-z|}\frac{1}{(k_s|x-z|)^{5/4}})
 \ee
 Now we consider the finite aperture point spread function $J_d(z,y)$:
-\be
-\int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
+\be\label{fapsf}
+J_d(z,y)=\int_{-d}^{d} (T_D(x_1,0;z_1,z_2))^T\overline{G(x_1,0;y_1,y_2)}dx_1
 \ee
 Recall following standard asymptotic expansion:
 \be
@@ -961,7 +961,7 @@ e^{\i t}=1+O(t) \\
 where $x,y,z\in \R^2$, $t,a,b\in\R $ and $\alpha>0$.
 \begin{lem}
 For any $z,y\in \R^2_+$, $J_d(z,y)=F(z,y)+O((1+\frac{|y-z|}{z_2})(\frac{1}{k_s z_2})^{1/4}+\frac{(k_s|y-z|)^2}{k_s z_2}+(\frac{|y-z|}{z_2})^{1/2})$, where
-\be \hspace{-2.2cm} 
+\be \hspace{-2.2cm}
 F(z,y) =-\frac{\i}{2\pi\mu}\int_{\theta^d_1}^{\theta^d_2}f_s(\theta)
 \Bigg(
 \begin{array}{cc}
@@ -1541,10 +1541,59 @@ u_0(y)e_i&=\int_{\R^2_+\bks\bar D} -(\Delta_e (G(x,y)e_i)+\omega^2 G(x,y)e_i)\cd
 -\Delta_e (G(x,y)e_i)\cdot u_0(x) \\
 &=\int_{\Ga_D} (\sigma(U(x,y)e_i)\nu)\cdot u_0(x) - (U(x,y)e_i)\cdot (\sigma(u_0)\nu)ds(x)=0
 \een
-Then the desired unique exsitence follows with lemma \ref{ext}. This comlpletes the proof of theorem \ref{eu1}.
+Then the desired unique exsitence follows with lemma \ref{ext}. This completes the proof of theorem \ref{eu1}.
 \finproof
 \section{The resolution analysis}
-In this section we study the imaging resolution of the RTM for the Direchlet boundary obstacle in the half space.
+In this section we study the imaging resolution of the RTM for the Dirichlet boundary obstacle in the half space.
+\begin{thm}
+For any $z\in\Omega$
+\end{thm}
+\debproof
+By the integral representation, we have,
+\be\hspace{-1.5cm}
+u^s_k(x_r,x_s)=\int_{\Gamma_D}(T^{\nu(y)}_y G(y,x_r))^Tu^s_k(y,x_s)-G(x_r,y)(T^{\nu(y)}_y u^s_k(y,x_s)) ds(y)
+\ee
+where $u^s_k(x,x_s)+G(x,x_s)e_k=0$.
+From (\ref{fapsf}) we get for any $z\in\Omega$,
+\be\
+v_k(z,x_s)=\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}ds(x_r) \\
+=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{(T^{\nu(y)}_y G(y,x_r))^T}ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
+-\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
+=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y \overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z))^T ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
+-\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
+=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y [\overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z)])^T ds(x_r)\Big)\overline{u^s_k(y,x_s) }\\
+-\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\\
+=\int_{\Gamma_D}ds(y)\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) } 
+-J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big)
+\ee
+where we use the fact $(\sigma_x(A(x))\nu)B=\sigma_x(A(x)B)\nu$ above. By the definition of the imaging function $I_d(z)$, we have
+\be
+I_d(z)=\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot v_k(z,x_s) ds(x_s)\\
+=\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T\int_{\Gamma_0^d}
+\overline{ u^s_k(y,x_s) } e_k^T T^{e_2}_{x_s}D(x_s,z)\\
+-J_d(z,y)\int_{\Gamma_0^d}\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} e_k^T T^{e_2}_{x_s}D(x_s,z)\Big) \\
+=\int_{\Gamma_d} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T W_k(y,z)\\
+-J_d(z,y)\int_{\Gamma_0^d}(T^{\nu(y)}_y W_k(y,z))\Big)
+\ee
+where 
+\be
+W_k(y,z)= \int_{\Gamma_0^d}
+\overline{ u^s_k(y,x_s) } e_k^T T^{e_2}_{x_s}D(x_s,z)ds(x_s)
+\ee
+Therefore, $\overline{W_k(y,z)}$ can be viewed as the weighted superposition of $u^s_k(y,x_s)$. Then $\overline{W_k(y,z)}$ satisfies elastic equation
+\be
+\Delta_e^y \overline{W_k(y,z)} +\omega^2 \overline{W_k(y,z)}=0
+\ee
+On the boundary of the obstacle $\Gamma_D$, we have
+\be 
+\sum_{k=1}^{2}\overline{W_k(y,z)}=\sum_{k=1}^{2}\int_{\Gamma_0^d}
+ u^s_k(y,x_s)  e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
+ =\sum_{k=1}^{2}\int_{\Gamma_0^d}-G(y,x_s)e_k e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s)\\
+ =-\int_{\Gamma_0^d}G(y,x_s) T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
+ =-\overline{J_d^T(z,y)}
+ \ee
+ Moreover, $T_y^{e_2}\overline{W_k(y,z)}=0$ on $\Gamma_0$ since $T_y^{e_2}u^s_k(y,x_s)=0$ on $\Gamma_0$.
+\finproof
 
 \section*{References}
 \bibliography{eee}
