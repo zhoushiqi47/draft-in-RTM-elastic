@@ -614,7 +614,7 @@ We recall following lemma, see e.g. \cite{Wong_Asymptotic}:
 \begin{lem} \label{asym_frac}
 	Let $F(\lambda,a)=\int_{0}^{a} t^{\alpha-1}f(t)e^{\i\lambda t}dt$ where $0<a\leq+\infty$, $0<\alpha<1$ and $t^{\alpha-1}f'\in L^1(0,a)$, then we have
 	\be
-	|F(\lambda,a)|\leq C(\frac{1}{\lambda^\alpha}+\frac{1}{\lambda}(a^{\alpha-1}f(a)+|t^{\alpha-1}f'(t)|_{L^1(0,a)})
+	|F(\lambda,a)|\leq C(\frac{1}{\lambda^\alpha}f(0)+\frac{1}{\lambda}(a^{\alpha-1}f(a)+|t^{\alpha-1}f|_{L^1(0,a)})
 	\ee
 \end{lem}
 \begin{lem}\label{pr_dgreen}
@@ -1563,29 +1563,31 @@ v_k(z,x_s)=\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}ds
 -\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
 =\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y [\overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z)])^T ds(x_r)\Big)\overline{u^s_k(y,x_s) }\\
 -\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\\
-=\int_{\Gamma_D}ds(y)\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) } 
+=\int_{\Gamma_D}ds(y)\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) }
 -J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big)
 \ee
 where we use the fact $(\sigma_x(A(x))\nu)B=\sigma_x(A(x)B)\nu$ above. By the definition of the imaging function $I_d(z)$, we have
 \be
-I_d(z)=\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot v_k(z,x_s) ds(x_s)\\
-=\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T\int_{\Gamma_0^d}
+I_d(z)=\Im\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot v_k(z,x_s) ds(x_s)\\
+=\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) } \\
+-J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big) \\
+=\Im\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T\int_{\Gamma_0^d}
 \overline{ u^s_k(y,x_s) } e_k^T T^{e_2}_{x_s}D(x_s,z)\\
 -J_d(z,y)\int_{\Gamma_0^d}\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} e_k^T T^{e_2}_{x_s}D(x_s,z)\Big) \\
-=\int_{\Gamma_d} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T W_k(y,z)\\
--J_d(z,y)\int_{\Gamma_0^d}(T^{\nu(y)}_y W_k(y,z))\Big)
+=\Im\int_{\Gamma_d} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T W_k(y,z)\\
+-J_d(z,y)(T^{\nu(y)}_y W_k(y,z))\Big)
 \ee
-where 
+where
 \be
 W_k(y,z)= \int_{\Gamma_0^d}
-\overline{ u^s_k(y,x_s) } e_k^T T^{e_2}_{x_s}D(x_s,z)ds(x_s)
+\overline{ u^s_k(y,x_s) } e_k^T (T^{e_2}_{x_s}D(x_s,z))ds(x_s)
 \ee
 Therefore, $\overline{W_k(y,z)}$ can be viewed as the weighted superposition of $u^s_k(y,x_s)$. Then $\overline{W_k(y,z)}$ satisfies elastic equation
 \be
 \Delta_e^y \overline{W_k(y,z)} +\omega^2 \overline{W_k(y,z)}=0
 \ee
 On the boundary of the obstacle $\Gamma_D$, we have
-\be 
+\be
 \sum_{k=1}^{2}\overline{W_k(y,z)}=\sum_{k=1}^{2}\int_{\Gamma_0^d}
  u^s_k(y,x_s)  e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
  =\sum_{k=1}^{2}\int_{\Gamma_0^d}-G(y,x_s)e_k e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s)\\
