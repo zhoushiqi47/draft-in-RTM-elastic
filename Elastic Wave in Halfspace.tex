@@ -1550,33 +1550,33 @@ For any $z\in\Omega$
 \end{thm}
 \debproof
 By the integral representation, we have,
-\be\hspace{-1.5cm}
+\be\hspace{-1cm}
 u^s_k(x_r,x_s)=\int_{\Gamma_D}(T^{\nu(y)}_y G(y,x_r))^Tu^s_k(y,x_s)-G(x_r,y)(T^{\nu(y)}_y u^s_k(y,x_s)) ds(y)
 \ee
 where $u^s_k(x,x_s)+G(x,x_s)e_k=0$.
 From (\ref{fapsf}) we get for any $z\in\Omega$,
-\be\
-v_k(z,x_s)=\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}ds(x_r) \\
-=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{(T^{\nu(y)}_y G(y,x_r))^T}ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
--\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
-=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y \overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z))^T ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
--\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
-=\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y [\overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z)])^T ds(x_r)\Big)\overline{u^s_k(y,x_s) }\\
--\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\\
-=\int_{\Gamma_D}ds(y)\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) }
+\ben\hspace{-1cm}
+v_k(z,x_s)&=&\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}ds(x_r) \\
+&=&\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{(T^{\nu(y)}_y G(y,x_r))^T}ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
+& &-\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
+&=&\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y \overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z))^T ds(x_r)\Big)\overline{ u^s_k(y,x_s) }\\
+& & -\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} \\
+&=&\int_{\Gamma_D}ds(y)\Big(\int_{\Gamma_0^d}(T^{\nu(y)}_y [\overline{G(y,x_r)}T^{e_2}_{x_r}D(x_r,z)])^T ds(x_r)\Big)\overline{u^s_k(y,x_s) }\\
+& &-\Big(\int_{\Gamma_0^d}(T^{e_2}_{x_r}D(x_r,z))^T\overline{G(x_r,y)}ds(x_r)\Big)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\\
+&=&\int_{\Gamma_D}ds(y)\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) }
 -J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big)
-\ee
+\een
 where we use the fact $(\sigma_x(A(x))\nu)B=\sigma_x(A(x)B)\nu$ above. By the definition of the imaging function $I_d(z)$, we have
-\be
-I_d(z)=\Im\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot v_k(z,x_s) ds(x_s)\\
-=\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) } \\
--J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big) \\
-=\Im\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T\int_{\Gamma_0^d}
+\ben\hspace{-1cm}
+I_d(z)&=&\Im\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot v_k(z,x_s) ds(x_s)\\
+&=&\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\int_{\Gamma_0^d}(T^{e_2}_{x_s}D(x_s,z))^Te_k\cdot\Big((T^{\nu(y)}_y J^T_d(z,y))^T \overline{ u^s_k(y,x_s) } \\
+& &-J_d(z,y)\overline{(T^{\nu(y)}_y u^s_k(y,x_s))}\Big) \\
+&=&\Im\int_{\Gamma_D} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T\int_{\Gamma_0^d}
 \overline{ u^s_k(y,x_s) } e_k^T T^{e_2}_{x_s}D(x_s,z)\\
--J_d(z,y)\int_{\Gamma_0^d}\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} e_k^T T^{e_2}_{x_s}D(x_s,z)\Big) \\
-=\Im\int_{\Gamma_d} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T W_k(y,z)\\
--J_d(z,y)(T^{\nu(y)}_y W_k(y,z))\Big)
-\ee
+& &-J_d(z,y)\int_{\Gamma_0^d}\overline{(T^{\nu(y)}_y u^s_k(y,x_s))} e_k^T T^{e_2}_{x_s}D(x_s,z)\Big) \\
+&=&\Im\int_{\Gamma_d} ds(y)\sum_{k=1}^{2}\mathbf{tr}\Big((T^{\nu(y)}_y J^T_d(z,y))^T W_k(y,z)\\
+& &-J_d(z,y)(T^{\nu(y)}_y W_k(y,z))\Big)
+\een
 where
 \be
 W_k(y,z)= \int_{\Gamma_0^d}
@@ -1587,13 +1587,13 @@ Therefore, $\overline{W_k(y,z)}$ can be viewed as the weighted superposition of 
 \Delta_e^y \overline{W_k(y,z)} +\omega^2 \overline{W_k(y,z)}=0
 \ee
 On the boundary of the obstacle $\Gamma_D$, we have
-\be
-\sum_{k=1}^{2}\overline{W_k(y,z)}=\sum_{k=1}^{2}\int_{\Gamma_0^d}
+\ben
+\sum_{k=1}^{2}\overline{W_k(y,z)}&=&\sum_{k=1}^{2}\int_{\Gamma_0^d}
  u^s_k(y,x_s)  e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
- =\sum_{k=1}^{2}\int_{\Gamma_0^d}-G(y,x_s)e_k e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s)\\
- =-\int_{\Gamma_0^d}G(y,x_s) T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
- =-\overline{J_d^T(z,y)}
- \ee
+ &=&\sum_{k=1}^{2}\int_{\Gamma_0^d}-G(y,x_s)e_k e_k^T T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s)\\
+ &=&-\int_{\Gamma_0^d}G(y,x_s) T^{e_2}_{x_s}\overline{D(x_s,z)}ds(x_s) \\
+ &=&-\overline{J_d^T(z,y)}
+ \een
  Moreover, $T_y^{e_2}\overline{W_k(y,z)}=0$ on $\Gamma_0$ since $T_y^{e_2}u^s_k(y,x_s)=0$ on $\Gamma_0$.
 \finproof
 

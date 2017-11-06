@@ -1,10 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  2 NOV 2017 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  4 NOV 2017 15:09
 entering extended mode
-**"C:/Users/zhoushiqi/Desktop/github/draft-in-RTM-elastic/Elastic Wave in Halfs
-pace.tex"
-
-("C:/Users/zhoushiqi/Desktop/github/draft-in-RTM-elastic/Elastic Wave in Halfsp
-ace.tex"
+**"./Elastic Wave in Halfspace.tex"
+("Elastic Wave in Halfspace.tex"
 LaTeX2e <2016/03/31>
 Babel <3.9q> and hyphenation patterns for 1 language(s) loaded.
 (iopart.cls
@@ -341,13 +338,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2436 strings out of 495237
- 28822 string characters out of 3182726
+ 2435 strings out of 495237
+ 28657 string characters out of 3182726
  99706 words of memory out of 3000000
  5672 multiletter control sequences out of 15000+200000
  13839 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,12n,26p,943b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,26p,890b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmbx6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/C
@@ -362,7 +359,7 @@ m/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/CTEX/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/CTEX/MiKTeX/fonts/type1/pu
 blic/amsfonts/latxfont/lasy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (36 pages, 405850 bytes).
+Output written on "Elastic Wave in Halfspace.pdf" (36 pages, 405675 bytes).
 PDF statistics:
  189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
