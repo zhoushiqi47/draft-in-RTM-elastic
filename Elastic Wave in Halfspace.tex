@@ -24,10 +24,22 @@
 \@addtoreset{equation}{section}
 \makeatother  % `@' is restored as "non-letter"
 \renewcommand\theequation{{\thesection}.{\arabic{equation}}}
-\title[]{Elastic Problem in Half-space}
+\title[RTM in the Elastic Medium Half Space]{Reverse Time Migration for Extended Obstacles in the Half Space: Elastic Waves}
+\author{ Zhiming Chen, Shiqi Zhou }
+\address{LSEC, Institute of Computational Mathematics, Academy of
+	Mathematics and Systems Science, Chinese Academy of Sciences,
+	Beijing 100190, China}
 
-
-
+\begin{abstract}
+	We consider a reverse time migration method for reconstructing extended
+	obstacles in the half space with finite aperture data using elastic waves at a fixed
+	frequency. We prove the resolution of the reconstruction method in terms of the
+	aperture and the depth of the obstacle embedded in the half space. The resolution
+	analysis implies that the imaginary part of the cross-correlation imaging function
+	always peaks on the illuminated boundary of the obstacle. Numerical experiments
+	are included to illustrate the powerful imaging quality and to confirm our resolution
+	results. 
+\end{abstract}
 \maketitle
 \newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathcal{R}}
@@ -116,6 +128,7 @@
 \newcommand{\R}{{\mathbb{R}}}
 \newcommand{\Z}{{\mathbb{Z}}}
 \newcommand{\C}{{\mathbb{C}}}
+\newcommand{\I}{{\mathbb{I}}}
 \renewcommand{\Re}{\mathrm{Re}\,}
 \renewcommand{\Im}{\mathrm{Im}\,}
 \renewcommand{\div}{\mathrm{div}}
@@ -129,6 +142,40 @@
 \newcommand{\ben}{\begin{eqnarray*}}
 \newcommand{\een}{\end{eqnarray*}}
 \newcommand{\nn}{\nonumber}
+
+\section{Introduction}\label{section1}
+In this paper we study a reverse time migration (RTM) algorithm to find the support of an unknown obstacle in the half space from the measurement of scattered waves on the boundary of the half space which is far away from the obstacle. The physical properties of the obstacle such as penetrable or non-penetrable, and for non-penetrable obstacles, the type of boundary conditions on the boundary of the obstacle, are not required in the algorithm.
+
+Let the non-penetrable obstacle occupy a bounded Lipschitz domain $D\subset\R_+^2$ with $\nu$ the unit outer normal to its boundary $\Ga_D$. We
+assume the incident wave is emitted by a point source located at $x_s$, explosive along the polarization direction $q\in\R^2$, on the surface $\Ga_0=\{(x_1,x_2)^T:x_1\in\R,x_2=0\}$ which is far away from the obstacle. The measured data $u_q$ corresponding to the polarization direction $q$ is the solution of the following elastic scattering problem in the isotropic homogeneous medium half space with \emph{Lam\'{e}} constant $\lambda$ and $\mu$ and constant density $\rho\equiv1$:
+\be\label{eq1.1}
+& &\nabla\cdot\sigma(u_q) + \rho\omega^2u_q= -\delta_{x_s}(x)q \ \ \ \ \mbox{in }\R_+^2\bks \bar{D}\\
+& &u_q=0 \ \ \mbox{on} \ \Ga_D  \ \ \mbox{and} \ \ \sigma(u_q)\cdot e_2=0 \ \ \mbox{on} \ \Ga_0
+\ee
+together with the constitutive relation (Hookes law)
+\ben
+\sigma(u_q) = 2\mu\varepsilon(u_q) + \lambda\div u_q \I \\
+\varepsilon(u_q)=\frac{1}{2}(\na u_q +(\na u_q)^T)
+\een
+where $\omega$ is the circular frequency, $u_q(x)\in\C^2$ denotes the displacement fields and $\sigma$ is the stress tensor. We also need to define the surface traction $T_x^n (\cdot)$ on the normal direction n,
+\ben
+T_x^n u(x) := \sigma\cdot n = 2\mu\frac{\pa u}{\pa n}+\lambda n\div u + \mu n \times \curl u
+\een
+For simplicity, let's introduce \emph{Lam\'{e}} operator $\Delta_e$ as
+\ben
+\Delta_e u = (\lambda+2\mu)\nabla\nabla\cdot u - \mu\nabla\times\nabla\times u=\nabla\cdot\sigma(u)
+\een
+The equation (\ref{eq1.1}) is understood as the limit when $x_s\in\R_+^2\bks \bar{D}$ tends to $\Ga_0$ whose precise meaning will be given below after we introduce the Neumann Green Tensor and the definition of the radiation condition.
+
+The layout of the paper is as follows. In section 2 we study the two Green Tensor for
+the scattering problem in the half space satisfying the homogeneous Neumann condition and Dirichlet condition on $\Ga_0$. We recall the derivation of the Green
+Tensor by the method of Fourier transform and derive an alternative form of the
+Green Tensor which is crucial for the analysis in the rest. In section 3 we introduce the RTM
+algorithm. In section 4 we study the point spread function. In section 5 we study
+the resolution analysis of the RTM method. In section 6
+we report extensive numerical experiments to show the competitive performance of the
+RTM algorithm.
+
 
 
 
@@ -1041,13 +1088,46 @@ In this section we introduce RTM method for inverse elastic scattering problems 
 |x_2|\leq c_3 h    \ \ \ \forall x,y \in \Omega
 \ee
 
-Our RTM algorithm consists of two steps\cite{Zhang08}\cite{Zhang2007}. The first step\cite{ela_reverse} is the back-propagation in which we back-propagate the complex conjugated data $\overline{u^s(x_r,x_s)}$ as the Dirichlet boundary condition into the domain. The second step is the cross-correlation in which we compute the imaginary part of the cross-correlation of the back-propagated field and the incoming wave which uses the source as the boundary codition on $\Gamma_0$.
-\begin{alg}{Rtm}
-	ÄÚÈÝ...
+Our RTM algorithm consists of two steps \cite{Zhang08,Zhang2007}. The first step \cite{ela_reverse} is the back-propagation in which we back-propagate the complex conjugated data $\overline{u^s(x_r,x_s)}$ as the Dirichlet boundary condition into the domain. The second step is the cross-correlation in which we compute the imaginary part of the cross-correlation of the back-propagated field and the incoming wave which uses the source as the boundary codition on $\Gamma_0$.
+\begin{alg}{\sc (Reverse time migration algorithm)}\\
+Given the data $u_k^s(x_r,x_s)$, $k=1,2$ which is the measurement of the scattered field at $x_r$ when the source is emitted at $x_s$ in the  polarized direction $e_k$, $s=1,\dots, N_s$ and $r=1,\dots,N_r$. \\	
+$1^\circ$ Back-propagation: For $s=1,\dots,N_s$ and k=1,2, compute the back-propagation field
+\be
+v_k(z,x_s)=\frac{|\Gamma_0^d|}{N_r}\sum^{N_r}_{r=1}(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}, \ \ \ \ \ \forall z\in\Omega
+\ee
+$2^\circ$ Cross-correlation: For $z\in\Om$, compute
+\be\label{cor1}
+I_d(z)=\Im\sum_{k=1}^{2}\left\{\frac{|\Gamma_0^d|}{N_s}\sum^{N_s}_{s=1}[(T^{e_2}_{x_s}D(x_s,z))^Te_k]\cdot v_k(z,x_s)\right\}.
+\ee
 \end{alg}
 
-\section{point spread function (backpropagate with Dirichlet Green Tensor)}
-The point spread function measures the resolution for finding point source\cite{ammari2013mathematical}. In \cite{RTMhalf_aco}, the point spread function has been defined in acoustic wave case. We can define elastic point spread function $J(z,y)$, a $\mathbb{C}^{2\times2}$ matrix, which back-propagate the conjugated data $\overline{G(x,y)}$ as the Dirichlet boundary condition. Thus, for any $z,y \in \R_+^2$
+It is easy to that for $z\in\Om$
+\be\hspace{-2.5cm}\label{cor2}
+I_d(z)=\Im\sum_{k=1}^{2}\left\{\frac{|\Gamma_0^d|}{N_s}\frac{|\Gamma_0^d|}{N_r}\sum^{N_s}_{s=1}\sum^{N_r}_{r=1}[(T^{e_2}_{x_s}D(x_s,z))^Te_k]\cdot[(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}]\right\}
+\ee
+This formula is used in all our numerical experiments in section. By letting $N_s,N_r\to\infty$, we know that (\ref{cor2}) can be viewed as an approximation of the following continuous integral:
+\be\hspace{-2.5cm}\label{cor3}
+\hat{I}_d(z)=\Im\sum_{k=1}^{2}\int_{\Gamma_0^d}\int_{\Gamma_0^d}[(T^{e_2}_{x_s}D(x_s,z))^Te_k]\cdot[(T^{e_2}_{x_r}D(x_r,z))^T\overline{u^s_k(x_r,x_s)}]ds(x_r)ds(x_s)
+\ee
+where $z\in\Om$. We will study the resolution of the function $\hat{I}_d(z)$ in the section 5. To this end  we will first consider the resolution of the finite aperture point source function in the next function.
+
+\section{The point spread function }
+We first introduce some notation.  For any bounded domain $U\subset \R^2$ with Lipschitz boundary $\Ga$, let
+$\|u\|_{H^1(U)}=(\|\na \phi\|_{L^2(U)}^2+d_U^{-2}\|\phi\|_{L^2(U)}^2)^{1/2}$ be the weighted $H^1(U)$ norm
+and
+$\|v\|_{H^{1/2}(\Ga)}=(d_U^{-1}\|v\|_{L^2(\Ga)}^2+|v|_{\frac 12,\Ga}^2)^{1/2}$ be the weighted $H^{1/2}(\Ga)$ norm,
+where $d_U$ is the diameter of $U$ and
+\ben
+|v|_{\frac 12,\Ga}=\left(\int_\Ga\int_\Ga\frac{|v(x)-v(y)|^2}{|x-y|^2}ds(x)ds(y)\right)^{1/2}.
+\een
+By scaling argument and trace theorem we know that there exists a constant $C>0$ independent of $d_D$ such that for any $\phi\in C^1(\bar D)$,
+\be\label{q0}
+\|\phi\|_{H^{1/2}(\Ga_D)}+\|\pa\phi/\pa\nu\|_{H^{-1/2}(\Ga_D)}\le C\max_{x\in\bar D}(|\phi(x)|+d_D|\na\phi(x)|).
+%C_1\frac{|U|^{\frac 12}}{|\Ga|}\|v\|_{H^{1/2}(\Ga)}\le
+%\inf_{{\phi|_{\Ga}=v,\,\phi\in H^1(U)}}\|\phi\|_{H^1(U)}\le C_2\frac{|U|^{\frac 12}}{d_U}\|v\|_{H^{1/2}(\Ga)}.
+\ee
+
+The point spread function measures the resolution for finding point source\cite{ammari2013mathematical}. In \cite{RTMhalf_aco}, the point spread function has been defined in the case of acoustic wave. We now define elastic point spread function $J(z,y)$, a $\mathbb{C}^{2\times2}$ matrix, which back-propagate the conjugated data $\overline{G(x,y)}$ as the Dirichlet boundary condition. Thus, for any $z,y \in \R_+^2$
 \be
 J(z,y)&=&\int_{\Gamma_0} \ (T_D(x,z))^T \overline{G(x,y)} ds(x) \\
 &=&\int_\R \ (T_D(x_1,0;z_1,z_2))^T \overline{G(x_1,0;y_1,y_2)} dx_1

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  7 NOV 2017 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.26)  22 NOV 2017 14:35
 entering extended mode
 **"./Elastic Wave in Halfspace.tex"
 ("Elastic Wave in Halfspace.tex"
@@ -199,169 +199,166 @@ G,.JBIG2,.JB2,.eps]
 \c@assum=\count101
 \c@definition=\count102
 \c@RomanNumber=\count103
-LaTeX Font Info:    Try loading font information for U+msa on input line 136.
+LaTeX Font Info:    Try loading font information for U+msa on input line 149.
 
 (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 136.
+LaTeX Font Info:    Try loading font information for U+msb on input line 149.
 
 (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 136.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 149.
 
 (C:\CTEX\MiKTeX\tex\latex\base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [2]
-Overfull \hbox (8.24463pt too wide) in alignment at lines 193--203
+) [2] [3]
+Overfull \hbox (8.24463pt too wide) in alignment at lines 240--250
  [] [] [] [] 
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 323--326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 361--365
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 414--417
+Underfull \hbox (badness 10000) in paragraph at lines 370--373
 
  []
 
-[7] [8] [9] [10]
-Overfull \hbox (14.33205pt too wide) in alignment at lines 590--596
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--412
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 461--464
+
+ []
+
+[8] [9] [10] [11]
+Overfull \hbox (14.33205pt too wide) in alignment at lines 637--643
  [] [] [] [] 
  []
 
-[11] [12] [13] [14]
-Overfull \hbox (14.33205pt too wide) in alignment at lines 750--756
+[12] [13] [14] [15]
+Overfull \hbox (14.33205pt too wide) in alignment at lines 797--803
  [] [] [] [] 
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 800--803
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 847--850
 
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 913--915
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 960--962
 
  []
 
-[19]
-Overfull \hbox (2.51326pt too wide) in alignment at lines 981--986
+[20]
+Overfull \hbox (2.51326pt too wide) in alignment at lines 1028--1033
  [] [] [] [] 
  []
 
-[20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1033--1036
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1083
 
  []
 
-Missing character: There is no Ä in font cmti12!
-Missing character: There is no Ú in font cmti12!
-Missing character: There is no È in font cmti12!
-Missing character: There is no Ý in font cmti12!
-[22] [23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1192
+[23] [24] [25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1272
 
  []
 
 Missing character: There is no £ in font cmr12!
 Missing character: There is no ­ in font cmr12!
 
-Overfull \hbox (40.89989pt too wide) in alignment at lines 1213--1218
+Overfull \hbox (40.89989pt too wide) in alignment at lines 1293--1298
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1218--1221
+Underfull \hbox (badness 10000) in paragraph at lines 1298--1301
 
- []
-
-[26] [27]
-Overfull \hbox (32.7782pt too wide) in alignment at lines 1282--1285
- [] [] [] [] 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1313--1316
-
+Overfull \hbox (32.7782pt too wide) in alignment at lines 1362--1365
+ [] [] [] [] 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1375--1378
+Underfull \hbox (badness 10000) in paragraph at lines 1393--1396
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1408--1411
-
- []
-
-[30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1452--1455
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1455--1458
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1460--1463
-
- []
-
-[32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1546
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1488--1491
 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1596--1599
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1535
 
  []
 
-[35] ("Elastic Wave in Halfspace.bbl"
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1540--1543
+
+ []
+
+[34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 1623--1626
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1676--1679
+
+ []
+
+("Elastic Wave in Halfspace.bbl" [37]
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no ¨ in font cmr10!
-) [36] ("Elastic Wave in Halfspace.aux")
+) [38] ("Elastic Wave in Halfspace.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2435 strings out of 495237
- 28657 string characters out of 3182726
- 99706 words of memory out of 3000000
- 5672 multiletter control sequences out of 15000+200000
- 13839 words of font info for 53 fonts, out of 3000000 for 9000
+ 2444 strings out of 495237
+ 28733 string characters out of 3182726
+ 99793 words of memory out of 3000000
+ 5680 multiletter control sequences out of 15000+200000
+ 14448 words of font info for 55 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,12n,26p,890b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmbx6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/C
-TEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
-:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/CTEX/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/CTEX/MiKTeX/fonts/type1/pu
-blic/amsfonts/latxfont/lasy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on "Elastic Wave in Halfspace.pdf" (36 pages, 405675 bytes).
+ 38i,12n,26p,890b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbx6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/C
+TEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/CTEX/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/CTEX/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><C:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Elastic Wave in Halfspace.pdf" (38 pages, 442777 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
+ 206 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
